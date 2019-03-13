@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2018/01/30 13:16:53 by cmiran           ###   ########.fr       */
+/*   Created: 2017/11/13 21:17:58 by cmiran            #+#    #+#             */
+/*   Updated: 2017/12/04 15:46:48 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdarg.h>
+#include "libft.h"
 
-int	ft_printf(const char * restrict format, ...)
+int	ft_isdigit(int c)
 {
-
-	return (0);
+	return (c >= '0' && c <= '9');
 }

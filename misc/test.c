@@ -20,57 +20,77 @@ int	main(int argc, char **argv)
 		doubleValue = atoi(argv[3]);
 
 /*
-printf formatting is controlled by 'format identifiers' which, are shown below in their simplest form.
-%d %i		Signed decimal. 
+
+Printf formatting is controlled by format identifiers which are shown below in their
+simplest form.
+
+' '		No argument expected.
+%d %i		Signed decimal.
 %o		Unsigned octal.
+%u		Unsigned decimal.
 %x %X		Unsigned hexadecimal (x and X) notation.
-%u		Unsigned intValue.
+
+%D		Long int signed decimal.
+%O		Long int unsigned octal.
+%U		Long int unsigned decial.
+
 %c		Character.
 %s		String.
+%p		Pointer (address).
+
 %f		Double.
+
 %e %E		Double.
 %g %G		Double.
-%p		Pointer (address).
-%n		Number of characters written by this printf.
- 		No argument expected.
+
+%n		Number of characters written by printf.
 %%		%. No argument expected.
 
-These identifiers actually have up to 6 parts as shown in the table below. They MUST be used in the order shown:
+These identifiers actually have up to 6 parts as shown in the table below.
+They MUST be used in the order shown:
+
 %[flags][width][.precision][size_flag]type
 
 The % marks the start and therfore is mandatory.
-*/	
+
+*/
+
 // %d, %i
-	printf("printf\"%%d\", intValue);\n");
+	printf("printf(\"%%d\", intValue);\n");
 	printf("%d\n\n", intValue);
-	printf("printf\"%%i\", intValue);\n");
+	printf("printf(\"%%i\", intValue);\n");
 	printf("%i\n\n", intValue);
 
 // %o
-	printf("printf\"%%o\", intValue);\n");
+	printf("printf(\"%%o\", intValue);\n");
 	printf("%o\n\n", intValue);
 
-// %x, %X
-	printf("printf\"%%x\", intValue);\n");
-	printf("%x\n", intValue);
-	printf("printf\"%%X\", intValue);\n");
-	printf("%X\n", intValue);
-
 // %u
-	printf("printf\"%%u\", Unsigned intValue);\n");
+	printf("printf(\"%%u\", Unsigned intValue);\n");
 	printf("%u\n\n", intValue);
 
+// %x
+	printf("printf(\"%%x\", intValue);\n");
+	printf("%x\n\n", intValue);
+
+// %X
+	printf("printf(\"%%X\", intValue);\n");
+	printf("%X\n\n", intValue);
+
 // %c
-	printf("printf\"%%c\", Unsigned intValue);\n");
+	printf("printf(\"%%c\", Unsigned intValue);\n");
 	printf("%u\n\n", intValue);
 
 /*
+
 FLAGS
-The format identifers can be altered from their default function by applying the following flags: 
--	Left justify.
+
+The format identifers can be altered from their default function by applying the
+following flags:
 0	Field is padded with 0's instead of blanks.
-+	Sign of number always O/P.
-blank	Positive values begin with a blank.
+-	Left justify.
++	Include sign in the output, + or -.
+space	Positive values begin with a space, negative with a -.
 # 	Various uses:
 	%#o (Octal)	0 prefix inserted.
 	%#x (Hex)	0x prefix added to non-zero values.
@@ -82,33 +102,42 @@ blank	Positive values begin with a blank.
 			zeros not removed.
 	%#G		Always show the decimal point trailing
 			zeros not removed.
+
 */
+
 // [FLAGS] 
-printf("// %%[FLAGS][no_width][no_.precision][no-size_flag]type\n\n");
+	printf("// %%[FLAGS][no_width][no_.precision][no-size_flag]type\n\n");
+
 // [+]d, include sign in the output, + or -
 	printf("// [+], include sign in the output, + or -\nprintf(\"%%+d\", intValue);\n");
 	printf("%+d\n\n", intValue);
+
 
 // [ ]d, use space or - for the sign
 	printf("// [ ], use space or - for the sign\nprintf(\"%% d\", intValue);\n");
 	printf("% d\n\n", intValue);
 
+
 // [-]d, left justify the output with space if necessary
 	printf("// [-], left justify the output with space if necessary\nprintf(\"%%-10d\", intValue);\n");
 	printf("%-10dc\n\n", intValue);
+
 
 // [-+]d, combination with [+] (above), replace one space with sign
 	printf("// [-+], combination with the above, put the sign with [+]\nprintf(\"%%-+10d\", intValue);\n");
 	printf("%-+10dc\n\n", intValue);
 
+
 // [#]o, prefix octal value with 0
 	printf("// [#]o, prefix octal value with 0\nprintf(\"%%#o\", intValue);\n");
 	printf("%#o\n", intValue);
+
 // [#]x or [#]X, prefix hexadecimal output value with with 0x or 0X 	
 	printf("// [#]x or [#]X, prefix hexadecimal output value with with 0x or 0X\nprintf(\"%%#x\", intValue);\n");
 	printf("%#x\n", intValue);
 	printf("printf(\"%%#X\", intValue);\n");
 	printf("%#X\n\n", intValue);
+
 // [#]e, [#]E or [#]f, always include a decimal point in floating-point value
 	printf("// [#]e, [#]E or [#]f, always include a decimal point in floating-point value\nprintf(\"%%e\", doubleValue);\n");
 	printf("%e\n", doubleValue);
@@ -116,6 +145,7 @@ printf("// %%[FLAGS][no_width][no_.precision][no-size_flag]type\n\n");
 	printf("%#E\n", doubleValue);
 	printf("printf(\"%%#f\", doubleValue);\n");
 	printf("%#f\n\n", doubleValue);
+
 // [#]g or [#]G, do not remove trailling zero
 	printf("// [#]g or [#]G, do not remove trailling zero\nprintf(\"%%#g\", doubleValue);\n");
 	printf("%#g\n", doubleValue);
