@@ -6,18 +6,15 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/13 21:58:54 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/14 00:02:02 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
-
 /*
-** 	| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-** 	| # | 0 | - | + |   |wid|pre| hh| h | ll|  l |
+**	%[flag][width][.precision][size_flag]type
 */
 
-//	%[flag][width][.precision][size_flag]type
+#include "../inc/ft_printf.h"
 
 int	pf_atoi(const char *format, size_t i)
 {
@@ -30,7 +27,7 @@ int	pf_atoi(const char *format, size_t i)
 //		if (!ft_isdigit(format[i]))
 //			exit(EXIT_FAILURE);
 	}
-	return ((int)nb);	
+	return ((int)nb);
 }
 
 void	check_sizeflag(const char *format, size_t i, size_t *fla)
@@ -70,6 +67,11 @@ void	set_format(t_printf *var, const char *format)
 	ft_bzero(var->fla, 11);
 	while (format[var->i++])
 	{
+		if (format[var->i] == '%')
+		{
+			write(1, "%", 1);
+			break;
+		}
 		if (format[var->i] == '#' || format[var->i] == '0'\
 				|| format[var->i] == '-' || format[var->i] == '+'\
 				|| format[var->i] == ' ')
@@ -77,7 +79,9 @@ void	set_format(t_printf *var, const char *format)
 		else if (ft_isdigit(format[var->i]))
 		{
 				var->fla[5] = pf_atoi(format, var->i);
-				var->ret += var->fla[5]; // ?? a checker avec test width idem pour la precision
+				var->ret += var->fla[5]; // ?? a checker avec test
+							 // width idem pour la
+							 // precision
 		}
 		else if (format[var->i] == '.')
 			var->fla[6] = pf_atoi(format, var->i + 1);
