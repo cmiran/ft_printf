@@ -4,7 +4,7 @@
 int	main(void)
 {
 //	ft_printf("Christopher Nolan\n");
-	printf("%idede",'A');
+	printf("%y",'A');
 //	printf("Badaboom %i Chuck Norris\n", 42);
 	return(0);
 }

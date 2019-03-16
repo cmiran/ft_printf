@@ -6,11 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 08:40:10 by cmiran            #+#    #+#             */
-/*   Updated: 2017/11/15 00:27:17 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/15 00:21:31 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/ft_printf.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

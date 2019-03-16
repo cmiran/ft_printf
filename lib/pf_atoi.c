@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   pf_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/12 09:13:13 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/15 00:20:59 by cmiran           ###   ########.fr       */
+/*   Created: 2019/03/15 00:19:43 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/15 00:20:03 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+int	pf_atoi(const char *format, size_t i)
 {
-	ft_memset(s, 0, n);
+	long	nb;
+
+	while (ft_isdigit(format[i]))
+	{
+		nb = nb * 10 + format[i] - '0';
+		i++;
+	}
+	return ((int)nb);
 }
