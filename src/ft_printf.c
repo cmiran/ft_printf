@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/16 17:35:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/18 21:24:00 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 
 #include "../inc/ft_printf.h"
 
-int	check_conversion(const char *format, size_t i, size_t *conv)
+int	check_conversion(t_printf *var, const char *format)
 {
-	format[i] == 'c' ? conv[0] = 1 : 0;
-	format[i] == 's' ? conv[1] = 1 : 0;	// on peut largement faire mieux,
-	format[i] == 'p' ? conv[2] = 1 : 0;	// cette fonction peut etre celle
-	format[i] == 'd' ? conv[3] = 1 : 0;	// ou t'envoi sur chaque traitement
-	format[i] == 'i' ? conv[4] = 1 : 0;	// de conversion.
-	format[i] == 'o' ? conv[5] = 1 : 0;
-	format[i] == 'u' ? conv[6] = 1 : 0;
-	format[i] == 'x' ? conv[7] = 1 : 0;
-	format[i] == 'X' ? conv[8] = 1 : 0;
-	format[i] == 'f' ? conv[9] = 1 : 0;
-	format[i] == 'p' ? conv[10] = 1 : 0;
-	format[i] == 'n' ? conv[11] = 1 : exit(EXIT_FAILURE);
+	format[var->i] == 'c' ? var->conv[0] = 1 : 0;
+	format[var->i] == 's' ? var->conv[1] = 1 : 0;
+	format[var->i] == 'p' ? var->conv[2] = 1 : 0;
+	format[var->i] == 'd' ? is_di(var, va_arg(var->ap, int)) : 0;
+	format[var->i] == 'i' ? var->conv[4] = 1 : 0;
+	format[var->i] == 'o' ? var->conv[5] = 1 : 0;
+	format[var->i] == 'u' ? var->conv[6] = 1 : 0;
+	format[var->i] == 'x' ? var->conv[7] = 1 : 0;
+	format[var->i] == 'X' ? var->conv[8] = 1 : 0;
+	format[var->i] == 'f' ? var->conv[9] = 1 : 0;
+	format[var->i] == 'p' ? var->conv[10] = 1 : 0;
+	format[var->i] == 'n' ? var->conv[11] = 1 : exit(EXIT_FAILURE);
 	return (1);
 }
 
@@ -86,19 +86,18 @@ void	set_format(t_printf *var, const char *format)
 			var->fla[6] = pf_atoi(format, ++var->i);
 		else if (format[var->i] == 'h' || format[var->i] == 'l')
 			check_sizeflag(format, var->i, var->fla);
-		else if (check_conversion(format, var->i, var->conv))
+		else if (check_conversion(var, format))
 			break;
 	}
 }
 
 int	ft_printf(const char * restrict format, ...)
 {
-	va_list		ap;
 	t_printf	var;
 
 	if (!format)
 		return (0);
-	va_start(ap, format);
+	va_start(var.ap, format);
 	var.i = 0;
 	var.ret = 0;
 	while (format[var.i])
@@ -113,6 +112,6 @@ int	ft_printf(const char * restrict format, ...)
 		}
 		var.i++;
 	}
-	va_end(ap);
+	va_end(var.ap);
 	return (var.ret);
 }
