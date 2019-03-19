@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/18 21:24:04 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/18 22:56:32 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_printf(const char * restrict format, ...);
 /*
 ** 		src/diouxX.c
 */
-void	is_di(t_printf *var, int nb);
+void	is_di(t_printf *var);
 
 /*
 **		lib/
@@ -63,5 +63,7 @@ void	ft_putchar(char c);
 char	*ft_itoa(int nb);
 	size_t	ft_nbrlen(int nb);
 char	*ft_strnew(size_t size);
+int	ft_isspace(int c);
+
 int	main(void);
 #endif

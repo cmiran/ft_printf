@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/18 21:24:02 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/18 22:29:44 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	width_precision(t_printf *var, int nb)
 {
-	if ()
-		;
-	
 /*	int	i;
 	char	*str;
 
@@ -32,8 +29,11 @@ void	width_precision(t_printf *var, int nb)
 	}*/
 }
 
-void	is_di(t_printf *var, int nb)
+void	is_di(t_printf *var)
 {
+	int	nb;
+
+	nb = va_arg(var->ap, int);
 	if (var->fla[2])
 	{
 		var->fla[3] || var->fla[4] ?\

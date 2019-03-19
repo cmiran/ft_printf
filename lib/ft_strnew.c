@@ -6,7 +6,7 @@
 /*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 16:55:23 by cmiran            #+#    #+#             */
-/*   Updated: 2018/01/29 21:38:33 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/18 22:56:06 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Si l’allocation echoue, la fonction renvoie NULL.
 */
 
-#include "libft.h"
+#include "../inc/ft_printf.h"
 
 char	*ft_strnew(size_t size)
 {

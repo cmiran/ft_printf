@@ -5,6 +5,7 @@ int	main(void)
 {
 //	ft_printf("Christopher Nolan\n");
 	printf("%d Check Norris\n", 42);
+	ft_printf("%-d Check Norris\n", 42);
 
 	printf("%-d Check Norris\n", 42);
 

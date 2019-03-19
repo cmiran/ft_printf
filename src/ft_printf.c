@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/18 21:24:00 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/18 22:28:24 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_conversion(t_printf *var, const char *format)
 	format[var->i] == 'c' ? var->conv[0] = 1 : 0;
 	format[var->i] == 's' ? var->conv[1] = 1 : 0;
 	format[var->i] == 'p' ? var->conv[2] = 1 : 0;
-	format[var->i] == 'd' ? is_di(var, va_arg(var->ap, int)) : 0;
+	format[var->i] == 'd' ? is_di(var) : 0;
 	format[var->i] == 'i' ? var->conv[4] = 1 : 0;
 	format[var->i] == 'o' ? var->conv[5] = 1 : 0;
 	format[var->i] == 'u' ? var->conv[6] = 1 : 0;
