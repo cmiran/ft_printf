@@ -6,30 +6,32 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/18 22:28:24 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/19 18:58:33 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**	%[flag][width][.precision][size_flag]type
+**	%[flag][width][.precision][size-flag]type
 */
 
 #include "../inc/ft_printf.h"
 
 int	check_conversion(t_printf *var, const char *format)
 {
-	format[var->i] == 'c' ? var->conv[0] = 1 : 0;
-	format[var->i] == 's' ? var->conv[1] = 1 : 0;
-	format[var->i] == 'p' ? var->conv[2] = 1 : 0;
+	if (!ft_strchr("diouxXfpn", format[var->i]))
+		exit(EXIT_FAILURE);
+//	format[var->i] == 'c' ? 1 : 0;
+//	format[var->i] == 's' ? 1 : 0;
+//	format[var->i] == 'p' ? 1 : 0;
 	format[var->i] == 'd' ? is_di(var) : 0;
-	format[var->i] == 'i' ? var->conv[4] = 1 : 0;
-	format[var->i] == 'o' ? var->conv[5] = 1 : 0;
-	format[var->i] == 'u' ? var->conv[6] = 1 : 0;
-	format[var->i] == 'x' ? var->conv[7] = 1 : 0;
-	format[var->i] == 'X' ? var->conv[8] = 1 : 0;
-	format[var->i] == 'f' ? var->conv[9] = 1 : 0;
-	format[var->i] == 'p' ? var->conv[10] = 1 : 0;
-	format[var->i] == 'n' ? var->conv[11] = 1 : exit(EXIT_FAILURE);
+//	format[var->i] == 'i' ? 1 : 0;
+//	format[var->i] == 'o' ? 1 : 0;
+//	format[var->i] == 'u' ? 1 : 0;
+//	format[var->i] == 'x' ? 1 : 0;
+//	format[var->i] == 'X' ? 1 : 0;
+//	format[var->i] == 'f' ? 1 : 0;
+//	format[var->i] == 'p' ? 1 : 0;
+//	format[var->i] == 'n' ? 1 : 0;
 	return (1);
 }
 
@@ -68,7 +70,6 @@ void	check_flag(const char *format, size_t i, size_t *fla)
 void	set_format(t_printf *var, const char *format)
 {
 	ft_bzero(var->fla, 11);
-	ft_bzero(var->conv, 12);
 	while (format[var->i++])
 	{
 		if (format[var->i] == '#' || format[var->i] == '0'\
@@ -104,7 +105,8 @@ int	ft_printf(const char * restrict format, ...)
 	{
 		if (format[var.i] == '%')
 			format[var.i + 1] == '%' ?\
-					   write(1, "%", 1) : set_format(&var, format);
+					   write(1, &format[var.i++], 1) :\
+					   set_format(&var, format);
 		else
 		{
 			write(1, &format[var.i], 1);

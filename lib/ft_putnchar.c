@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 21:07:51 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/19 18:58:39 by cmiran           ###   ########.fr       */
+/*   Created: 2019/03/19 13:38:29 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/19 17:22:58 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Affiche l’entier n sur la sortie standard.
-*/
+** Affiche n caracteres c sur la sortie standard.
+*/ 
 
 #include "../inc/ft_printf.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnchar(char c, size_t i)
 {
-	long	n;
-
-	n = nb;
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = -n;
-	}
-	if (n < 10)
-		ft_putchar(n + 48);
-	else
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
+	while (i--)
+		write(1, &c, 1);
 }

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/12 08:40:10 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/15 00:21:31 by cmiran           ###   ########.fr       */
+/*   Created: 2017/11/13 21:35:58 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/19 16:27:06 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_isprint(int c)
 {
-	unsigned char	*p;
-
-	p = b;
-	while (len--)
-		*p++ = c;
-	return (b);
+	return (c >= ' ' && c <= '~');
 }

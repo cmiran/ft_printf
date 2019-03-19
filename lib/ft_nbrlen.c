@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/20 21:07:51 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/19 18:58:39 by cmiran           ###   ########.fr       */
+/*   Created: 2019/03/19 18:00:33 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/19 18:01:04 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Affiche l’entier n sur la sortie standard.
-*/
-
 #include "../inc/ft_printf.h"
 
-void	ft_putnbr(int nb)
+size_t	ft_nbrlen(int n)
 {
-	long	n;
+	size_t	len;
 
-	n = nb;
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = -n;
-	}
-	if (n < 10)
-		ft_putchar(n + 48);
-	else
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
+	len = (n < 0) ? 2 : 1;
+	while (n /= 10)
+		len++;
+	return (len);
 }

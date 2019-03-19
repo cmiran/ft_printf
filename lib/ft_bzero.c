@@ -6,13 +6,14 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 09:13:13 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/15 00:20:59 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/19 17:48:43 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(size_t *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	while (n--)
+		*s++ = 0;
 }

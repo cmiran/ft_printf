@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/18 22:56:32 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/19 18:58:36 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# include <stdio.h>
 
 typedef struct s_printf
 {
@@ -27,12 +29,6 @@ typedef struct s_printf
 **	| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 **	| # | 0 | - | + |   |wid|pre| hh| h | ll|  l |
 */
-	size_t	conv[12];
-/*
-**	| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
-**	| c | s | p | d | i | o | u | x | X | f |  b |  n |
-*/
-	char	*buf;
 }		t_printf;
 
 /*
@@ -50,20 +46,26 @@ int	ft_printf(const char * restrict format, ...);
 ** 		src/diouxX.c
 */
 void	is_di(t_printf *var);
+/*
+** void	fl_dash(size_t *fla, long nb);
+** void	fl_zer0(size_t *fla, long nb);
+*/
 
 /*
 **		lib/
 */
-void	ft_bzero(void *s, size_t n);
-void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(size_t *s, size_t n);
 int	ft_isdigit(int c);
-int	pf_atoi(const char *format, size_t i);
-void	ft_putnbr(int nb);
+size_t	pf_atoi(const char *format, size_t i);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
+void	pf_putnbr(int nb);
 void	ft_putchar(char c);
-char	*ft_itoa(int nb);
-	size_t	ft_nbrlen(int nb);
-char	*ft_strnew(size_t size);
+void	ft_putnchar(char c, size_t i);
+size_t	ft_nbrlen(int nb);
 int	ft_isspace(int c);
 
 int	main(void);
+void	*ft_print_memory(void const *addr, size_t size);
+int	ft_isprint(int c);
 #endif
