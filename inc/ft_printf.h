@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/19 18:58:36 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/20 01:44:58 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 typedef struct s_printf
 {
-	va_list	ap;	
+	va_list	ap;
 	size_t	i;
 	size_t	ret;
-	size_t	fla[11];
+	size_t	fla[128];
 /*
-**	| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-**	| # | 0 | - | + |   |wid|pre| hh| h | ll|  l |
+**	fla['hh'] = fla[91]
+**	fla['ll'] = fla[93]
 */
 }		t_printf;
 
@@ -36,10 +36,8 @@ typedef struct s_printf
 */
 int	ft_printf(const char * restrict format, ...);
 /*
-** void	set_format(t_printf *var, const char *format);
-** void	check_flag(const char *format, size_t i, size_t *fla);
+** int	set_format(t_printf *var, const char *format);
 ** void	check_sizeflag(const char *format, size_t i, size_t *fla);
-** int	check_conversion(const char *format, size_t i, size_t *conv);
 */
 
 /*
