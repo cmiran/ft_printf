@@ -6,28 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/20 01:13:32 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/22 18:06:21 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
-
-/*void	width_precision(t_printf *var, int nbr)
-{
-	int	i;
-	char	*str;
-
-	if (!(var->buf = ft_strnew(var->fla[5] + var->fla[6] + ft_nbrlen(nb))))
-		exit(EXIT_FAILURE);
-	i = 0;
-	if (var->fla[2])
-	{
-		str = ft_itoa(nb);
-		while (*str)
-			var->buf[i++] = *str++;
-		free(str);
-	}
-}*/
 
 void	fl_zer0(size_t *fla, long long nbr)
 {
