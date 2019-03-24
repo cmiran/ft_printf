@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/22 18:06:22 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/24 19:25:42 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct s_printf
 */
 int	ft_printf(const char * restrict format, ...);
 /*
-** int	set_format(t_printf *var, const char *format);
-** void	check_sizeflag(const char *format, size_t i, size_t *fla);
+** int		set_format(t_printf *var, const char *format);
+** size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla);
 */
 
 /*
@@ -52,16 +52,16 @@ void	is_di(t_printf *var);
 /*
 **		lib/
 */
-void	ft_bzero(size_t *s, size_t n);
-int	ft_isdigit(int c);
-size_t	pf_atoi(const char *format, size_t i);
-char	*ft_strchr(const char *s, int c);
-size_t	ft_strlen(const char *s);
-void	pf_putnbr(int nb);
-void	ft_putchar(char c);
-void	ft_putnchar(char c, size_t i);
-size_t	ft_nbrlen(int nb);
-int	ft_isspace(int c);
+void		ft_bzero(size_t *s, size_t n);
+int		ft_isdigit(int c);
+size_t		pf_atoi(const char *format, size_t i);
+unsigned char	pf_strchr(const char *s, int c);
+size_t		ft_strlen(const char *s);
+void		pf_putnbr(int nb);
+void		ft_putchar(char c);
+void		ft_putnchar(char c, size_t i);
+size_t		ft_nbrlen(int nb);
+int		ft_isspace(int c);
 
 int	main(void);
 void	*ft_print_memory(void const *addr, size_t size);

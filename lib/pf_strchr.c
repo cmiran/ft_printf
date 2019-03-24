@@ -6,21 +6,19 @@
 /*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 17:46:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/19 15:07:40 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/24 19:25:40 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+unsigned char	pf_strchr(const char *s, int c)
 {
-	if (c == '\0')
-		return ((char *)s + ft_strlen(s));
 	while (*s)
 	{
 		if (*s == c)
-			return ((char *)s);
+			return (*s);
 		s++;
 	}
-	return (NULL);
+	return (0);
 }

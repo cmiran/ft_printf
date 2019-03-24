@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/22 18:06:19 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/24 19:25:28 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 
 #include "../inc/ft_printf.h"
 
-void		check_sizeflag(const char *format, size_t i, size_t *fla)
+size_t		*check_sizeflag(const char *format, size_t *fla, size_t *i)
 {
-	if (format[i] == 'h')
-		(fla[91] = (format[i + 1] == 'h')) ? i++ : fla['h']++;
-	else if (format[i] == 'l')
-		(fla[93] = (format[i + 1] == 'l')) ? i++ : fla['l']++;
+	if (format[*i] == 'h')
+		fla[91] = (format[*i + 1] == 'h') ? (*i)++ : fla['h']++;
+	else if (format[*i] == 'l')
+		fla[93] = (format[*i + 1] == 'l') ? (*i)++ : fla['l']++;
 	else
 		fla['L'] = 1;
+	return (fla);
 }
 
 unsigned int	set_format(t_printf *var, const char *format)
@@ -31,28 +32,32 @@ unsigned int	set_format(t_printf *var, const char *format)
 	ft_bzero(var->fla, 127);
 	while (format[var->i++])
 	{
-		if (ft_strchr("#0-+ ", format[var->i]))
-			var->fla[(int)ft_strchr("#0-+ ", format[var->i])] = 1;
+		if (pf_strchr("#0-+ ", format[var->i]))
+			var->fla[pf_strchr("#0-+ ", format[var->i])] = 1;
 		else if (ft_isdigit(format[var->i]))
-		{
-				var->fla['W'] = pf_atoi(format, var->i);
-				var->ret += var->fla['W'];/* 
+		{	
+			var->fla['W'] = pf_atoi(format, var->i);
+			var->i += ft_nbrlen(var->fla['W']) - 1;
+			var->ret += var->fla['W'];/* 
 **								?? a checker avec test
 **								width idem pour la
 **								precision.
 */
 		}
 		else if (format[var->i] == '.')
-			var->fla['P'] = pf_atoi(format, ++var->i);/* 
+		{
+			var->fla['P'] = pf_atoi(format, var->i + 1);
+			var->i += ft_nbrlen(var->fla['.']) - 1;
+		}/* 
 **									^^^
 */
 		else if (format[var->i] == 'h' || format[var->i] == 'l'\
 				|| format[var->i] == 'L')
-			check_sizeflag(format, var->i, var->fla);
+			*(var->fla) = *check_sizeflag(format, var->fla, &var->i);
 		else
 			break ;
 	}
-	return (ft_strchr("diouxXfpn", format[var->i]) ? 1 : 0);
+	return (pf_strchr("diouxXfpn", format[var->i]));
 }
 
 int		ft_printf(const char *format, ...)
