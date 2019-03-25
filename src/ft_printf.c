@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/24 19:25:28 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/25 18:45:26 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ unsigned int	set_format(t_printf *var, const char *format)
 	{
 		if (pf_strchr("#0-+ ", format[var->i]))
 			var->fla[pf_strchr("#0-+ ", format[var->i])] = 1;
-		else if (ft_isdigit(format[var->i]))
+		else if ((!var->fla['W']) && ft_isdigit(format[var->i]))
 		{	
 			var->fla['W'] = pf_atoi(format, var->i);
 			var->i += ft_nbrlen(var->fla['W']) - 1;
@@ -47,7 +47,7 @@ unsigned int	set_format(t_printf *var, const char *format)
 		else if (format[var->i] == '.')
 		{
 			var->fla['P'] = pf_atoi(format, var->i + 1);
-			var->i += ft_nbrlen(var->fla['.']) - 1;
+			var->i += ft_nbrlen(var->fla['.']);
 		}/* 
 **									^^^
 */

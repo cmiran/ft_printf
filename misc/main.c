@@ -54,7 +54,32 @@ int	main(void)
 	ft_printf("%010.4d Check\n", -42);
 	
 	printf("\n13\n");
-	printf("%0 14d Check\n", +42);
-	ft_printf("%0 14d Check\n", +42);
+	printf("%0 14d Check\n", -42);
+	ft_printf("%0 14d Check\n", -42);
+	
+	printf("\n14\n");
+	printf("%0 d Check\n", -42);
+	ft_printf("%0 d Check\n", -42);
+
+	printf("\n15\n");
+	printf("%0 +-14d Check\n", -42);
+	ft_printf("%0 +-14d Check\n", -42);
+	
+	printf("\n16\n");
+	printf("%0 +17.89d Check\n", -42);
+	ft_printf("%0 +17.89d Check\n", -42);
+
+	printf("\n17\n");
+	printf("%- +17.89d Check\n", +42);
+	ft_printf("%- +17.89d Check\n", +42);
+
+	printf("\n18\n");
+	printf("%- +89.17d Check\n", -42);
+	ft_printf("%- +89.17d Check\n", -42);
+
+	printf("\n19\n");
+	printf("%0 +89.17d Check\n", -42);
+	ft_printf("%0 +89.17d Check\n", -42);
+
 	return(0);
 }
