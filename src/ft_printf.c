@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/25 18:45:26 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/26 18:30:42 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ size_t		*check_sizeflag(const char *format, size_t *fla, size_t *i)
 	return (fla);
 }
 
-unsigned int	set_format(t_printf *var, const char *format)
+unsigned int	get_format(t_env *var, const char *format)
 {
 	ft_bzero(var->fla, 127);
 	while (format[var->i++])
 	{
 		if (pf_strchr("#0-+ ", format[var->i]))
 			var->fla[pf_strchr("#0-+ ", format[var->i])] = 1;
-		else if ((!var->fla['W']) && ft_isdigit(format[var->i]))
-		{	
+		else if (ft_isdigit(format[var->i]))
+		{
 			var->fla['W'] = pf_atoi(format, var->i);
 			var->i += ft_nbrlen(var->fla['W']) - 1;
-			var->ret += var->fla['W'];/* 
+			var->ret += var->fla['W'];/*
 **								?? a checker avec test
 **								width idem pour la
 **								precision.
@@ -47,13 +47,16 @@ unsigned int	set_format(t_printf *var, const char *format)
 		else if (format[var->i] == '.')
 		{
 			var->fla['P'] = pf_atoi(format, var->i + 1);
-			var->i += ft_nbrlen(var->fla['.']);
+			var->i += ft_nbrlen(var->fla['P']);
 		}/* 
 **									^^^
 */
-		else if (format[var->i] == 'h' || format[var->i] == 'l'\
-				|| format[var->i] == 'L')
-			*(var->fla) = *check_sizeflag(format, var->fla, &var->i);
+		else if (pf_strchr("Lhl", format[var->i]))
+		{
+			*var->fla = *check_sizeflag(format, var->fla, &var->i);
+			var->i++;
+			break ;
+		}
 		else
 			break ;
 	}
@@ -62,7 +65,7 @@ unsigned int	set_format(t_printf *var, const char *format)
 
 int		ft_printf(const char *format, ...)
 {
-	t_printf	var;
+	t_env	var;
 
 	if (!format)
 		return (0);
@@ -73,10 +76,10 @@ int		ft_printf(const char *format, ...)
 	{
 		if (format[var.i] == '%')
 		{
-			format[var.i + 1] == '%' ?\
-					   write(1, &format[var.i++], 1) :\
-					   (!set_format(&var, format) ?\
-					    	exit(EXIT_FAILURE) : is_di(&var));/*
+			if (format[var.i + 1] == '%')
+				write(1, &format[var.i++], 1);
+			else
+				!get_format(&var, format) ? exit(EXIT_FAILURE) : set_format(&var);/*
 **				pointeur sur fonction stuff
 **				(*f[(int)ft_strchr("diouxXfpn")])(fomat[var.i], var);
 */

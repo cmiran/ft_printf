@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/03/24 19:25:44 by cmiran           ###   ########.fr        #
+#    Updated: 2019/03/26 17:59:21 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ LIB_NAME= ft_atoi.c\
 	ft_strlen.c\
 	pf_atoi.c\
 	pf_putnbr.c\
+	pf_putnbr_base.c\
 	pf_strchr.c
 
 LIB= $(addprefix $(LIB_DIR), $(LIB_NAME))
