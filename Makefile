@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/03/26 17:59:21 by cmiran           ###   ########.fr        #
+#    Updated: 2019/03/26 22:28:47 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS= -Wall -Wextra -Werror
 
 SRC_DIR= ./src/
 SRC_NAME= ft_printf.c\
-	diouxX.c
+	numbers.c
 SRC= $(addprefix $(SRC_DIR), $(SRC_NAME))
 
 LIB_DIR= ./lib/

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/26 18:30:46 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/27 00:06:43 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 
 typedef struct s_conversion
 {
-	intmax_t	nbr;
-	uintmax_t	u_nbr;
+	ssize_t	nbr;
+	size_t	u_nbr;
 }		t_conv;
 
-typedef struct s_printf_environnement
+typedef struct s_printf_environment
 {
 	va_list		ap;
 	size_t		i;
@@ -46,19 +46,19 @@ typedef struct s_printf_environnement
 */
 int	ft_printf(const char * restrict format, ...);
 /*
-** int		get_format(t_printf *var, const char *format);
+** int		parse(size_t *fla, size_t *i, const char *format);
 ** size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla);
 */
 
 
 /*
-** 	src/diouxX.c
+** 	src/numbers.c
 */
-void	set_format(t_env *var);
+void	dispatch(t_env *var);
 /*
-** void		fl_dash(size_t *fla, long long nbr, ssize_t len);
-** void		fl_zer0(size_t *fla, long long nbr, ssize_t len);
-** void		fl_sign(size_t *fla, long long nbr);
+** void		dash(size_t *fla, long long nbr, ssize_t len);
+** void		zer0(size_t *fla, long long nbr, ssize_t len);
+** void		sign(size_t *fla, long long nbr);
 */
 
 
@@ -70,12 +70,12 @@ int		ft_isdigit(int c);
 size_t		pf_atoi(const char *format, size_t i);
 unsigned char	pf_strchr(const char *s, int c);
 size_t		ft_strlen(const char *s);
-void		pf_putnbr(int nb);
+void		pf_putnbr(ssize_t nbr);
+void		pf_putnbr_base(size_t nbr, size_t *fla);
 void		ft_putchar(char c);
 void		ft_putnchar(char c, size_t i);
 size_t		ft_nbrlen(int nb);
 int		ft_isspace(int c);
-void		pf_putnbr_base(ssize_t nbr, size_t *fla);
 
 int	main(void);
 void	*ft_print_memory(void const *addr, size_t size);
