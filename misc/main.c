@@ -82,7 +82,15 @@ int	main(void)
 	ft_printf("%0 +89.17d Check\n", -42);
 
 	printf("\n20\n");
+	printf("%+d Check\n", 42);
+	ft_printf("%+d Check\n", 42);
+
+	printf("\n21\n");
+	printf("%u Check\n", 42);
+	ft_printf("%u Check\n", 42);
+
+	printf("\n22\n");
 	printf("%hhd Check\n", (char)42);
-//	ft_printf("%hd Check\n", 42);
+	ft_printf("%hhd Check\n", (char)42);
 	return(0);
 }

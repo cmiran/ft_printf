@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/27 00:06:43 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/29 18:45:06 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_printf(const char * restrict format, ...);
 /*
 ** 	src/numbers.c
 */
-void	dispatch(t_env *var);
+void	dispatch(t_env *var, char i);
 /*
 ** void		dash(size_t *fla, long long nbr, ssize_t len);
 ** void		zer0(size_t *fla, long long nbr, ssize_t len);
@@ -71,11 +71,13 @@ size_t		pf_atoi(const char *format, size_t i);
 unsigned char	pf_strchr(const char *s, int c);
 size_t		ft_strlen(const char *s);
 void		pf_putnbr(ssize_t nbr);
-void		pf_putnbr_base(size_t nbr, size_t *fla);
+void		pf_putnbr_base(size_t u_nbr, char c);
+unsigned char	pf_itoc(size_t i, char c);
 void		ft_putchar(char c);
 void		ft_putnchar(char c, size_t i);
-size_t		ft_nbrlen(int nb);
+size_t		ft_nbrlen(ssize_t nb);
 int		ft_isspace(int c);
+int		ft_isupper(int c);
 
 int	main(void);
 void	*ft_print_memory(void const *addr, size_t size);

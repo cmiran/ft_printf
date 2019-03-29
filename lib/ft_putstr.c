@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/19 18:00:33 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/29 16:50:03 by cmiran           ###   ########.fr       */
+/*   Created: 2017/11/20 20:59:37 by cmiran            #+#    #+#             */
+/*   Updated: 2017/11/30 17:46:39 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+/*
+** Affiche la chaine s sur la sortie standard.
+*/
 
-size_t	ft_nbrlen(ssize_t n)
+#include "libft.h"
+
+void	ft_putstr(char const *s)
 {
-	size_t	len;
-
-	len = (n < 0) ? 2 : 1;
-	while (n /= 10)
-		len++;
-	return (len);
+	if (!s)
+		return ;
+	write(1, (const char *)s, ft_strlen(s));
 }

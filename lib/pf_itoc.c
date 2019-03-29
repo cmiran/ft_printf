@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_itoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/19 18:00:33 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/29 16:50:03 by cmiran           ###   ########.fr       */
+/*   Created: 2019/03/29 17:57:39 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/29 18:22:03 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-size_t	ft_nbrlen(ssize_t n)
+unsigned char	pf_itoc(size_t i, char c)
 {
-	size_t	len;
-
-	len = (n < 0) ? 2 : 1;
-	while (n /= 10)
-		len++;
-	return (len);
+	if (i <= 9)
+		return (i + '0');
+	if (i >= 10 && i <= 36)
+	{
+		if (ft_isupper(c))
+			return (i + 'A' - 10);
+		return (i + 'a' - 10);
+	}
+	return (0);
 }

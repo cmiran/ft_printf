@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/27 00:51:14 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/29 18:44:41 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	parse(const char *format, size_t *i, size_t *fla)
 */
 		else if (pf_strchr("Lhl", format[*i]))
 		{
-			*fla = *check_sizeflag(format, &*i, fla);
+			*fla = *check_sizeflag(format, i, fla);
 			++*i;
 			break ;
 		}
@@ -79,9 +79,10 @@ int	ft_printf(const char *format, ...)
 			if (format[var.i + 1] == '%')
 				write(1, &format[var.i++], 1);
 			else
-				!parse(format, &var.i, &*var.fla) ? exit(EXIT_FAILURE) : dispatch(&var);/*
+				!parse(format, &var.i, &*var.fla) ? exit(EXIT_FAILURE) :\
+					dispatch(&var, format[var.i]);/*
 **				pointeur sur fonction stuff
-**				(*f[(int)ft_strchr("diouxXfpn")])(fomat[var.i], var);
+**				(*f[(int)ft_strchr("diouxXfpn")])(format[var.i], var);
 */
 		}
 		else
