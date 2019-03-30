@@ -90,7 +90,29 @@ int	main(void)
 	ft_printf("%u Check\n", 42);
 
 	printf("\n22\n");
-	printf("%hhd Check\n", (char)42);
-	ft_printf("%hhd Check\n", (char)42);
+	printf("%16u Check\n", 42);
+	ft_printf("%16u Check\n", 42);
+
+	printf("\n23\n");
+	printf("%.16i Check\n", 42);
+	ft_printf("%.16i Check\n", 42);
+
+	printf("\n24\n");
+	printf("%5.16d Check\n", -42);
+	ft_printf("%5.16d Check\n", -42);
+
+	printf("\n25\n");
+	printf("%34.16u Check\n", 42);
+	ft_printf("%34.16u Check\n", 42);
+
+	printf("\n26\n");
+	printf("%34.16d Check\n", -42);
+	ft_printf("%34.16d Check\n", -42);
+
+
+
+	printf("\n30\n");
+	printf("%hhd Check\n", (char)'c');
+	ft_printf("%hhd Check\n", (char)'c');
 	return(0);
 }

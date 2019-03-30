@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/03/29 18:03:07 by cmiran           ###   ########.fr        #
+#    Updated: 2019/03/30 14:26:42 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ LIB_NAME= ft_atoi.c\
 	ft_isspace.c\
 	ft_isupper.c\
 	ft_nbrlen.c\
+	ft_unbrlen.c\
 	ft_print_memory.c\
 	ft_putchar.c\
 	ft_putnbr.c\
