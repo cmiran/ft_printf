@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unbrlen.c                                       :+:      :+:    :+:   */
+/*   pf_getbase.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 14:10:16 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 14:14:39 by cmiran           ###   ########.fr       */
+/*   Created: 2019/03/30 15:45:47 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/30 15:46:06 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-size_t	ft_unbrlen(size_t unbr)
+unsigned char	get_base(char c)
 {
-	size_t	len;
+	unsigned char	base;
 
-	len = 1;
-	while (unbr /= 10)
-		len++;
-	return (len);
+	if (c == 'o')
+		base = 8;
+	else if (c == 'x' || c == 'X')
+		base = 16;
+	else
+		base = 10;
+	return (base);
 }

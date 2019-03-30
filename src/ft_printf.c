@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 14:45:00 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/30 18:02:51 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,15 @@
 
 #include "../inc/ft_printf.h"
 
-size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla)
+void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
+{
+	while (len--)
+		*fla++ = 0;
+	conv->nbr = 0;
+	conv->unbr = 0;
+}
+
+void	check_sizeflag(const char *format, size_t *i, size_t *fla)
 {
 	if (format[*i] == 'h')
 		fla[91] = (format[*i + 1] == 'h') ? ++*i : ++fla['h'];
@@ -24,12 +32,10 @@ size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla)
 		fla[93] = (format[*i + 1] == 'l') ? ++*i : ++fla['l'];
 	else
 		++fla['L'];
-	return (fla);
 }
 
 int	parse(const char *format, size_t *i, size_t *fla)
 {
-	ft_bzero(fla, 127);
 	while (format[++*i])
 	{
 		if (pf_strchr("#0-+ ", format[*i]))
@@ -53,7 +59,7 @@ int	parse(const char *format, size_t *i, size_t *fla)
 */
 		else if (pf_strchr("Lhl", format[*i]))
 		{
-			*fla = *check_sizeflag(format, i, fla);
+			check_sizeflag(format, i, fla);
 			++*i;
 			break ;
 		}
@@ -79,11 +85,13 @@ int	ft_printf(const char *format, ...)
 			if (format[var.i + 1] == '%')
 				write(1, &format[var.i++], 1);
 			else
+			{
+				pf_bzero(&*var.fla, 127, &var.conv);
 				!parse(format, &var.i, &*var.fla) ? exit(EXIT_FAILURE) :\
 					dispatch(&var, format[var.i]);/*
 **				pointeur sur fonction stuff
 **				(*f[(int)ft_strchr("diouxXfpn")])(format[var.i], var);
-*/
+*/			}
 		}
 		else
 		{

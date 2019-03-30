@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   pf_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/13 17:46:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 18:03:03 by cmiran           ###   ########.fr       */
+/*   Created: 2019/03/30 15:01:28 by cmiran            #+#    #+#             */
+/*   Updated: 2019/03/30 15:16:30 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-unsigned char	pf_strchr(const char *s, int c)
+void	pf_bzero(t_env *var, size_t len)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return (c);
-		s++;
-	}
-	return (0);
+	while (len--)
+		var->fla[len] = 0;
+	var->conv.nbr = 0;
+	var->conv.unbr = 0;
 }

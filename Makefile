@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/03/30 14:26:42 by cmiran           ###   ########.fr        #
+#    Updated: 2019/03/30 16:20:28 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,20 +23,21 @@ SRC= $(addprefix $(SRC_DIR), $(SRC_NAME))
 LIB_DIR= ./lib/
 
 LIB_NAME= ft_atoi.c\
-	ft_bzero.c\
 	ft_isdigit.c\
 	ft_isprint.c\
 	ft_isspace.c\
 	ft_isupper.c\
 	ft_nbrlen.c\
-	ft_unbrlen.c\
 	ft_print_memory.c\
 	ft_putchar.c\
 	ft_putnbr.c\
 	ft_putnchar.c\
 	ft_strlen.c\
+	get_base.c\
 	pf_atoi.c\
-	pf_itoc.c\
+	pf_bzero.c\
+	pf_nbrlen.c\
+	pf_unbrlen.c\
 	pf_putnbr.c\
 	pf_putnbr_base.c\
 	pf_strchr.c
