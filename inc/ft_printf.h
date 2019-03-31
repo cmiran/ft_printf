@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 18:03:01 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/30 23:19:13 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,14 @@ int	ft_printf(const char * restrict format, ...);
 /*
 ** int		parse(size_t *fla, size_t *i, const char *format);
 ** size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla);
+** void		pf_bzero(size_t *fla, size_t len, t_conv *conv);
 */
 
+/*
+**	src/conversions.c
+*/
+int	is_di(size_t *fla, ssize_t *nbr, va_list ap);
+int	is_ouxX(size_t *fla, size_t *unbr, va_list ap);
 
 /*
 ** 	src/numbers.c
@@ -63,7 +69,7 @@ void	dispatch(t_env *var, char i);
 
 
 /*
-**		lib/
+**		lib/   by apparition order
 */
 //void			ft_bzero(size_t *fla, size_t n);
 int		ft_isdigit(int c);

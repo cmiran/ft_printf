@@ -193,5 +193,25 @@ int	main(void)
 	printf("\n47\n");
 	printf("%hhd Check\n", (char)'c');
 	ft_printf("%hhd Check\n", (char)'c');
+
+	printf("\n48\n");
+	printf("% 5d Check\n", 0);
+	ft_printf("% 5d Check\n", 0);
+	
+	printf("\n49\n");
+	printf("% +.6d Check\n", 0);
+	ft_printf("% +.6d Check\n", 0);
+
+	printf("\n50\n");
+	printf("%-5.1d Check\n", 0);
+	ft_printf("%-5.1d Check\n", 0);
+	
+	printf("\n51\n");
+	printf("% +-.1d Check\n", 0);
+	ft_printf("% +-.1d Check\n", 0);
+
+	printf("\n52\n");
+	printf("lol % +-.1d, %4u, kde%-32.45d\n Check\n", 0, 56, -43);
+	ft_printf("lol % +-.1d, %4u, kde%-32.45d\n Check\n", 0, 56, -43);
 	return(0);
 }

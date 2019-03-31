@@ -6,12 +6,12 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 18:02:51 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/31 00:22:42 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**	%[flag][width][.precision][size-flag]type
+**	%[flag][width][.precision][size-flag]conversion-specifier
 */
 
 #include "../inc/ft_printf.h"
@@ -74,7 +74,7 @@ int	ft_printf(const char *format, ...)
 	t_env	var;
 
 	if (!format)
-		return (0);
+		return (0);	
 	va_start(var.ap, format);
 	var.i = 0;
 	var.ret = 0;

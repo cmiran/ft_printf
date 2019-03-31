@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/03/30 16:20:28 by cmiran           ###   ########.fr        #
+#    Updated: 2019/03/30 22:53:55 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS= -Wall -Wextra -Werror
 
 SRC_DIR= ./src/
 SRC_NAME= ft_printf.c\
+	conversions.c\
 	numbers.c
 SRC= $(addprefix $(SRC_DIR), $(SRC_NAME))
 
