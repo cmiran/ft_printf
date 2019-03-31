@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/31 00:13:33 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/31 15:11:58 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	other(size_t *fla, t_conv conv, char b, char c)
 			sign(fla, conv.nbr, b);
 		if (fla['W'])
 			ft_putnchar(c, fla['W'] - len -\
-				((fla['+'] || fla[' ']) && conv.nbr >= 0 ? 1 : 0));
+				((fla['+'] || fla[' ']) &&\
+				 	conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
+				(fla['#'] && b == 'o' && conv.unbr ? 1 : 0));
 		if (c == ' ')
 			sign(fla, conv.nbr, b);
 	}
@@ -41,12 +43,13 @@ void	other(size_t *fla, t_conv conv, char b, char c)
 	{
 		if ((ssize_t)(fla['W'] - fla['P']) > 0)
 			ft_putnchar(' ', fla['W'] - (len > fla['P'] ? len : fla['P']) -\
-				((fla['+'] || fla[' ']) && conv.nbr > 0 ? 1 : 0) -\
+				((fla['+'] || fla[' ']) &&\
+				 	conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
 				(conv.nbr < 0 && fla['P'] > len ? 1 : 0));
 		sign(fla, conv.nbr, b);
-		ft_putnchar('0', fla['P'] - (conv.nbr >= 0 || conv.unbr  ? len : len - 1));
+		ft_putnchar('0', fla['P'] - (conv.nbr >= 0 ? len : len - 1));
 	}
-	conv.nbr ? pf_putnbr(conv.nbr) : pf_putnbr_base(conv.unbr, b);
+	conv.nbr ? pf_putnbr(conv.nbr) : pf_putnbr_base(conv.unbr, b, fla);
 }
 
 void	dash(size_t *fla, t_conv conv, char b)
@@ -57,10 +60,10 @@ void	dash(size_t *fla, t_conv conv, char b)
 	sign(fla, conv.nbr, b);
 	if (fla['P'] > len)
 		ft_putnchar('0', fla['P'] - len + (conv.nbr < 0 ? 1 : 0));
-	conv.nbr ? pf_putnbr(conv.nbr) : pf_putnbr_base(conv.unbr, b);
+	conv.nbr ? pf_putnbr(conv.nbr) : pf_putnbr_base(conv.unbr, b, fla);
 	if ((ssize_t)(fla['W'] - fla['P']) > 0)
 		ft_putnchar(' ', fla['W'] - (len > fla['P'] ? len : fla['P']) -\
-			((fla['+'] || fla[' ']) && conv.nbr >= 0 ? 1 : 0) -\
+			((fla['+'] || fla[' ']) && conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
 			(conv.nbr < 0 && fla['P'] > len ? 1 : 0));
 }
 

@@ -213,5 +213,66 @@ int	main(void)
 	printf("\n52\n");
 	printf("lol % +-.1d, %4u, kde%-32.45d\n Check\n", 0, 56, -43);
 	ft_printf("lol % +-.1d, %4u, kde%-32.45d\n Check\n", 0, 56, -43);
+	
+	printf("\n53\n");
+	printf("% +15.5u Check\n", 0);
+	ft_printf("% +15.5u Check\n", 0);
+
+	printf("\n54\n");
+	printf("% -.5u Check\n", 0);
+	ft_printf("% -.5u Check\n", 0);
+	
+	printf("\n55\n");
+	printf("% -.5d Check\n", 0);
+	ft_printf("% -.5d Check\n", 0);
+
+	printf("\n56\n");
+	printf("%#o Check\n", 0);
+	ft_printf("%#o Check\n", 0);
+
+	printf("\n57\n");
+	printf("%#o Check\n", 10);
+	ft_printf("%#o Check\n", 10);
+
+	printf("\n58\n");
+	printf("%+#o Check\n", 10);
+	ft_printf("%+#o Check\n", 10);
+
+	printf("\n59\n");
+	printf("%#10o Check\n", 10);
+	ft_printf("%#10o Check\n", 10);
+
+	printf("\n60\n");
+	printf("%#10.5o Check\n", 10);
+	ft_printf("%#10.5o Check\n", 10);
+
+	printf("\n61\n");
+	printf("%#5.10o Check\n", 10);
+	ft_printf("%#5.10o Check\n", 10);
+
+	printf("\n62\n");
+	printf("%+#10o Check\n", 10);
+	ft_printf("%+#10o Check\n", 10);
+
+	printf("\n63\n");
+	printf("% #.2o Check\n", 10);
+	ft_printf("% #.2o Check\n", 10);
+
+	printf("\n64\n");
+	printf("%+#10.5o Check\n", 10);
+	ft_printf("%+#10.5o Check\n", 10);
+
+	printf("\n65\n");
+	printf("%-+#10.5o Check\n", 10);
+	ft_printf("%-+#10.5o Check\n", 10);
+
+	printf("\n66\n");
+	printf("%-+#.5o Check\n", 10);
+	ft_printf("%-+#.5o Check\n", 10);
+	
+	printf("\n67\n");
+	printf("%-+#2o Check\n", 10);
+	ft_printf("%-+#2o Check\n", 10);
+
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 23:19:13 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/31 15:12:10 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ size_t		pf_nbrlen(long long nbr, char c);
 size_t		pf_unbrlen(unsigned long long unbr, char c);
 unsigned char	get_base(char c);
 void		pf_putnbr(ssize_t nbr);
-void		pf_putnbr_base(size_t u_nbr, char c);
+void		pf_putnbr_base(size_t u_nbr, char c, size_t *fla);
 void		ft_putchar(char c);
 void		ft_putnchar(char c, size_t i);
 int		ft_isspace(int c);
