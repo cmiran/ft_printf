@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/04/01 22:30:58 by cmiran           ###   ########.fr        #
+#    Updated: 2019/04/01 23:27:07 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,9 +44,9 @@ LIB= $(addprefix $(LIB_DIR), $(LIB_NAME))
 INC_DIR= ./inc/
 INC= $(addprefix -I , $(INC_DIR))
 
-OBJ_DIR= ./obj/
+OBJ_DIR= ./.sources/
 OBJ= $(addprefix $(OBJ_DIR), $(SRC_NAME:.c=.o))
-OBJLIB_DIR= ./objlib/
+OBJLIB_DIR= ./.library/
 OBJLIB= $(addprefix $(OBJLIB_DIR), $(LIB_NAME:.c=.o))
 
 
@@ -57,8 +57,8 @@ $(NAME): obj $(OBJ) $(OBJLIB)
 	ranlib $@
 
 obj:
-	mkdir -p ./obj/
-	mkdir -p ./objlib/
+	mkdir -p ./.sources/
+	mkdir -p ./.library/
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(CFLAGS) -o $@ -c $< $(INC)

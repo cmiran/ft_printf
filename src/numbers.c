@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 19:22:30 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 23:50:28 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void		dispatch(t_env *var, unsigned char b)
 {
 	if (b == 'd' || b == 'i')
 	{
-		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
+		if (!is_bdi(var->fla, &var->conv.nbr, var->ap))
 			exit(EXIT_FAILURE);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 13:27:24 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 22:59:10 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/02 00:07:02 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,16 @@ void	precision(size_t *fla, ssize_t nbr, unsigned char len)
 
 void	sign_4bin(size_t *fla, ssize_t nbr)
 {
-	if (fla['+'] && !fla['0'])
-		nbr < 0 ? write(1, "-", 1) : write(1, "+", 1);
-	else if (fla[' '] && !fla['+'] && !fla['0'])
-		nbr < 0 ? write(1, "1", 1) : write(1, "0", 1);
-	else if (nbr < 0 && !fla['0'])
-		write(1, "-", 1); 
-	if ((fla['+'] || fla[' ']) && fla['#'] && !fla['0'])
-		write(1, " ", 1);
+	if (nbr > 0 && !fla['0'])
+	{
+		if ((fla['+'] || fla[' ']))
+			write(1, "0", 1);
+		if ((fla['+'] || fla[' ']) && fla['#'])
+			write(1, " ", 1);
+	}
 }
 
-void	other_4bin(size_t *fla, size_t nbr, unsigned char len)
+void	other_4bin(size_t *fla, ssize_t nbr, unsigned char len)
 {
 	if (!fla['P'])
 	{
@@ -72,9 +71,9 @@ void	binary(t_env *var, unsigned char b)
 	unsigned char	len;
 
 	if (b == 'b')
-		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
+		if (!is_bdi(var->fla, &var->conv.nbr, var->ap))
 			exit(EXIT_FAILURE);
-	printf("nbr : %ld\n", var->conv.nbr);
+	printf("nbr : %d\n", (signed)var->conv.nbr);
 	len = pf_nbrlen(var->conv.nbr, 'b');
 	if (var->conv.nbr < 0)
 		len -= 1;

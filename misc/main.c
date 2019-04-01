@@ -339,9 +339,9 @@ int	main(void)
 	ft_printf("%#15.19b Check\n", 1546);
 
 	printf("\n84\n");
-	ft_printf("%#+10b Check\n", -1546);
+	ft_printf("%+10b Check\n", -1546);
 
 	printf("\n85\n");
-	ft_printf("%#15.14b Check\n", 1546);
+	ft_printf("%+#b Check\n", 2346);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 21:13:47 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 23:49:30 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int	is_ouxX(size_t *fla, size_t *unbr, va_list ap)
 	return (0);
 }
 
-int	is_bdi(size_t *fla, ssize_t *nbr, va_list ap, unsigned char b)
+int	is_bdi(size_t *fla, ssize_t *nbr, va_list ap)
 {
 	if (fla[91] && (*nbr = va_arg(ap, int)))
 		return (*nbr >= SCHAR_MIN && *nbr <= SCHAR_MAX);
 	else if (fla['h'] && (*nbr = va_arg(ap, int)))
 		return (*nbr >= SHRT_MIN && *nbr <= SHRT_MAX);
-	else if ((fla['l'] || b == 'b')&& (*nbr = va_arg(ap, long)))
+	else if (fla['l'] && (*nbr = va_arg(ap, long)))
 		return (*nbr >= LONG_MIN && *nbr <= LONG_MAX );
 	else if (fla[93] && (*nbr = va_arg(ap, long long)))
 		return (*nbr >= LLONG_MIN && *nbr <= LLONG_MAX);

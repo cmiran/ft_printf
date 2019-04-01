@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 22:31:39 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 23:49:49 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_printf(const char * restrict format, ...);
 /*
 **	src/conversions.c
 */
-int		is_bdi(size_t *fla, ssize_t *nbr, va_list ap, unsigned char b);
+int		is_bdi(size_t *fla, ssize_t *nbr, va_list ap);
 int		is_ouxX(size_t *fla, size_t *unbr, va_list ap);
 
 /*
