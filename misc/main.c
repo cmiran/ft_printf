@@ -273,6 +273,39 @@ int	main(void)
 	printf("\n67\n");
 	printf("%-+#2o Check\n", 10);
 	ft_printf("%-+#2o Check\n", 10);
+	
+	printf("\n68\n");
+	printf("%#x Check\n", 4098594);
+	ft_printf("%#x Check\n", 4098594);
 
-	return(0);
+	printf("\n69\n");
+	printf("%#X Check\n", 4098594);
+	ft_printf("%#X Check\n", 4098594);
+
+	printf("\n70\n");
+	printf("%#10x Check\n", 4098594);
+	ft_printf("%#10x Check\n", 4098594);
+
+	printf("\n71\n");
+	printf("%#10.2x Check\n", 4098594);
+//	ft_printf("%#10.2x Check\n", 4098594);
+
+	printf("\n72\n");
+	printf("%#10.15x Check\n", 4098594);
+//	ft_printf("%#10.15x Check\n", 4098594);
+
+	printf("\n73\n");
+	printf("%0#10.15x Check\n", 4098594);
+//	ft_printf("%0#10.15x Check\n", 4098594);return(0);	
+	
+	printf("\n74\n");
+	printf("%-0#10.15x Check\n", 4098594);
+//	ft_printf("%-0#10.15x Check\n", 4098594);return(0);
+
+	printf("\n75\n");
+	printf("%-0#34.10x Check\n", 4098594);
+//	ft_printf("%-0#34.10x Check\n", 4098594);return(0);
+
+
+	return (0);
 }

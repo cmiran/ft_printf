@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/31 14:06:05 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 00:11:31 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,13 @@ int	parse(const char *format, size_t *i, size_t *fla)
 		else if (ft_isdigit(format[*i]))
 		{
 			fla['W'] = pf_atoi(format, *i);
-			*i += ft_nbrlen(fla['W']) - 1;/*
-**			var->ret += var->fla['W'];
-**								?? a checker avec test
-**								width idem pour la
-**								precision.
-*/
+			*i += ft_nbrlen(fla['W']) - 1;
 		}
 		else if (format[*i] == '.')
 		{
 			fla['P'] = pf_atoi(format, *i + 1);
 			*i += ft_nbrlen(fla['P']);
-		}/* 
-**								^^^
-*/
+		}
 		else if (pf_strchr("Lhl", format[*i]))
 		{
 			check_sizeflag(format, i, fla);

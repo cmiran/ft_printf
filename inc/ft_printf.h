@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/31 15:12:10 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/31 21:24:18 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 typedef struct s_conversion
 {
-	ssize_t	nbr;
-	size_t	unbr;
+	ssize_t		nbr;
+	size_t		unbr;
 }		t_conv;
 
 typedef struct s_printf_environment
@@ -44,7 +44,7 @@ typedef struct s_printf_environment
 /*
 **	src/ft_printf.c
 */
-int	ft_printf(const char * restrict format, ...);
+int		ft_printf(const char * restrict format, ...);
 /*
 ** int		parse(size_t *fla, size_t *i, const char *format);
 ** size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla);
@@ -54,13 +54,14 @@ int	ft_printf(const char * restrict format, ...);
 /*
 **	src/conversions.c
 */
-int	is_di(size_t *fla, ssize_t *nbr, va_list ap);
-int	is_ouxX(size_t *fla, size_t *unbr, va_list ap);
+int		is_di(size_t *fla, ssize_t *nbr, va_list ap);
+int		is_ouxX(size_t *fla, size_t *unbr, va_list ap);
 
 /*
 ** 	src/numbers.c
 */
-void	dispatch(t_env *var, char i);
+void		dispatch(t_env *var, char i);
+unsigned int	hash(size_t unbr, char b, size_t *fla);
 /*
 ** void		dash(size_t *fla, long long nbr, ssize_t len);
 ** void		zer0(size_t *fla, long long nbr, ssize_t len);

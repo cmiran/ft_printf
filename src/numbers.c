@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/31 15:11:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/03/31 21:12:10 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,14 @@ void	dash(size_t *fla, t_conv conv, char b)
 		ft_putnchar(' ', fla['W'] - (len > fla['P'] ? len : fla['P']) -\
 			((fla['+'] || fla[' ']) && conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
 			(conv.nbr < 0 && fla['P'] > len ? 1 : 0));
+}
+
+unsigned int	hash(size_t unbr, char b, size_t *fla)
+{
+	if (b == 'o')
+		ft_putnchar('0', 1 - (fla['P'] > pf_nbrlen(unbr, b) ? 1 : 0) -\
+				(unbr > 0 ? 0 : 1));
+	return (0);
 }
 
 void	dispatch(t_env *var, char b)
