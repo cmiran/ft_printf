@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 20:23:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 22:02:49 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 */
 
 #include "../inc/ft_printf.h"
-
-void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
-{
-	while (len--)
-		*fla++ = 0;
-	conv->nbr = 0;
-	conv->unbr = 0;
-}
 
 void	check_sizeflag(const char *format, size_t *i, size_t *fla)
 {
@@ -61,6 +53,15 @@ int	parse(const char *format, size_t *i, size_t *fla)
 	}
 	return (pf_strchr("cspdiouxXfbn", format[*i]));
 }
+
+void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
+{
+	while (len--)
+		*fla++ = 0;
+	conv->nbr = 0;
+	conv->unbr = 0;
+}
+
 
 void	init_env(t_env *var, t_fptr *f)
 {

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 13:27:24 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 21:13:40 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 22:59:10 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	binary(t_env *var, unsigned char b)
 			exit(EXIT_FAILURE);
 	printf("nbr : %ld\n", var->conv.nbr);
 	len = pf_nbrlen(var->conv.nbr, 'b');
+	if (var->conv.nbr < 0)
+		len -= 1;
 	printf("len : %d\n", len);
 	if (var->fla['-'])
 		dash_4bin(var->fla, var->conv.nbr, len);

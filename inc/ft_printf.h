@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 21:13:45 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 22:31:39 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # include <stdio.h>
 
-typedef struct s_conversion
+typedef struct s_conversions
 {
 	ssize_t		nbr;
 	size_t		unbr;
@@ -84,12 +84,10 @@ void		binary(t_env *var, unsigned char b);
 /*
 **		lib/   by apparition order
 */
-//void			ft_bzero(size_t *fla, size_t n);
 int		ft_isdigit(int c);
 size_t		pf_atoi(const char *format, size_t i);
 size_t		ft_nbrlen(ssize_t nbr);
 unsigned char	pf_strchr(const char *s, int c);
-size_t		ft_strlen(const char *s);
 size_t		pf_nbrlen(long long nbr, char b);
 unsigned char	pf_nbrlen_base(unsigned long long unbr, char b);
 unsigned char	get_base(char c);
@@ -97,9 +95,7 @@ void		pf_putnbr(ssize_t nbr);
 void		pf_putnbr_base(size_t u_nbr, char b, size_t *fla);
 void		ft_putchar(char c);
 void		ft_putnchar(char c, unsigned long long i);
-int		ft_isspace(int c);
 int		ft_isupper(int c);
-unsigned char	ft_nbrlen_base(unsigned long long unbr, size_t base);
 void		pf_putbin(size_t *fla, ssize_t nbr, unsigned char len);
 
 int	main(void);
