@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_unbrlen.c                                       :+:      :+:    :+:   */
+/*   pf_putbin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/30 14:10:16 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 16:19:59 by cmiran           ###   ########.fr       */
+/*   Created: 2019/04/01 15:05:01 by cmiran            #+#    #+#             */
+/*   Updated: 2019/04/01 18:41:17 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-size_t	pf_unbrlen(unsigned long long unbr, char c)
+void	pf_putbin(size_t *fla, int32_t nbr, unsigned char len)
 {
-	size_t		len;
-	unsigned char	base;
+	unsigned char	k;
 
-	len = 1;
-	base = get_base(c);
-	while (unbr /= base)
-		len++;
-	return (len);
+	if (fla['0'])
+		len = 31;
+	else if (fla['#'])
+		while (len)
+			if (len++ % 4 == 0)
+				break ;
+	while (len)
+	{
+		k = nbr >> len;
+		if (k & 1)
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		if (fla['#'] && len % 4 == 0)
+			write (1, " ", 1);
+		--len;
+	}
 }

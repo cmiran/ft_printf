@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/31 21:24:18 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 18:41:18 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <unistd.h>
 
 # include <stdio.h>
-
 
 typedef struct s_conversion
 {
@@ -39,7 +38,6 @@ typedef struct s_printf_environment
 */
 	t_conv		conv;
 }		t_env;
-
 
 /*
 **	src/ft_printf.c
@@ -68,6 +66,17 @@ unsigned int	hash(size_t unbr, char b, size_t *fla);
 ** void		sign(size_t *fla, long long nbr);
 */
 
+/*
+**	src/binary.c
+*/
+void		binary(t_env *var, char b);
+/*
+** void		dash(size_t *fla, t_conv conv, char b, unsigned char len);
+** void		other(size_t *fla, t_conv conv, unsigned char b, unsigned char len);
+** void		sign(size_t *fla, long long nbr, char b);
+** void		precision(size_t *fla, t_conv conv, unsigned char len);
+** void		width(size_t *fla, long long nbr, unsigned char b, unsigned char len);
+*/
 
 /*
 **		lib/   by apparition order
@@ -78,15 +87,18 @@ size_t		pf_atoi(const char *format, size_t i);
 size_t		ft_nbrlen(ssize_t nbr);
 unsigned char	pf_strchr(const char *s, int c);
 size_t		ft_strlen(const char *s);
-size_t		pf_nbrlen(long long nbr, char c);
-size_t		pf_unbrlen(unsigned long long unbr, char c);
+size_t		pf_nbrlen(long long nbr, char b);
+unsigned char	pf_nbrlen_base(unsigned long long unbr, char b);
 unsigned char	get_base(char c);
 void		pf_putnbr(ssize_t nbr);
-void		pf_putnbr_base(size_t u_nbr, char c, size_t *fla);
+void		pf_putnbr_base(size_t u_nbr, char b, size_t *fla);
 void		ft_putchar(char c);
-void		ft_putnchar(char c, size_t i);
+void		ft_putnchar(char c, unsigned long long i);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
+unsigned char	ft_nbrlen_base(unsigned long long unbr, size_t base);
+void		pf_putbin(size_t *fla, int32_t nbr, unsigned char len);
+void		pf_putubin(size_t *fla, unsigned long long nbr, unsigned char len);
 
 int	main(void);
 void	*ft_print_memory(void const *addr, size_t size);

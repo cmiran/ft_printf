@@ -273,6 +273,10 @@ int	main(void)
 	printf("\n67\n");
 	printf("%-+#2o Check\n", 10);
 	ft_printf("%-+#2o Check\n", 10);
+
+	printf("\n67\n");
+	printf("%-+#48.75o Check\n", 94289528529245);
+	ft_printf("%-+#48.75o Check\n", 94289528529245);
 	
 	printf("\n68\n");
 	printf("%#x Check\n", 4098594);
@@ -288,24 +292,45 @@ int	main(void)
 
 	printf("\n71\n");
 	printf("%#10.2x Check\n", 4098594);
-//	ft_printf("%#10.2x Check\n", 4098594);
+	ft_printf("%#10.2x Check\n", 4098594);
 
 	printf("\n72\n");
 	printf("%#10.15x Check\n", 4098594);
-//	ft_printf("%#10.15x Check\n", 4098594);
+	ft_printf("%#10.15x Check\n", 4098594);
 
 	printf("\n73\n");
 	printf("%0#10.15x Check\n", 4098594);
-//	ft_printf("%0#10.15x Check\n", 4098594);return(0);	
+	ft_printf("%0#10.15x Check\n", 4098594);	
 	
 	printf("\n74\n");
 	printf("%-0#10.15x Check\n", 4098594);
-//	ft_printf("%-0#10.15x Check\n", 4098594);return(0);
+	ft_printf("%-0#10.15x Check\n", 4098594);
 
 	printf("\n75\n");
 	printf("%-0#34.10x Check\n", 4098594);
-//	ft_printf("%-0#34.10x Check\n", 4098594);return(0);
+	ft_printf("%-0#34.10x Check\n", 4098594);
 
+	printf("\n76\n");
+	printf("%0#34.10x Check\n", 4098594);
+	ft_printf("%0#34.10x Check\n", 4098594);
+
+	printf("\n77\n");
+	printf("%+0#34.10x Check\n", 4098594);
+	ft_printf("%+0#34.10x Check\n", 4098594);
+	
+	printf("\n78\n");
+	printf("% +0#34.10x Check\n", 4098594);
+	ft_printf("% +0#34.10x Check\n", 4098594);
+	
+	printf("\n79\n");
+	printf("% +0#10.34x Check\n", 4098594);
+	ft_printf("% +0#10.34x Check\n", 4098594);
+
+	printf("\n80\n");
+	ft_printf("%b Check\n", 100);
+
+	printf("\n81\n");
+	ft_printf("%b Check\n", 256);
 
 	return (0);
 }

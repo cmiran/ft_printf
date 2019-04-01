@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 00:11:31 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 18:07:38 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	parse(const char *format, size_t *i, size_t *fla)
 		else
 			break ;
 	}
-	return (pf_strchr("diouxXfpn", format[*i]));
+	return (pf_strchr("cspdiouxXfbn", format[*i]));
 }
 
 int	ft_printf(const char *format, ...)
@@ -83,7 +83,7 @@ int	ft_printf(const char *format, ...)
 				!parse(format, &var.i, &*var.fla) ? exit(EXIT_FAILURE) :\
 					dispatch(&var, format[var.i]);/*
 **				pointeur sur fonction stuff
-**				(*f[(int)ft_strchr("diouxXfpn")])(format[var.i], var);
+**				(*f[(int)ft_strchr("cspdiouxXfbn")])(format[var.i], var);
 */			}
 		}
 		else

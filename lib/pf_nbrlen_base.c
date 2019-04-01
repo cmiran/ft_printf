@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnchar.c                                      :+:      :+:    :+:   */
+/*   pf_nbrlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/19 13:38:29 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 13:22:48 by cmiran           ###   ########.fr       */
+/*   Created: 2019/04/01 11:32:48 by cmiran            #+#    #+#             */
+/*   Updated: 2019/04/01 11:32:52 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Affiche n caracteres c sur la sortie standard.
-*/ 
-
 #include "../inc/ft_printf.h"
 
-void	ft_putnchar(char c, unsigned long long i)
+unsigned char	pf_nbrlen_base(unsigned long long unbr, char b)
 {
-	while (i--)
-		write(1, &c, 1);
+	unsigned char	len;
+	unsigned char	base;
+
+	len = 1;
+	base = get_base(b);
+	while (unbr /= base)
+		len++;
+	return (len);
 }
