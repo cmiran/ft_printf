@@ -327,10 +327,21 @@ int	main(void)
 	ft_printf("% +0#10.34x Check\n", 4098594);
 
 	printf("\n80\n");
-	ft_printf("%b Check\n", 100);
+	ft_printf("%+10b Check\n", 100);
 
 	printf("\n81\n");
 	ft_printf("%b Check\n", 256);
 
+	printf("\n82\n");
+	ft_printf("%10b Check\n", 100);
+
+	printf("\n83\n");
+	ft_printf("%#15.19b Check\n", 1546);
+
+	printf("\n84\n");
+	ft_printf("%#+10b Check\n", -1546);
+
+	printf("\n85\n");
+	ft_printf("%#15.14b Check\n", 1546);
 	return (0);
 }

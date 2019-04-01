@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 18:41:18 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 21:13:45 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ typedef struct s_printf_environment
 	t_conv		conv;
 }		t_env;
 
+typedef void (*t_fptr)(t_env *var, unsigned char b);
+
+
 /*
 **	src/ft_printf.c
 */
@@ -52,14 +55,14 @@ int		ft_printf(const char * restrict format, ...);
 /*
 **	src/conversions.c
 */
-int		is_di(size_t *fla, ssize_t *nbr, va_list ap);
+int		is_bdi(size_t *fla, ssize_t *nbr, va_list ap, unsigned char b);
 int		is_ouxX(size_t *fla, size_t *unbr, va_list ap);
 
 /*
 ** 	src/numbers.c
 */
-void		dispatch(t_env *var, char i);
-unsigned int	hash(size_t unbr, char b, size_t *fla);
+void		dispatch(t_env *var, unsigned char i);
+unsigned int	hash(size_t unbr, unsigned char b, size_t *fla);
 /*
 ** void		dash(size_t *fla, long long nbr, ssize_t len);
 ** void		zer0(size_t *fla, long long nbr, ssize_t len);
@@ -69,7 +72,7 @@ unsigned int	hash(size_t unbr, char b, size_t *fla);
 /*
 **	src/binary.c
 */
-void		binary(t_env *var, char b);
+void		binary(t_env *var, unsigned char b);
 /*
 ** void		dash(size_t *fla, t_conv conv, char b, unsigned char len);
 ** void		other(size_t *fla, t_conv conv, unsigned char b, unsigned char len);
@@ -97,8 +100,7 @@ void		ft_putnchar(char c, unsigned long long i);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
 unsigned char	ft_nbrlen_base(unsigned long long unbr, size_t base);
-void		pf_putbin(size_t *fla, int32_t nbr, unsigned char len);
-void		pf_putubin(size_t *fla, unsigned long long nbr, unsigned char len);
+void		pf_putbin(size_t *fla, ssize_t nbr, unsigned char len);
 
 int	main(void);
 void	*ft_print_memory(void const *addr, size_t size);

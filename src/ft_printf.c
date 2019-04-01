@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 18:07:38 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 20:23:58 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,33 @@ int	parse(const char *format, size_t *i, size_t *fla)
 	return (pf_strchr("cspdiouxXfbn", format[*i]));
 }
 
+void	init_env(t_env *var, t_fptr *f)
+{
+	var->i = 0;
+	var->ret = 0;
+//	f['c'] = &dispatch;
+//	f['s'] = &dispatch;
+//	f['p'] = &dispatch;
+	f['d'] = &dispatch;
+	f['i'] = &dispatch;
+	f['o'] = &dispatch;
+	f['u'] = &dispatch;
+	f['x'] = &dispatch;
+	f['X'] = &dispatch;
+//	f['f'] = &dispatch;
+	f['b'] = &binary;
+//	f['n'] = &dispatch;
+}
+
 int	ft_printf(const char *format, ...)
 {
 	t_env	var;
+	t_fptr	f[128];
 
 	if (!format)
-		return (0);	
+		return (0);
 	va_start(var.ap, format);
-	var.i = 0;
-	var.ret = 0;
+	init_env(&var, &*f);
 	while (format[var.i])
 	{
 		if (format[var.i] == '%')
@@ -81,16 +99,11 @@ int	ft_printf(const char *format, ...)
 			{
 				pf_bzero(&*var.fla, 127, &var.conv);
 				!parse(format, &var.i, &*var.fla) ? exit(EXIT_FAILURE) :\
-					dispatch(&var, format[var.i]);/*
-**				pointeur sur fonction stuff
-**				(*f[(int)ft_strchr("cspdiouxXfbn")])(format[var.i], var);
-*/			}
+					f[pf_strchr("cspdiouxXfbn", format[var.i])](&var, format[var.i]);
+			}
 		}
 		else
-		{
 			write(1, &format[var.i], 1);
-			++var.ret;
-		}
 		++var.i;
 	}
 	va_end(var.ap);

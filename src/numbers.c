@@ -6,13 +6,13 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 18:07:47 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/01 19:22:30 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void		sign(size_t *fla, ssize_t nbr, char b)
+void		sign(size_t *fla, ssize_t nbr, unsigned char b)
 {
 	if (nbr < 0)
 		write(1, "-", 1);
@@ -22,7 +22,7 @@ void		sign(size_t *fla, ssize_t nbr, char b)
 		nbr < 0 ? write(1, "-", 1) : write(1, " ", 1);
 }
 
-void		other(size_t *fla, t_conv conv, char b)
+void		other(size_t *fla, t_conv conv, unsigned char b)
 {
 	unsigned char len;
 
@@ -52,7 +52,7 @@ void		other(size_t *fla, t_conv conv, char b)
 	conv.nbr ? pf_putnbr(conv.nbr) : pf_putnbr_base(conv.unbr, b, fla);
 }
 
-void		dash(size_t *fla, t_conv conv, char b)
+void		dash(size_t *fla, t_conv conv, unsigned char b)
 {
 	unsigned char len;
 
@@ -72,7 +72,7 @@ void		dash(size_t *fla, t_conv conv, char b)
 			(fla['#'] && (b == 'x' || b == 'X') ? 2 : 0));
 }
 
-unsigned int	hash(size_t unbr, char b, size_t *fla)
+unsigned int	hash(size_t unbr, unsigned char b, size_t *fla)
 {
 	unsigned char len;
 
@@ -101,19 +101,17 @@ unsigned int	hash(size_t unbr, char b, size_t *fla)
 	return (0);
 }
 
-void		dispatch(t_env *var, char b)
+void		dispatch(t_env *var, unsigned char b)
 {
 	if (b == 'd' || b == 'i')
 	{
-		if (!is_di(var->fla, &var->conv.nbr, var->ap))
+		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
 			exit(EXIT_FAILURE);
 	}
 	else
 		if (!is_ouxX(var->fla, &var->conv.unbr, var->ap))
 			exit(EXIT_FAILURE);
-	if (b == 'b')
-		binary(var, b);
-	else if (var->fla['#'] && !var->fla['-'] && (b == 'x' || b == 'X'))
+	if (var->fla['#'] && !var->fla['-'] && (b == 'x' || b == 'X'))
 		hash(var->conv.unbr, b, var->fla);
 	else if (var->fla['-'])
 		dash(var->fla, var->conv, b);
