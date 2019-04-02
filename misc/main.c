@@ -336,12 +336,17 @@ int	main(void)
 	ft_printf("%10b Check\n", 100);
 
 	printf("\n83\n");
-	ft_printf("%#15.19b Check\n", 1546);
+	ft_printf("%#b Check\n", 12546);
 
 	printf("\n84\n");
-	ft_printf("%+10b Check\n", -1546);
+	ft_printf("%+b Check\n", -2546);
 
 	printf("\n85\n");
-	ft_printf("%+#b Check\n", 2346);
+	ft_printf("%+.64b Check\n", 62990);
+	 
+	printf("\n86\n");
+	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %#+-o\n\n", (unsigned long)3213, 431, 4314);
+	ft_printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d ,%#0b, %#+-o\n", (unsigned long)3213, 431, 45422, 4314);
+	
 	return (0);
 }

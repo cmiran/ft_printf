@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 23:49:49 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/02 01:05:25 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ unsigned int	hash(size_t unbr, unsigned char b, size_t *fla);
 */
 void		binary(t_env *var, unsigned char b);
 /*
-** void		dash(size_t *fla, t_conv conv, char b, unsigned char len);
-** void		other(size_t *fla, t_conv conv, unsigned char b, unsigned char len);
-** void		sign(size_t *fla, long long nbr, char b);
+** void		dash_4bin(size_t *fla, t_conv conv, char b, unsigned char len);
+** void		other_4bin(size_t *fla, t_conv conv, unsigned char b, unsigned char len);
+** void		sign_4bin(size_t *fla, long long nbr, char b);
 ** void		precision(size_t *fla, t_conv conv, unsigned char len);
 ** void		width(size_t *fla, long long nbr, unsigned char b, unsigned char len);
 */
