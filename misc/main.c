@@ -327,26 +327,35 @@ int	main(void)
 	ft_printf("% +0#10.34x Check\n", 4098594);
 
 	printf("\n80\n");
-	ft_printf("%+10b Check\n", 100);
+	ft_printf("%10b Check\n", 100);
 
 	printf("\n81\n");
 	ft_printf("%b Check\n", 256);
 
 	printf("\n82\n");
-	ft_printf("%10b Check\n", 100);
+	ft_printf("%-#10b Check\n", 100);
 
 	printf("\n83\n");
 	ft_printf("%#b Check\n", 12546);
 
 	printf("\n84\n");
-	ft_printf("%+b Check\n", -2546);
+	ft_printf("%#+b Check\n", -2546);
 
 	printf("\n85\n");
-	ft_printf("%+.64b Check\n", 62990);
+	ft_printf("%#+.64b Check\n", 62990);
 	 
 	printf("\n86\n");
 	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %#+-o\n\n", (unsigned long)3213, 431, 4314);
 	ft_printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d ,%#0b, %#+-o\n", (unsigned long)3213, 431, 45422, 4314);
+
+	printf("\n87\n");
+	ft_printf("%b Check\n", 0);
+
+	printf("\n88\n");
+	printf("%c Check\n", -74);
 	
+	printf("\n89\n");
+	printf("%lc Check\n", 74);
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/02 01:05:25 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/02 16:41:55 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_conversions
 {
 	ssize_t		nbr;
 	size_t		unbr;
+	wchar_t		c;
+	wint_t		lc;
 }		t_conv;
 
 typedef struct s_printf_environment
@@ -76,9 +78,7 @@ void		binary(t_env *var, unsigned char b);
 /*
 ** void		dash_4bin(size_t *fla, t_conv conv, char b, unsigned char len);
 ** void		other_4bin(size_t *fla, t_conv conv, unsigned char b, unsigned char len);
-** void		sign_4bin(size_t *fla, long long nbr, char b);
-** void		precision(size_t *fla, t_conv conv, unsigned char len);
-** void		width(size_t *fla, long long nbr, unsigned char b, unsigned char len);
+** void		pf_putbin(size_t *fla, ssize_t nbr, unsigned char len);
 */
 
 /*
@@ -96,7 +96,7 @@ void		pf_putnbr_base(size_t u_nbr, char b, size_t *fla);
 void		ft_putchar(char c);
 void		ft_putnchar(char c, unsigned long long i);
 int		ft_isupper(int c);
-void		pf_putbin(size_t *fla, ssize_t nbr, unsigned char len);
+
 
 int	main(void);
 void	*ft_print_memory(void const *addr, size_t size);

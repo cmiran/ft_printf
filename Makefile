@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/04/01 23:27:07 by cmiran           ###   ########.fr        #
+#    Updated: 2019/04/02 15:53:56 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ LIB_NAME= ft_isdigit.c\
 	pf_nbrlen_base.c\
 	pf_putnbr.c\
 	pf_putnbr_base.c\
-	pf_putbin.c\
 	pf_strchr.c
 
 LIB= $(addprefix $(LIB_DIR), $(LIB_NAME))
