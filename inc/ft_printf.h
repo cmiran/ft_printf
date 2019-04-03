@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/02 16:41:55 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/03 17:58:20 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct s_conversions
 {
 	ssize_t		nbr;
 	size_t		unbr;
-	wchar_t		c;
-	wint_t		lc;
+//	wchar_t		c;
+//	wint_t		lc;
 }		t_conv;
 
 typedef struct s_printf_environment
