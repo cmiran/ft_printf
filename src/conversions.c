@@ -6,18 +6,18 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/02 16:41:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/03 17:59:27 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-int	is_cs(size_t *fla, t_conv *conv, va_list ap)
+/*int	is_cs(size_t *fla, t_conv *conv, va_list ap)
 {
 	if (fla['l'] && (*lc = va_arg(ap, )))
 		return (*unbr <= ULONG_MAX);
 
-}
+}*/
 
 int	is_ouxX(size_t *fla, size_t *unbr, va_list ap)
 {
