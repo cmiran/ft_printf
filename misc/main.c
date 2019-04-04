@@ -356,6 +356,27 @@ int	main(void)
 	
 	printf("\n89\n");
 	printf("%lc Check\n", 74);
+	
+	printf("\n90\n");
+	printf("%f Check\n", 0.6);
+//	ft_printf("%f Check\n", 0.6);
+
+	printf("\n91\n");
+	printf("%.25f Check\n", 0.6);
+//	ft_printf("%.25f Check\n", 0.6);
+
+	printf("\n92\n");
+	printf("%#.25f Check\n", 0.6);
+//	ft_printf("%#.25f Check\n", 0.6);
+
+	printf("\n93\n");
+	printf("%#.25f Check\n", 6.6);
+//	ft_printf("%#.25f Check\n", 0.6);
+
+	printf("\n94\n");
+	printf("%.25f Check\n", 1.6e+201);
+//	ft_printf("%.25f Check\n", 0.6);
+
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 22:02:49 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/04 11:05:54 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ int	ft_printf(const char *format, ...)
 	t_env	var;
 	t_fptr	f[128];
 
-	if (!format)
-		return (0);
 	va_start(var.ap, format);
 	init_env(&var, &*f);
 	while (format[var.i])
