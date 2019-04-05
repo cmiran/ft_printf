@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 23:50:28 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/04 23:37:03 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		other(size_t *fla, t_conv conv, unsigned char b)
 	{
 		if (fla['0'])
 			sign(fla, conv.nbr, b);
-		if (fla['W'])
+		if (fla['W'] > len)
 			ft_putnchar((fla['0'] ? '0' : ' '), fla['W'] - len -\
 				((fla['+'] || fla[' ']) &&\
 				 	conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
@@ -64,7 +64,7 @@ void		dash(size_t *fla, t_conv conv, unsigned char b)
 	if (fla['P'] > len)
 		ft_putnchar('0', fla['P'] - len + (conv.nbr < 0 ? 1 : 0));
 	conv.nbr ? pf_putnbr(conv.nbr) : pf_putnbr_base(conv.unbr, b, fla);
-	if (fla['W'] > fla['P'])
+	if (fla['W'] > (len > fla['P'] ? len : fla['P']))
 		ft_putnchar(' ', fla['W'] - (len > fla['P'] ? len : fla['P']) -\
 			((fla['+'] || fla[' ']) && conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
 			(conv.nbr < 0 && fla['P'] > len ? 1 : 0) -\

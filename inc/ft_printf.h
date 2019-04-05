@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/04 11:28:42 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/05 11:54:50 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_conversions
 {
 	ssize_t		nbr;
 	size_t		unbr;
-	double		dnbr;
+//	double		dnbr;
 //	wchar_t		c;
 //	wint_t		lc;
 }		t_conv;

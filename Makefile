@@ -6,11 +6,11 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/04/02 15:53:56 by cmiran           ###   ########.fr        #
+#    Updated: 2019/04/04 22:44:45 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= libftprinft.a
+NAME= libftprintf.a
 
 CC= gcc -g
 CFLAGS= -Wall -Wextra -Werror

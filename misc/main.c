@@ -343,7 +343,7 @@ int	main(void)
 
 	printf("\n85\n");
 	ft_printf("%#+.64b Check\n", 62990);
-	 
+
 	printf("\n86\n");
 	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %#+-o\n\n", (unsigned long)3213, 431, 4314);
 	ft_printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d ,%#0b, %#+-o\n", (unsigned long)3213, 431, 45422, 4314);
@@ -374,9 +374,45 @@ int	main(void)
 //	ft_printf("%#.25f Check\n", 0.6);
 
 	printf("\n94\n");
-	printf("%.25f Check\n", 1.6e+201);
-//	ft_printf("%.25f Check\n", 0.6);
+	printf("%4.2f Check\n", 4.2);
+//	ft_printf("%.5f Check\n", 0.6);
 
+	printf("\n95\n");
+	printf("%4.2f Check\n", 4.2);
+//	ft_printf("%.5f Check\n", 0.6);
+
+	printf("\n96\n");
+	printf("%.0f\n", 99.99);
+	
+	printf("\n97\n");
+	printf("%.25f\n", 0.6);
+
+	printf("\n98\n");
+	printf("%.25f\n", -127.32435);
+
+	printf("\n99\n");
+	printf("%.20f\n", 12.345);
+	short		nb;
+	nb = -23;
+	printf("max int :  %d\n", INT16_MAX);
+	ft_printf("max int :  %d\n", INT16_MAX);
+	printf("min int :  %d\n", INT16_MIN);
+	ft_printf("min int :  %d\n", INT16_MIN);
+	printf("max int :  %d\n", INT32_MAX);
+	ft_printf("max int :  %d\n", INT32_MAX);
+	printf("min int :  %d\n", INT32_MIN);
+	ft_printf("min int :  %d\n", INT32_MIN);
+	printf("max long :  %ld\n", LONG_MAX);
+	ft_printf("max long :  %ld\n", LONG_MAX);
+	printf("min long :  %ld\n", LONG_MIN);
+	ft_printf("min long :  %ld\n", LONG_MIN);
+	printf("max long long :  %lld\n", __LONG_LONG_MAX__);
+	ft_printf("max long long :  %lld\n", __LONG_LONG_MAX__);
+	printf("min long long :  %lld\n",LLONG_MIN);
+	ft_printf("min long long :  %lld\n",LLONG_MIN);
+
+	ft_printf("MINE>\t[%+1d]\n", 650);
+	printf("ORIG>\t[%+1d]\n", 650);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 13:27:24 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/02 16:22:27 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/05 12:02:30 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len)
 			len++;
 		}
 	}
+	printf("\nnbr : %ld, len %d\n", nbr, len);
 	while (len--)
 	{
 		k = nbr >> len;
