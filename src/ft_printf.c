@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/04 18:04:53 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/05 19:51:10 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,14 @@ void	init_env(t_env *var, t_fptr *f)
 //	f['c'] = &
 //	f['s'] = &
 //	f['p'] = &;
-	f['d'] = &dispatch;
-	f['i'] = &dispatch;
-	f['o'] = &dispatch;
-	f['u'] = &dispatch;
-	f['x'] = &dispatch;
-	f['X'] = &dispatch;
-//	f['f'] = &
-	f['b'] = &binary;
+	f['d'] = &numbers;
+	f['i'] = &numbers;
+	f['o'] = &numbers;
+	f['u'] = &numbers;
+	f['x'] = &numbers;
+	f['X'] = &numbers;
+	f['f'] = &floats;
+	f['b'] = &binarys;
 //	f['n'] = &;
 }
 
@@ -102,9 +102,13 @@ int	ft_printf(const char *format, ...)
 			}
 		}
 		else
+		{
 			write(1, &format[var.i], 1);
+			var.ret++;
+		}
 		++var.i;
 	}
 	va_end(var.ap);
+	printf("ret : %lu\n", var.ret);
 	return (var.ret);
 }

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/01 13:27:24 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/05 12:02:30 by cmiran           ###   ########.fr       */
+/*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
+/*   Updated: 2019/04/05 22:00:20 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len)
+void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
 {
 	unsigned char	k;
 
@@ -28,52 +28,52 @@ void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len)
 			len++;
 		}
 	}
-	printf("\nnbr : %ld, len %d\n", nbr, len);
+	*ret += len;
 	while (len--)
 	{
 		k = nbr >> len;
-		if (k & 1)
-			write(1, "1", 1);
-		else
-			write(1, "0", 1);
+		k & 1 ? write(1, "1", 1) : write(1, "0", 1);
 		if (fla['#'] && len % 4 == 0 && len != 0)
+		{
 			write (1, " ", 1);
+			(*ret)++;
+		}
 	}
 }
 
-void	other_4bin(size_t *fla, ssize_t nbr, unsigned char len)
+void	other_4bin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
 {
 	if (!fla['P'])
 	{
 		if (fla['W'] && !fla['#'])
-			ft_putnchar(' ', fla['W'] -\
-			(len + fla['P'] <= 32 ? len + fla['P'] : len));
+			pf_putnchar(' ', fla['W'] -\
+			(len + fla['P'] <= 32 ? len + fla['P'] : len), ret);
 	}
 	else if (fla['P'] > len && fla['P'] + len < 32)
-		pf_putbin(fla, nbr, fla['P']);
+		pf_putbin(fla, nbr, fla['P'], ret);
 	else
 	{
-		pf_putbin(fla, nbr, len);
+		pf_putbin(fla, nbr, len, ret);
 		if (fla['W'] > fla['P'] + len)
-			fla['P'] + len < 32 ? ft_putnchar(' ', fla['W'] - fla['P'] - len) :\
-				ft_putnchar(' ', fla['W'] - len);
+			fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - fla['P'] - len, ret) :\
+				pf_putnchar(' ', fla['W'] - len, ret);
 		return ;
 	}
-	pf_putbin(fla, nbr, len);
+	pf_putbin(fla, nbr, len, ret);
 }
 
-void	dash_4bin(size_t *fla, ssize_t nbr, unsigned char len)
+void	dash_4bin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
 {
 	if (fla['P'] > len && fla['P'] + len <= 32)
- 		pf_putbin(fla, nbr, fla['P']);
+ 		pf_putbin(fla, nbr, fla['P'], ret);
 	else
-		pf_putbin(fla, nbr, len);
+		pf_putbin(fla, nbr, len, ret);
 	if (fla['W'] > fla['P'] + len && !fla['#'])
-		fla['P'] + len < 32 ? ft_putnchar(' ', fla['W'] - len) :\
-			ft_putnchar(' ', fla['W'] + fla['P']);
+		fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - len, ret) :\
+			pf_putnchar(' ', fla['W'] + fla['P'], ret);
 }
 
-void	binary(t_env *var, unsigned char b)
+void	binarys(t_env *var, unsigned char b)
 {
 	unsigned char	len;
 
@@ -84,7 +84,7 @@ void	binary(t_env *var, unsigned char b)
 	if (var->conv.nbr < 0)
 		len -= 1;
 	if (var->fla['-'])
-		dash_4bin(var->fla, var->conv.nbr, len);
+		dash_4bin(var->fla, var->conv.nbr, len, &var->ret);
 	else
-		other_4bin(var->fla, var->conv.nbr, len);
+		other_4bin(var->fla, var->conv.nbr, len, &var->ret);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 17:56:28 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/01 11:26:50 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/05 18:45:21 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,21 @@ unsigned char	itoc(size_t i, char b)
 	return (0);
 }
 
-void	pf_putnbr_base(size_t unbr, char b, size_t *fla)
+void	pf_putnbr_base(size_t unbr, char b, size_t *fla, size_t *ret)
 {
 	unsigned char	base;
 
 	base = get_base(b);
 	if (fla['#'] && b == 'o')
-		fla['#'] = hash(unbr, b, fla);
+		fla['#'] = hash(unbr, b, fla, ret);
 	if (unbr < base)
+	{
 		ft_putchar(itoc(unbr % base, b));
+		(*ret)++;
+	}
 	else
 	{
-		pf_putnbr_base(unbr / base, b, fla);
-		pf_putnbr_base(unbr % base, b, fla);
+		pf_putnbr_base(unbr / base, b, fla, ret);
+		pf_putnbr_base(unbr % base, b, fla, ret);
 	}
 }

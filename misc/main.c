@@ -358,15 +358,15 @@ int	main(void)
 	printf("%lc Check\n", 74);
 	
 	printf("\n90\n");
-	printf("%f Check\n", 0.6);
-//	ft_printf("%f Check\n", 0.6);
+	printf("%.8f Check\n", 0.6);
+	ft_printf("%f Check\n", 0.61);
 
 	printf("\n91\n");
-	printf("%.25f Check\n", 0.6);
+	printf("%+15f Check\n", 0.6);
 //	ft_printf("%.25f Check\n", 0.6);
 
 	printf("\n92\n");
-	printf("%#.25f Check\n", 0.6);
+	printf("%.f Check\n", 1.6);
 //	ft_printf("%#.25f Check\n", 0.6);
 
 	printf("\n93\n");
@@ -385,13 +385,17 @@ int	main(void)
 	printf("%.0f\n", 99.99);
 	
 	printf("\n97\n");
-	printf("%.25f\n", 0.6);
+	printf("%.17f\n", 0.6);
 
 	printf("\n98\n");
-	printf("%.25f\n", -127.32435);
+	printf("%.f\n", -127.32435);
+//	ft_printf("%.f\n", -127.32435);
 
 	printf("\n99\n");
-	printf("%.20f\n", 12.345);
+	printf("%.7f\n", 1456.45416345);
+
+	printf("\n100\n");
+	printf("%#145.50f\n", 12.345);
 	short		nb;
 	nb = -23;
 	printf("max int :  %d\n", INT16_MAX);

@@ -6,11 +6,11 @@
 /*   By: aaubin <aaubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/16 10:10:21 by aaubin            #+#    #+#             */
-/*   Updated: 2019/04/04 23:40:41 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/05 19:24:50 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/ft_printf.h"
+#include "../inc/ft_printf.h"
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
