@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/05 22:07:37 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 20:33:33 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void		other(size_t *fla, t_conv conv, unsigned char b, size_t *ret)
 			sign(fla, conv.nbr, b, ret);
 		if (fla['W'] > len)
 			pf_putnchar((fla['0'] ? '0' : ' '), fla['W'] - len -\
-				((fla['+'] || fla[' ']) &&\
-				 	conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
+				(((fla['+'] || fla[' ']) /*&&*/||\
+				 	/*conv.nbr >= 0*/ conv.nbr < 0) && !pf_strchr("ouxX", b) ? 1 : 0) -\
 				(fla['#'] && b == 'o' && conv.unbr ? 1 : 0), ret);
 		if (!fla['0'])
 			sign(fla, conv.nbr, b, ret);
@@ -52,8 +52,8 @@ void		other(size_t *fla, t_conv conv, unsigned char b, size_t *ret)
 	{
 		if (fla['W'] > fla['P'])
 			pf_putnchar(' ', fla['W'] - (len > fla['P'] ? len : fla['P']) -\
-				((fla['+'] || fla[' ']) &&\
-				 	conv.nbr >= 0 && !pf_strchr("ouxX", b) ? 1 : 0) -\
+				(((fla['+'] || fla[' ']) /*&&*/||\
+				 	/*conv.nbr >= 0*/ conv.nbr < 0) && !pf_strchr("ouxX", b) ? 1 : 0) -\
 				(conv.nbr < 0 && fla['P'] > len ? 1 : 0), ret);
 		sign(fla, conv.nbr, b, ret);
 		pf_putnchar('0', fla['P'] - (conv.nbr >= 0 ? len : len - 1), ret);
@@ -68,7 +68,7 @@ void		dash(size_t *fla, t_conv conv, unsigned char b, size_t *ret)
 	len = conv.nbr ? pf_nbrlen(conv.nbr, b) : pf_unbrlen(conv.unbr, b);
 	if (fla['#'] && (b == 'x' || b == 'X'))
 	{
-		b == 'x' ? write(1, "0x", 2) : write(1, "0X", 1);
+		b == 'x' ? write(1, "0x", 2) : write(1, "0X", 2);
 		(*ret) += 2;
 	}
 	else
@@ -121,8 +121,10 @@ void		numbers(t_env *var, unsigned char b)
 			exit(EXIT_FAILURE);
 	}
 	else
+	{
 		if (!is_ouxX(var->fla, &var->conv.unbr, var->ap))
 			exit(EXIT_FAILURE);
+	}
 	if (var->fla['#'] && !var->fla['-'] && (b == 'x' || b == 'X'))
 	{
 		var->ret += 2;

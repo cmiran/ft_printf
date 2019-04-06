@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 15:41:13 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 15:41:27 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 16:50:44 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_nbrlen(ssize_t nbr)
 {
 	size_t	len;
 
+	if (!nbr)
+		return (0);
 	len = (nbr < 0) ? 2 : 1;
 	while (nbr /= 10)
 		len++;

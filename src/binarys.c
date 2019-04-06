@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/05 22:00:20 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 19:25:33 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
 		k & 1 ? write(1, "1", 1) : write(1, "0", 1);
 		if (fla['#'] && len % 4 == 0 && len != 0)
 		{
-			write (1, " ", 1);
+			write(1, " ", 1);
 			(*ret)++;
 		}
 	}

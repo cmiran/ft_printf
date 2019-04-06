@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/05 20:17:37 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 20:03:51 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@
 
 int	is_f(size_t l, long double *dnbr, va_list ap)
 {
-	if (l)
-	{
-		*dnbr = va_arg(ap, long double);
+	if (l && (*dnbr = va_arg(ap, long double)))
 		return (1);
-	}
 	else
 	{
 		*dnbr = va_arg(ap, double);

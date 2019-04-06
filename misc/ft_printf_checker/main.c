@@ -6,7 +6,7 @@
 /*   By: jmartel <jmartel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 10:43:15 by jmartel           #+#    #+#             */
-/*   Updated: 2019/04/04 22:05:23 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 19:12:00 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int			main(void)
 	di_launcher();
 //	c_launcher();
 	xx_launcher();
-//	f_launcher();
+	f_launcher();
 	u_launcher();
 	o_launcher();
 //	s_launcher();

@@ -359,64 +359,197 @@ int	main(void)
 	
 	printf("\n90\n");
 	printf("%.8f Check\n", 0.6);
-	ft_printf("%f Check\n", 0.61);
+	ft_printf("%.8f Check\n", 0.6);
 
 	printf("\n91\n");
 	printf("%+15f Check\n", 0.6);
-//	ft_printf("%.25f Check\n", 0.6);
+	ft_printf("%+15f Check\n", 0.6);
 
 	printf("\n92\n");
 	printf("%.f Check\n", 1.6);
-//	ft_printf("%#.25f Check\n", 0.6);
+	ft_printf("%.f Check\n", 1.6);
 
 	printf("\n93\n");
 	printf("%#.25f Check\n", 6.6);
-//	ft_printf("%#.25f Check\n", 0.6);
+	ft_printf("%#.25f Check\n", 6.6);
 
 	printf("\n94\n");
 	printf("%4.2f Check\n", 4.2);
-//	ft_printf("%.5f Check\n", 0.6);
+	ft_printf("%4.2f Check\n", 4.2);
 
 	printf("\n95\n");
-	printf("%4.2f Check\n", 4.2);
-//	ft_printf("%.5f Check\n", 0.6);
+	printf("%+4.2f Check\n", 4.2);
+	ft_printf("%+4.2f Check\n", 4.2);
 
 	printf("\n96\n");
 	printf("%.0f\n", 99.99);
-	
+
+	printf("\n97\n");
+	printf("%.25f\n", 0.6);
+	ft_printf("%.25f\n", 0.6);
+
+	printf("\n97\n");
+	printf("%.19f\n", 0.6);
+	ft_printf("%.19f\n", 0.6);
+
 	printf("\n97\n");
 	printf("%.17f\n", 0.6);
+	ft_printf("%.17f\n", 0.6);
+
+	printf("\n97\n");
+	printf("%.16f\n", 0.6);
+	ft_printf("%.16f\n", 0.6);
 
 	printf("\n98\n");
 	printf("%.f\n", -127.32435);
-//	ft_printf("%.f\n", -127.32435);
+	ft_printf("%.f\n", -127.32435);
 
 	printf("\n99\n");
-	printf("%.7f\n", 1456.45416345);
+	printf("%.7f\ta\n", 1456.45416345);
+	ft_printf("%.7f\ta\n", 1456.45416345);
+
+	printf("\n99\n");
+	printf("%.15f\n\t", 1456.454199988996345);
+	ft_printf("%.15f\n", 1456.454199988996345);
 
 	printf("\n100\n");
-	printf("%#145.50f\n", 12.345);
-	short		nb;
-	nb = -23;
+	printf("%#145.13fnorris\n", 12.345);
+	ft_printf("%#145.13fnorris\n", 12.345);
+
+	printf("\n101\n");
+	printf("%# fnorris\n", 12.345);
+	ft_printf("%# fnorris\n", 12.345);
+
+	printf("\n102\n");
+	printf("%-156.14f check\n", 12.345);
+	ft_printf("%-156.14f check\n", 12.345);
+
+	printf("\n103\n");
+	printf("%#15.f check\n", 12);
+	ft_printf("%#15.f check\n", 12);
+
+	printf("\n104\n");
+	printf("%#15.f check\n", 12);
+	ft_printf("%#15.f check\n", 12);
+
+	printf("\n105\n");
 	printf("max int :  %d\n", INT16_MAX);
 	ft_printf("max int :  %d\n", INT16_MAX);
+	
+	printf("\n106\n");	
 	printf("min int :  %d\n", INT16_MIN);
 	ft_printf("min int :  %d\n", INT16_MIN);
+		
+	printf("\n107\n");	
 	printf("max int :  %d\n", INT32_MAX);
 	ft_printf("max int :  %d\n", INT32_MAX);
+		
+	printf("\n108\n");	
 	printf("min int :  %d\n", INT32_MIN);
 	ft_printf("min int :  %d\n", INT32_MIN);
+		
+	printf("\n109\n");	
 	printf("max long :  %ld\n", LONG_MAX);
 	ft_printf("max long :  %ld\n", LONG_MAX);
+		
+	printf("\n110\n");	
 	printf("min long :  %ld\n", LONG_MIN);
 	ft_printf("min long :  %ld\n", LONG_MIN);
-	printf("max long long :  %lld\n", __LONG_LONG_MAX__);
-	ft_printf("max long long :  %lld\n", __LONG_LONG_MAX__);
+		
+	printf("\n112\n");	
+	printf("max long long :  %lld\n", LLONG_MAX);
+	ft_printf("max long long :  %lld\n", LLONG_MAX);
+		
+	printf("\n113\n");	
 	printf("min long long :  %lld\n",LLONG_MIN);
 	ft_printf("min long long :  %lld\n",LLONG_MIN);
 
-	ft_printf("MINE>\t[%+1d]\n", 650);
-	printf("ORIG>\t[%+1d]\n", 650);
+	int		nb;
+	nb = -45;
+		
+	printf("\n114\n");	
+	printf("space% d\n", nb);
+	ft_printf("space% d\n", nb);
+			
+	printf("\n115\n");
+	printf("space% d\n", nb);
+	ft_printf("plus:%+d\n", nb);
+			
+	printf("\n116\n");
+	printf("precision:%.5d\n", nb);
+	ft_printf("precision:%.5d\n", nb);
+			
+	printf("\n117\n");
+	printf("space + prec:% .5d\n", nb);
+	ft_printf("space + prec:% .5d\n", nb);
+			
+	printf("\n118\n");
+	printf("Plus + prec / grande:%+.5d\n", nb);
+	ft_printf("Plus + prec / grande:%+.5d\n", nb);
+			
+	printf("\n119\n");
+	printf("Plus + prec / petite:%+.0d\n", nb);
+	ft_printf("Plus + prec / petite:%+.0d\n", nb);
+			
+	printf("\n120\n");
+	printf("Prec + 0:%0.5d\n", nb);
+	ft_printf("Prec + 0:%0.5d\n", nb);
+			
+	printf("\n121\n");
+	printf("Prec + minus:%-.5d\n", nb);
+	ft_printf("Prec + minus:%-.5d\n", nb);
+			
+	printf("\n122\n");
+	printf("size:%5d\n", nb);
+	ft_printf("size:%5d\n", nb);
+			
+	printf("\n123\n");
+	printf("size + space:% 5d\n", nb);
+	ft_printf("size + space:% 5d\n", nb);
+			
+	printf("\n124\n");
+	printf("size + plus:%+5d\n", nb);
+	ft_printf("size + plus:%+5d\n", nb);
+			
+	printf("\n125\n");
+	printf("size + minus:%-5d\n", nb);
+	ft_printf("size + minus:%-5d\n", nb);
+			
+	printf("\n126\n");
+	printf("size + 0:%05d\n", nb);
+	ft_printf("size + 0:%05d\n", nb);
+			
+	printf("\n127\n");
+	printf("size + 0 + plus:%+05d\n", nb);
+	ft_printf("size + 0 + plus:%+05d\n", nb);
+			
+	printf("\n128\n");
+	printf("size + 0 + plus:%0+5d\n", nb);
+	ft_printf("size + 0 + plus:%0+5d\n", nb);
+			
+	printf("\n129\n");
+	printf("size + 0 + prec:%05.3d\n", nb);
+	ft_printf("size + 0 + prec:%05.3d\n", nb);
+			
+	printf("\n130\n");
+	printf("size + minus + prec:%-5.3d\n", nb);
+	ft_printf("size + minus + prec:%-5.3d\n", nb);
+			
+	printf("\n131\n");
+	printf("size + plus + 0 + prec:%+05.3d\n", nb);
+	ft_printf("size + plus + 0 + prec:%+05.3d\n", nb);
+			
+	printf("\n132\n");
+	ft_printf("size + espace + zero + prec:%0 5.3d\n", nb);
+	printf("size + espace + zero + prec:%0 5.3d\n", nb);
+			
+	printf("\n133\n");
+	printf("size + espace + zero + prec:% 05.3d\n", nb);
+	ft_printf("size + espace + zero + prec:% 05.3d\n", nb);
+			
+	printf("\n134\n");
+	printf("size + minus + plus + prec:%-+5.3d\n", nb);
+	ft_printf("size + minus + plus + prec:%-+5.3d\n", nb);
 
 	return (0);
 }

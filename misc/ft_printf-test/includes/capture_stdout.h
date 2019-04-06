@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_putnchar.c                                      :+:      :+:    :+:   */
+/*   capture_stdout.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thugo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/19 13:38:29 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/06 16:16:37 by cmiran           ###   ########.fr       */
+/*   Created: 2017/01/26 16:55:44 by thugo             #+#    #+#             */
+/*   Updated: 2017/01/26 17:12:00 by thugo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Affiche n caracteres c sur la sortie standard.
-*/ 
+#ifndef CAPTURE_STDOUT_H
+# define CAPTURE_STDOUT_H
 
-#include "../inc/ft_printf.h"
+# define BUFF_SIZE 2048
 
-void	pf_putnchar(char c, ssize_t i, size_t *ret)
-{
-	if (i < 0)
-		return ;
-	*ret += i;
-	while (i--)
-		write(1, &c, 1);
-}
+# define PIPE_READ 0
+# define PIPE_WRITE 1
+
+void	capture_start(void);
+char	*capture_getbuffer(size_t *size);
+void	capture_end(void);
+
+#endif

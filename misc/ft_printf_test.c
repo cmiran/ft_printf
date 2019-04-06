@@ -6,7 +6,7 @@
 /*   By: aaubin <aaubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/16 10:10:21 by aaubin            #+#    #+#             */
-/*   Updated: 2019/04/05 19:24:50 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 19:51:44 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -578,52 +578,52 @@ int	main(void)
 	or = printf(   "ORIG>\t[%-20+-p]\n", &or);
 	ft_print_result(mr, or, __LINE__);
 
-	printf("\033[1;37m======== end %%p ====\033[0m\n\n");
+	printf("\033[1;37m======== end %%p ====\033[0m\n\n");*/
 
 
 	printf("\033[1;37m==== Width parameter ===\033[0m\n");
 
-	mr = ft_printf("MINE>\t[%*d]\n", 10, 999);
+	mr = ft_printf("MINE>\t[%10d]\n", 999);
 	or = printf(   "ORIG>\t[%*d]\n", 10, 999);
 	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%*d]\n", -10, 999);
+	mr = ft_printf("MINE>\t[%-10d]\n", 999);
 	or = printf(   "ORIG>\t[%*d]\n", -10, 999);
 	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%*d]\n", 999);
-	or = printf(   "ORIG>\t[%*d]\n", 999);
+	mr = ft_printf("MINE>\t[%d]\n", 999);
+	or = printf(   "ORIG>\t[%d]\n", 999);
 	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%*i]\n", 10, 123);
+	mr = ft_printf("MINE>\t[%10i]\n", 123);
 	or = printf(   "ORIG>\t[%*i]\n", 10, 123);
 	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%*s]\n", 10, "chamo");
-	or = printf(   "ORIG>\t[%*s]\n", 10, "chamo");
-	ft_print_result(mr, or, __LINE__);
+//	mr = ft_printf("MINE>\t[%*s]\n", 10, "chamo");
+//	or = printf(   "ORIG>\t[%*s]\n", 10, "chamo");
+//	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%*c]\n", 8, 'c');
-	or = printf(   "ORIG>\t[%*c]\n", 8, 'c');
-	ft_print_result(mr, or, __LINE__);
+//	mr = ft_printf("MINE>\t[%*c]\n", 8, 'c');
+//	or = printf(   "ORIG>\t[%*c]\n", 8, 'c');
+//	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%-*c]\n", 8, 'k');
-	or = printf(   "ORIG>\t[%-*c]\n", 8, 'k');
-	ft_print_result(mr, or, __LINE__);
+//	mr = ft_printf("MINE>\t[%-*c]\n", 8, 'k');
+//	or = printf(   "ORIG>\t[%-*c]\n", 8, 'k');
+//	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[% '#*p]\n", 18, &or);
-	or = printf(   "ORIG>\t[% '#*p]\n", 18, &or);
-	ft_print_result(mr, or, __LINE__);
+//	mr = ft_printf("MINE>\t[% '#*p]\n", 18, &or);
+//	or = printf(   "ORIG>\t[% '#*p]\n", 18, &or);
+//	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%#'-*X]\n", 18, 167715);
-	or = printf(   "ORIG>\t[%#'-*X]\n", 18, 167715);
-	ft_print_result(mr, or, __LINE__);
+//	mr = ft_printf("MINE>\t[%#'-*X]\n", 18, 167715);
+//	or = printf(   "ORIG>\t[%#'-*X]\n", 18, 167715);
+//	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%#+*x]\n", 25, 1777215);
+	mr = ft_printf("MINE>\t[%#+25x]\n", 1777215);
 	or = printf("ORIG>\t[%#+*x]\n", 25, 1777215);
 	ft_print_result(mr, or, __LINE__);
 
-	mr = ft_printf("MINE>\t[%#-*X]\n", 25, 16215);
+	mr = ft_printf("MINE>\t[%#-25X]\n", 16215);
 	or = printf("ORIG>\t[%#-*X]\n", 25, 16215);
 	ft_print_result(mr, or, __LINE__);
 
@@ -632,7 +632,7 @@ int	main(void)
 
 	printf("\033[1;37m= End Numbered width parameter =\033[0m\n");
 
-	mr = ft_printf("MINE>\t[%*2$d]\n", 10, 40);
+//	mr = ft_printf("MINE>\t[%102$d]\n", 40);
 	or = printf(   "ORIG>\t[%*2$d]\n", 10, 40);
 	ft_print_result(mr, or, __LINE__);
 
@@ -680,7 +680,7 @@ int	main(void)
 	or = printf("ORIG>\t[%{after]\n", 25, 16215);
 	ft_print_result(mr, or, __LINE__);
 
-	printf("\033[1;37m== End Crashtest zone ==\033[0m\n\n");*/
+	printf("\033[1;37m== End Crashtest zone ==\033[0m\n\n");
 
 
 	printf("\033[1;37m==== %%d + modifiers ===\033[0m\n");

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/05 19:50:25 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/06 20:20:34 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <limits.h>
+# include <float.h>
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -101,7 +102,7 @@ unsigned char	get_base(char c);
 void		pf_putnbr(ssize_t nbr, size_t *ret);
 void		pf_putnbr_base(size_t u_nbr, char b, size_t *fla, size_t *ret);
 void		ft_putchar(char c);
-void		pf_putnchar(char c, unsigned long long i, size_t *ret);
+void		pf_putnchar(char c, ssize_t i, size_t *ret);
 int		ft_isupper(int c);
 
 
