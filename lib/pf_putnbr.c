@@ -6,7 +6,7 @@
 /*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 21:07:51 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/06 16:34:47 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/07 20:45:51 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "../inc/ft_printf.h"
 
-void	pf_putnbr(ssize_t nbr, size_t *ret)
+void	pf_putnbr(long long nbr, size_t *ret)
 {
 	if (nbr < 0)
 		nbr = -nbr;

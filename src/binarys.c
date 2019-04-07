@@ -6,13 +6,13 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/06 19:25:33 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/07 18:54:20 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
+void	pf_putbin(size_t *fla, long long nbr, unsigned char len, size_t *ret)
 {
 	unsigned char	k;
 
@@ -41,9 +41,9 @@ void	pf_putbin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
 	}
 }
 
-void	other_4bin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
+void	other_4bin(size_t *fla, long long nbr, unsigned char len, size_t *ret)
 {
-	if (!fla['P'])
+	if (!fla['.'])
 	{
 		if (fla['W'] && !fla['#'])
 			pf_putnchar(' ', fla['W'] -\
@@ -54,21 +54,20 @@ void	other_4bin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
 	else
 	{
 		pf_putbin(fla, nbr, len, ret);
-		if (fla['W'] > fla['P'] + len)
-			fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - fla['P'] - len, ret) :\
-				pf_putnchar(' ', fla['W'] - len, ret);
+		fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - fla['P'] - len, ret) :\
+			pf_putnchar(' ', fla['W'] - len, ret);
 		return ;
 	}
 	pf_putbin(fla, nbr, len, ret);
 }
 
-void	dash_4bin(size_t *fla, ssize_t nbr, unsigned char len, size_t *ret)
+void	dash_4bin(size_t *fla, long long nbr, unsigned char len, size_t *ret)
 {
 	if (fla['P'] > len && fla['P'] + len <= 32)
  		pf_putbin(fla, nbr, fla['P'], ret);
 	else
 		pf_putbin(fla, nbr, len, ret);
-	if (fla['W'] > fla['P'] + len && !fla['#'])
+	if (!fla['#'])
 		fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - len, ret) :\
 			pf_putnchar(' ', fla['W'] + fla['P'], ret);
 }
@@ -78,7 +77,7 @@ void	binarys(t_env *var, unsigned char b)
 	unsigned char	len;
 
 	if (b == 'b')
-		if (!is_bdi(var->fla, &var->conv.nbr, var->ap))
+		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
 			exit(EXIT_FAILURE);
 	len = pf_nbrlen(var->conv.nbr, 'b');
 	if (var->conv.nbr < 0)

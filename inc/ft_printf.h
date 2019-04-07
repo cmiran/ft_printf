@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 00:18:41 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/07 19:23:42 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 
 # include <stdio.h>
 
-
+# define ABS(a) (a < 0) ? -a : a
 
 typedef struct s_conversions
 {
-	ssize_t		nbr;
-	size_t		unbr;
-	long double	dnbr;
+	long long		nbr;
+	unsigned long long	unbr;
+	long double		dnbr;
 //	wchar_t		c;
 //	wint_t		lc;
 }		t_conv;
@@ -61,15 +61,15 @@ int		ft_printf(const char * restrict format, ...);
 /*
 **	src/conversions.c
 */
-int		is_bdi(size_t *fla, ssize_t *nbr, va_list ap);
-int		is_ouxX(size_t *fla, size_t *unbr, va_list ap);
+int		is_bdi(size_t *fla, long long *nbr, va_list ap, char b);
+int		is_ouxX(size_t *fla, unsigned long long *unbr, va_list ap);
 int		is_f(size_t l, long double *dnbr, va_list ap);
 
 /*
 ** 	src/numbers.c
 */
 void		numbers(t_env *var, unsigned char i);
-unsigned int	hash(size_t unbr, unsigned char b, size_t *fla, size_t *ret);
+unsigned int	hash(unsigned long long unbr, unsigned char b, size_t *fla, size_t *ret);
 /*
 ** void		dash(size_t *fla, long long nbr, ssize_t len);
 ** void		zer0(size_t *fla, long long nbr, ssize_t len);
@@ -107,8 +107,8 @@ unsigned char	pf_strchr(const char *s, int c);
 size_t		pf_nbrlen(long long nbr, char b);
 unsigned char	pf_unbrlen(unsigned long long unbr, char b);
 unsigned char	get_base(char c);
-void		pf_putnbr(ssize_t nbr, size_t *ret);
-void		pf_putnbr_base(size_t u_nbr, char b, size_t *fla, size_t *ret);
+void		pf_putnbr(long long nbr, size_t *ret);
+void		pf_putnbr_base(unsigned long long unbr, char b, size_t *fla, size_t *ret);
 void		ft_putchar(char c);
 void		pf_putnchar(char c, ssize_t i, size_t *ret);
 int		ft_isupper(int c);
