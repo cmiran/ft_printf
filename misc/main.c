@@ -405,8 +405,8 @@ int	main(void)
 	ft_printf("%.f\n", -127.32435);
 
 	printf("\n99\n");
-	printf("%.7f\ta\n", 1456.45416345);
-	ft_printf("%.7f\ta\n", 1456.45416345);
+	printf("%.25f\ta\n", 1456.45416345);
+	ft_printf("%.25f\ta\n", 1456.45416345);
 
 	printf("\n99\n");
 	printf("%.15f\n\t", 1456.454199988996345);

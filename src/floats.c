@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   doubles.c                                          :+:      :+:    :+:   */
+/*   floats.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/06 19:20:33 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/07 00:03:25 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	pf_putdbl(size_t *fla, long double dnbr, unsigned char len, size_t *ret)
 	}
 }
 
-void		sign_4dbl(size_t *fla, double long dnbr, size_t *ret)
+void	sign_4dbl(size_t *fla, double long dnbr, size_t *ret)
 {
 	if (dnbr < 0)
 	{

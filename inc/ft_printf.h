@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/06 20:20:34 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/07 00:18:41 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <unistd.h>
 
 # include <stdio.h>
+
+
 
 typedef struct s_conversions
 {
@@ -88,9 +90,15 @@ void		binarys(t_env *var, unsigned char b);
 **	src/floats.c
 */
 void		floats(t_env *var, unsigned char b);
+/*
+** void		other_4dbl(size_t *fla, long double dnbr, unsigned char len, size_t *ret);
+** void		sign_4dbl(size_t *fla, double long dnbr, size_t *ret);
+** void		pf_putdbl(size_t *fla, long double dnbr, unsigned char len, size_t *ret);
+*/
+
 
 /*
-**		lib/   by apparition order
+**	lib/   by apparition order
 */
 int		ft_isdigit(int c);
 size_t		pf_atoi(const char *format, size_t i);

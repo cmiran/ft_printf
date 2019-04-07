@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/06 20:33:36 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/07 00:08:24 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
 		*fla++ = 0;
 	conv->nbr = 0;
 	conv->unbr = 0;
+	conv->dnbr = 0.0;
 }
 
 
