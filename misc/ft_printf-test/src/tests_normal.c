@@ -6,7 +6,7 @@
 /*   By: thugo <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 22:17:08 by thugo             #+#    #+#             */
-/*   Updated: 2017/01/27 00:56:12 by thugo            ###   ########.fr       */
+/*   Updated: 2019/04/07 23:56:34 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,9 +305,9 @@ void	normal_tests(void)
 	tests_o();
 	tests_x();
 	tests_u();
-	tests_p();
-	tests_c();
-	tests_s();
+//	tests_p();
+//	tests_c();
+//	tests_s();
 	tests_mod();
 
 	PRINT_TESTS_RESULT("Normal tests")

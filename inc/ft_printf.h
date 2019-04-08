@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 19:23:42 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/08 01:44:19 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <float.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <sysexits.h>
 # include <unistd.h>
 
 # include <stdio.h>

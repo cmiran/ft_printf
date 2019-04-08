@@ -891,6 +891,10 @@ int	main(void)
 	printf("size + minus + plus + prec + hash:%-#+5.0f\n", db);
 	ft_printf("size + minus + plus + prec + hash:%-#+5.0f\n", db);
 
+	printf("\n202\n");
+	printf("%hd\n", INT_MAX);
+	ft_printf("%hd\n", INT_MAX);
+
 	return (0);
 
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 18:05:49 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/08 09:53:49 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,48 +21,39 @@
 
 int	is_f(size_t l, long double *dnbr, va_list ap)
 {
-	if (l && (*dnbr = va_arg(ap, long double)))
-		return (1);
+	if (l)
+		*dnbr = va_arg(ap, long double);
 	else
-	{
 		*dnbr = va_arg(ap, double);
-		return (1);
-	}
-	return (0);
+	return (1);
 }
 
 int	is_ouxX(size_t *fla, unsigned long long *unbr, va_list ap)
 {
-	if (fla[91] && (*unbr = va_arg(ap, unsigned int)))
-		return (*unbr <= UCHAR_MAX);
-	else if (fla['h'] && (*unbr = va_arg(ap, unsigned int)))
-		return (*unbr <= USHRT_MAX);
-	else if (fla['l'] && (*unbr = va_arg(ap, unsigned long)))
-		return (*unbr <= ULONG_MAX);
-	else if (fla[93] && (*unbr = va_arg(ap, unsigned long long)))
-		return (*unbr <= ULLONG_MAX);
+	if (fla[91])
+		*unbr = (unsigned char)va_arg(ap, unsigned int);
+	else if (fla['h'])
+		*unbr = (unsigned short)va_arg(ap, unsigned int);
+	else if (fla['l'])
+		*unbr = va_arg(ap, unsigned long);
+	else if (fla[93])
+		*unbr = va_arg(ap, unsigned long long);
 	else
-	{
 		*unbr = va_arg(ap, unsigned int);
-		return (*unbr <= UINT_MAX);
-	}
-	return (0);
+	return (1);
 }
 
 int	is_bdi(size_t *fla, long long *nbr, va_list ap, char b)
 {
-	if (fla[91] && (*nbr = va_arg(ap, int)))
-		return (*nbr >= SCHAR_MIN && *nbr <= SCHAR_MAX);
-	else if (fla['h'] && (*nbr = va_arg(ap, int)))
-		return (*nbr >= SHRT_MIN && *nbr <= SHRT_MAX);
-	else if (fla['l'] && (*nbr = va_arg(ap, long)))
-		return (*nbr >= LONG_MIN && *nbr <= LONG_MAX );
-	else if ((fla[93] || b == 'b')  && (*nbr = va_arg(ap, long long)))	
-		return (*nbr >= LLONG_MIN && *nbr <= LLONG_MAX);
+	if (fla[91])
+		*nbr = (char)va_arg(ap, int);
+	else if (fla['h'])
+		*nbr = (short)va_arg(ap, int);
+	else if (fla['l'])
+		*nbr = (intmax_t)va_arg(ap, long);
+	else if (fla[93] || b == 'b')
+		*nbr = (intmax_t)va_arg(ap, long long);
 	else
-	{
 		*nbr = va_arg(ap, int);
-		return (*nbr >= INT_MIN && *nbr <= INT_MAX);
-	}
-	return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 18:54:47 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/08 00:42:55 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void		sign(size_t *fla, long long nbr, unsigned char b, size_t *ret)
 	if (nbr < 0)
 	{
 		write(1, "-", 1);
-		(*ret)++;
+		++(*ret);
 	}
 	else if (fla['+'] && !pf_strchr("ouxX", b))
 	{
 		nbr < 0 ? write(1, "-", 1) : write(1, "+", 1);
-		(*ret)++;
+		++(*ret);
 	}
 	else if (fla[' '] && !fla['+'] && !pf_strchr("ouxX", b))
 	{
 		nbr < 0 ? write(1, "-", 1) : write(1, " ", 1);
-		(*ret)++;
+		++(*ret);
 	}
 }
 
@@ -74,7 +74,8 @@ void		dash(size_t *fla, t_conv conv, unsigned char b, size_t *ret)
 		pf_putnchar('0', fla['P'] - len, ret);
 	conv.nbr ? pf_putnbr(conv.nbr, ret) : pf_putnbr_base(conv.unbr, b, fla, ret);
 	pf_putnchar(' ', fla['W'] - (len > fla['P'] ? len : fla['P']) -\
-			((fla['+'] || fla[' '] || conv.nbr < 0) && !pf_strchr("ouxX", b) ? 1 : 0) -\
+			((fla['+'] || fla[' '] || conv.nbr < 0) &&\
+			 	!pf_strchr("ouxX", b) ? 1 : 0) -\
 			(fla['#'] && (b == 'o') ? 1 : 0) -\
 			(fla['#'] && (b == 'x' || b == 'X') ? 2 : 0), ret);
 }
@@ -113,12 +114,12 @@ void		numbers(t_env *var, unsigned char b)
 	if (b == 'd' || b == 'i')
 	{
 		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
-			exit(EXIT_FAILURE);
+			exit(EX_USAGE);
 	}
 	else
 	{
 		if (!is_ouxX(var->fla, &var->conv.unbr, var->ap))
-			exit(EXIT_FAILURE);
+			exit(EX_USAGE);
 	}
 	if (var->fla['#'] && !var->fla['-'] && (b == 'x' || b == 'X'))
 	{

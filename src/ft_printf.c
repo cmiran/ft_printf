@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 00:08:24 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/08 00:08:41 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	ft_printf(const char *format, ...)
 			else
 			{
 				pf_bzero(&*var.fla, 127, &var.conv);
-				!parse(format, &var.i, &*var.fla) ? exit(EXIT_FAILURE) :\
+				!parse(format, &var.i, &*var.fla) ? exit(EX_USAGE) :\
 					f[pf_strchr("cspdiouxXfbn", format[var.i])](&var, format[var.i]);
 			}
 		}

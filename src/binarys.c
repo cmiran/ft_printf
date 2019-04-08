@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   binary.c                                           :+:      :+:    :+:   */
+/*   binarys.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 18:54:20 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/08 00:43:08 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	binarys(t_env *var, unsigned char b)
 
 	if (b == 'b')
 		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
-			exit(EXIT_FAILURE);
+			exit(EX_USAGE);
 	len = pf_nbrlen(var->conv.nbr, 'b');
 	if (var->conv.nbr < 0)
 		len -= 1;

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/07 22:01:59 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/08 00:43:20 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	floats(t_env *var, unsigned char b)
 
 	if (b == 'f')
 		if (!is_f(var->fla['L'], &var->conv.dnbr, var->ap))
-			exit(EXIT_FAILURE);
+			exit(EX_USAGE);
 	len = pf_nbrlen(var->conv.dnbr, 'f');
 	if (!var->fla['.'] && !var->fla['P'])
 		var->fla['P'] = 6;
