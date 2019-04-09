@@ -6,7 +6,7 @@
 #    By: alelievr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/07/15 15:13:38 by alelievr          #+#    #+#              #
-#    Updated: 2018/02/16 19:10:35 by alelievr         ###   ########.fr        #
+#    Updated: 2019/04/09 14:43:39 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC			=	main.cpp				\
 OBJDIR		=	obj
 
 #	Printf library directory
-PRINTFDIR	=	../ft_printf/
+PRINTFDIR	=	../
 
 #	Variables
 LIBFT		=	2	#1 or 0 to include the libft / 2 for autodetct

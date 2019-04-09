@@ -467,8 +467,12 @@ int	main(void)
 	ft_printf("%.f\n", -127.52435);
 
 	printf("\n99\n");
-	printf("%.25f\ta\n", 1456.45416345);
-	ft_printf("%.25f\ta\n", 1456.45416345);
+	printf("%.26f\ta\n", 1456.45416345);
+	ft_printf("%.26f\ta\n", 1456.45416345);
+	printf("%.31f\ta\n", 1456.45416345);
+	ft_printf("%.31f\ta\n", 1456.45416345);
+	printf("%.36f\ta\n", 1456.45416345);
+	ft_printf("%.36f\ta\n", 1456.45416345);
 
 	printf("\n99\n");
 	printf("%.15f\n\t", 1456.454199988996345);
@@ -749,6 +753,8 @@ int	main(void)
 	double		db;
 	db = -12547.58;
 	db = 0;
+//	db = 45.123456789;
+//	db = 12389123798;
 
 	
 	printf("\n167\n");
@@ -886,7 +892,11 @@ int	main(void)
 	printf("\n200\n");
 	printf("size + minus + plus + prec:%-+5.3f\n", db);
 	ft_printf("size + minus + plus + prec:%-+5.3f\n", db);
-	
+		
+	printf("\n200\n");
+	printf("ret : %d\n", printf("size + minus + plus + prec:%-+5.3f\n", db));
+	printf("ret : %d\n", ft_printf("size + minus + plus + prec:%-+5.3f\n", db));
+
 	printf("\n201\n");
 	printf("size + minus + plus + prec + hash:%-#+5.0f\n", db);
 	ft_printf("size + minus + plus + prec + hash:%-#+5.0f\n", db);
@@ -894,6 +904,103 @@ int	main(void)
 	printf("\n202\n");
 	printf("%hd\n", INT_MAX);
 	ft_printf("%hd\n", INT_MAX);
+
+	nb = 0;
+
+	printf("\n203\n");
+	printf("null prec : %+.0da\n", nb);
+	ft_printf("null prec : %+.0da\n", nb);
+
+	printf("\n203\n");
+	printf("null prec : %+da\n", nb);
+	ft_printf("null prec : %+da\n", nb);
+
+	nb = 8;
+
+	printf("\n204\n");
+	printf("null prec : %+.0da\n", nb);
+	ft_printf("null prec : %+.0da\n", nb);
+	
+	nb = -1234212;
+
+	printf("\n205\n");
+	printf("null prec : %+.0da\n", nb);
+	ft_printf("null prec : %+.0da\n", nb);
+
+	nb = 0;
+
+	printf("\n206\n");
+	printf("null prec : %.0da\n", nb);
+	ft_printf("null prec : %.0da\n", nb);
+	
+	nb = 8;
+
+	printf("\n207\n");
+	printf("null prec : %.0da\n", nb);
+	ft_printf("null prec : %.0da\n", nb);
+	
+	nb = -1234212;
+
+	printf("\n208\n");
+	printf("null prec : %.0da\n", nb);
+	ft_printf("null prec : %.0da\n", nb);
+
+	
+	nb = 0;
+
+	printf("\n209\n");
+	printf("null prec : %+.0da\n", nb);
+	ft_printf("null prec : %+.0da\n", nb);
+
+	printf("\n210\n");
+	printf("null prec : %+.da\n", nb);
+	ft_printf("null prec : %+.da\n", nb);
+
+	printf("\n211\n");
+	printf("null prec : %.0da\n", nb);
+	ft_printf("null prec : %.0da\n", nb);
+
+	printf("\n212\n");
+	printf("null prec : %012.0da\n", nb);
+	ft_printf("null prec : %012.0da\n", nb);
+
+	printf("\n213\n");
+	printf("null prec : %-.0da\n", nb);
+	ft_printf("null prec : %-.0da\n", nb);
+
+	printf("\n214\n");
+	printf("null prec : %-12.0da\n", nb);
+	ft_printf("null prec : %-12.0da\n", nb);
+
+	nb = 0;
+
+	printf("\n214\n");
+	printf("null prec : %.0ua\n", nb);
+	ft_printf("null prec : %.0ua\n", nb);
+	
+	nb = 8;
+
+	printf("\n215\n");
+	printf("null prec : %.0ua\n", nb);
+	ft_printf("null prec : %.0ua\n", nb);
+	
+	nb = -1234212;
+
+	printf("\n216\n");
+	printf("null prec : %.0ua\n", nb);
+	ft_printf("null prec : %.0ua\n", nb);
+	
+	nb = -1;
+
+	printf("\n217\n");
+	printf("null prec : %.0ua\n", nb);
+	ft_printf("null prec : %.0ua\n", nb);
+	
+	nb = 12354;
+
+	printf("\n218\n");
+	printf("null prec : %.0ua\n", nb);
+	ft_printf("null prec : %.0ua\n", nb);
 
 	return (0);
 

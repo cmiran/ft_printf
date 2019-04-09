@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/08 01:44:19 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/09 18:55:35 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ typedef struct s_printf_environment
 {
 	va_list		ap;
 	size_t		i;
-	size_t		ret;
 	size_t		fla[128];
 /*
-**	fla['hh'] = fla[91]
-**	fla['ll'] = fla[93]
+**	fla['hh'] = 	fla[91]
+**	fla['ll'] = 	fla[93]
+**	nbr lenght =	fla['N']
+**	float marker =	fla['F']
+**	return value =	fla['R']
 */
 	t_conv		conv;
 }		t_env;
@@ -70,7 +72,7 @@ int		is_f(size_t l, long double *dnbr, va_list ap);
 ** 	src/numbers.c
 */
 void		numbers(t_env *var, unsigned char i);
-unsigned int	hash(unsigned long long unbr, unsigned char b, size_t *fla, size_t *ret);
+unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b);
 /*
 ** void		dash(size_t *fla, long long nbr, ssize_t len);
 ** void		zer0(size_t *fla, long long nbr, ssize_t len);
@@ -108,8 +110,8 @@ unsigned char	pf_strchr(const char *s, int c);
 size_t		pf_nbrlen(long long nbr, char b);
 unsigned char	pf_unbrlen(unsigned long long unbr, char b);
 unsigned char	get_base(char c);
-void		pf_putnbr(long long nbr, size_t *ret);
-void		pf_putnbr_base(unsigned long long unbr, char b, size_t *fla, size_t *ret);
+void		pf_putnbr(long long nbr, size_t *fla);
+void		pf_putnbr_base(unsigned long long unbr, char b, size_t *fla);
 void		ft_putchar(char c);
 void		pf_putnchar(char c, ssize_t i, size_t *ret);
 int		ft_isupper(int c);

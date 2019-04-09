@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/08 00:08:41 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/09 18:50:52 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
 void	init_env(t_env *var, t_fptr *f)
 {
 	var->i = 0;
-	var->ret = 0;
 //	f['c'] = &
 //	f['s'] = &
 //	f['p'] = &;
@@ -106,10 +105,10 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			write(1, &format[var.i], 1);
-			var.ret++;
+			var.fla['R']++;
 		}
 		++var.i;
 	}
 	va_end(var.ap);
-	return (var.ret);
+	return (var.fla['R']);
 }

@@ -6,84 +6,80 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/08 00:43:08 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/09 18:47:40 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	pf_putbin(size_t *fla, long long nbr, unsigned char len, size_t *ret)
+void	pf_putbin(size_t *fla, long long nbr)
 {
 	unsigned char	k;
 
 	if (fla['0'])
-		len = 32;
+		fla['N'] = 32;
 	else if (fla['#'] || nbr < 0)
 	{
-		len % 4 == 0 ? len += 1 : len;
-		while (len)
+		fla['N'] % 4 == 0 ? fla['N'] += 1 : fla['N'];
+		while (fla['N'])
 		{
-			if (len % 4 == 0)
+			if (fla['N'] % 4 == 0)
 				break ;
-			len++;
+			fla['N']++;
 		}
 	}
-	*ret += len;
-	while (len--)
+	fla['R'] += fla['N'];
+	while (fla['N']--)
 	{
-		k = nbr >> len;
+		k = nbr >> fla['N'];
 		k & 1 ? write(1, "1", 1) : write(1, "0", 1);
-		if (fla['#'] && len % 4 == 0 && len != 0)
+		if (fla['#'] && fla['N'] % 4 == 0 && fla['N'] != 0)
 		{
 			write(1, " ", 1);
-			(*ret)++;
+			fla['R']++;
 		}
 	}
 }
 
-void	other_4bin(size_t *fla, long long nbr, unsigned char len, size_t *ret)
+void	other_4bin(size_t *fla, long long nbr)
 {
 	if (!fla['.'])
 	{
 		if (fla['W'] && !fla['#'])
 			pf_putnchar(' ', fla['W'] -\
-			(len + fla['P'] <= 32 ? len + fla['P'] : len), ret);
+			(fla['N'] + fla['P'] <= 32 ? fla['N'] + fla['P'] : fla['N']), &fla['R']);
 	}
-	else if (fla['P'] > len && fla['P'] + len < 32)
-		pf_putbin(fla, nbr, fla['P'], ret);
+	else if (fla['P'] > fla['N'] && fla['P'] + fla['N'] < 32)
+		pf_putbin(fla, nbr);
 	else
 	{
-		pf_putbin(fla, nbr, len, ret);
-		fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - fla['P'] - len, ret) :\
-			pf_putnchar(' ', fla['W'] - len, ret);
+		pf_putbin(fla, nbr);
+		fla['P'] + fla['N'] < 32 ? pf_putnchar(' ', fla['W'] - fla['P'] - fla['N'], &fla['R']) :\
+			pf_putnchar(' ', fla['W'] - fla['N'], &fla['R']);
 		return ;
 	}
-	pf_putbin(fla, nbr, len, ret);
+	pf_putbin(fla, nbr);
 }
 
-void	dash_4bin(size_t *fla, long long nbr, unsigned char len, size_t *ret)
+void	dash_4bin(size_t *fla, long long nbr)
 {
-	if (fla['P'] > len && fla['P'] + len <= 32)
- 		pf_putbin(fla, nbr, fla['P'], ret);
+	if (fla['P'] > fla['N'] && fla['P'] + fla['N'] <= 32)
+ 		pf_putbin(&*fla, nbr);
 	else
-		pf_putbin(fla, nbr, len, ret);
+		pf_putbin(&*fla, nbr);
 	if (!fla['#'])
-		fla['P'] + len < 32 ? pf_putnchar(' ', fla['W'] - len, ret) :\
-			pf_putnchar(' ', fla['W'] + fla['P'], ret);
+		fla['P'] + fla['N'] < 32 ? pf_putnchar(' ', fla['W'] - fla['N'], &fla['R']) :\
+			pf_putnchar(' ', fla['W'] + fla['P'], &fla['R']);
 }
 
 void	binarys(t_env *var, unsigned char b)
 {
-	unsigned char	len;
-
 	if (b == 'b')
 		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
 			exit(EX_USAGE);
-	len = pf_nbrlen(var->conv.nbr, 'b');
-	if (var->conv.nbr < 0)
-		len -= 1;
+	var->fla['N'] = pf_nbrlen(var->conv.nbr, 'b');
 	if (var->fla['-'])
-		dash_4bin(var->fla, var->conv.nbr, len, &var->ret);
+		dash_4bin(&*var->fla, var->conv.nbr);
 	else
-		other_4bin(var->fla, var->conv.nbr, len, &var->ret);
+		other_4bin(&*var->fla, var->conv.nbr);
 }
