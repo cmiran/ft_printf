@@ -1002,6 +1002,316 @@ int	main(void)
 	printf("null prec : %.0ua\n", nb);
 	ft_printf("null prec : %.0ua\n", nb);
 
-	return (0);
 
+	printf("\n219\n");
+	db = 0;
+	printf("null prec : %+.0fa\n", db);
+	printf("%d\n", printf("null prec : %+.0fa\n", db));
+	ft_printf("null prec : %+.0fa\n", db);
+	printf("%d\n", ft_printf("null prec : %+.0fa\n", db));
+
+
+	printf("\n220\n");
+	db = 12.5;
+	printf("null prec : %+.0fa\n", db);
+	ft_printf("null prec : %+.0fa\n", db);
+
+	printf("\n221\n");
+	db = -25632.2541;
+	printf( "null prec : %+.0fa\n", db);
+	ft_printf("null prec : %+.0fa\n", db);
+
+	printf("\n222\n");
+	db = -1.0123;
+	printf("null prec : %+.0fa\n", db);
+	ft_printf("null prec : %+.0fa\n", db);
+
+	printf("\n223\n");
+	db = 12354.569874;
+	printf("null prec : %+.0fa\n", db);
+	ft_printf("null prec : %+.0fa\n", db);
+	
+	nb = 0;
+
+	printf("\n224\n");
+	printf("null prec : %.0xa\n", nb);
+	ft_printf("null prec : %.0xa\n", nb);
+
+	printf("\n225\n");
+	printf("null prec : %.xa\n", nb);
+	ft_printf("null prec : %.xa\n", nb);
+
+	printf("\n226\n");
+	printf("null prec : %12.0xa\n", nb);
+	ft_printf("null prec : %12.0xa\n", nb);
+
+	printf("\n227\n");
+	printf("null prec : %-5.xa\n", nb);
+	ft_printf("null prec : %-5.xa\n", nb);
+
+
+	printf("\n228\n");
+	printf("null prec : %#.0xa\n", nb);
+	ft_printf("null prec : %#.0xa\n", nb);
+
+	printf("\n229\n");
+	printf("null prec : %#.xa\n", nb);
+	ft_printf("null prec : %#.xa\n", nb);
+
+	printf("\n230\n");
+	printf("null prec : %#12.0xa\n", nb);
+	ft_printf("null prec : %#12.0xa\n", nb);
+
+	printf("\n231\n");
+	printf("null prec : %#-5.xa\n", nb);
+	ft_printf("null prec : %#-5.xa\n", nb);
+
+	nb = 0;
+
+	printf("\n232\n");
+	printf("null prec : %.0Xa\n", nb);
+	ft_printf("null prec : %.0Xa\n", nb);
+
+	printf("\n233\n");
+	printf("null prec : %.Xa\n", nb);
+	ft_printf("null prec : %.Xa\n", nb);
+
+	printf("\n234\n");
+	printf("null prec : %12.0Xa\n", nb);
+	ft_printf("null prec : %12.0Xa\n", nb);
+
+	printf("\n235\n");
+	printf("null prec : %-5.Xa\n", nb);
+	ft_printf( "null prec : %-5.Xa\n", nb);
+
+
+	printf("\n236\n");
+	printf("null prec : %#.0Xa\n", nb);
+	ft_printf("null prec : %#.0Xa\n", nb);
+
+	printf("\n237\n");
+	printf("null prec : %#.Xa\n", nb);
+	ft_printf("null prec : %#.Xa\n", nb);
+
+	printf("\n238\n");
+	printf("null prec : %#12.0Xa\n", nb);
+	ft_printf("null prec : %#12.0Xa\n", nb);
+
+	printf("\n239\n");
+	printf("null prec : %#-5.Xa\n", nb);
+	ft_printf("null prec : %#-5.Xa\n", nb);
+
+	nb = 0;
+
+	printf("\n240\n");
+	printf("null prec : %.0oa\n", nb);
+	ft_printf("null prec : %.0oa\n", nb);
+
+	printf("\n241\n");
+	printf("null prec : %.oa\n", nb);
+	ft_printf("null prec : %.oa\n", nb);
+
+	printf("\n242\n");
+	printf("null prec : %12.0oa\n", nb);
+	ft_printf("null prec : %12.0oa\n", nb);
+
+	printf("\n243\n");
+	printf("null prec : %-5.oa\n", nb);
+	ft_printf( "null prec : %-5.oa\n", nb);
+
+
+	printf("\n244\n");
+	printf("null prec : %#.0oa\n", nb);
+	ft_printf("null prec : %#.0oa\n", nb);
+
+	printf("\n245\n");
+	printf("null prec : %#.oa\n", nb);
+	ft_printf("null prec : %#.oa\n", nb);
+
+	printf("\n246\n");
+	printf("null prec : %#12.0oa\n", nb);
+	ft_printf("null prec : %#12.0oa\n", nb);
+
+	printf("\n247\n");
+	printf("null prec : %#-5.oa\n", nb);
+	ft_printf("null prec : %#-5.oa\n", nb);
+
+	nb = 21;
+
+	printf("\n248\n");
+	printf("null prec : %.0xa\n", nb);
+	ft_printf("null prec : %.0xa\n", nb);
+
+	printf("\n249\n");
+	printf("null prec : %.xa\n", nb);
+	ft_printf("null prec : %.xa\n", nb);
+
+	printf("\n250\n");
+	printf("null prec : %12.0xa\n", nb);
+	ft_printf("null prec : %12.0xa\n", nb);
+
+	printf("\n251\n");
+	printf("null prec : %-5.xa\n", nb);
+	ft_printf("null prec : %-5.xa\n", nb);
+
+	nb = 21;
+
+	printf("\n252\n");
+	printf("null prec : %.0Xa\n", nb);
+	ft_printf("null prec : %.0Xa\n", nb);
+
+	printf("\n253\n");
+	printf("null prec : %.Xa\n", nb);
+	ft_printf("null prec : %.Xa\n", nb);
+
+	printf("\n254\n");
+	printf("null prec : %12.0Xa\n", nb);
+	ft_printf("null prec : %12.0Xa\n", nb);
+
+	printf("\n255\n");
+	printf("null prec : %-5.Xa\n", nb);
+	ft_printf( "null prec : %-5.Xa\n", nb);
+
+	nb = 21;
+
+	printf("\n256\n");
+	printf("null prec : %.0oa\n", nb);
+	ft_printf("null prec : %.0oa\n", nb);
+
+	printf("\n257\n");
+	printf("null prec : %.oa\n", nb);
+	ft_printf("null prec : %.oa\n", nb);
+
+	printf("\n258\n");
+	printf("null prec : %12.0oa\n", nb);
+	ft_printf("null prec : %12.0oa\n", nb);
+
+	printf("\n259\n");
+	printf("null prec : %-5.oa\n", nb);
+	ft_printf( "null prec : %-5.oa\n", nb);
+
+	nb = -543;
+
+	printf("\n260\n");
+	printf("null prec : %.0xa\n", nb);
+	ft_printf("null prec : %.0xa\n", nb);
+
+	printf("\n261\n");
+	printf("null prec : %.xa\n", nb);
+	ft_printf("null prec : %.xa\n", nb);
+
+	printf("\n262\n");
+	printf("null prec : %12.0xa\n", nb);
+	ft_printf("null prec : %12.0xa\n", nb);
+
+	printf("\n263\n");
+	printf("null prec : %-5.xa\n", nb);
+	ft_printf("null prec : %-5.xa\n", nb);
+
+	nb = -543;
+
+	printf("\n264\n");
+	printf("null prec : %.0Xa\n", nb);
+	ft_printf("null prec : %.0Xa\n", nb);
+
+	printf("\n265\n");
+	printf("null prec : %.Xa\n", nb);
+	ft_printf("null prec : %.Xa\n", nb);
+
+	printf("\n266\n");
+	printf("null prec : %12.0Xa\n", nb);
+	ft_printf("null prec : %12.0Xa\n", nb);
+
+	printf("\n267\n");
+	printf("null prec : %-5.Xa\n", nb);
+	ft_printf( "null prec : %-5.Xa\n", nb);
+
+	nb = -543;
+
+	printf("\n268\n");
+	printf("null prec : %.0oa\n", nb);
+	ft_printf("null prec : %.0oa\n", nb);
+
+	printf("\n269\n");
+	printf("null prec : %.oa\n", nb);
+	ft_printf("null prec : %.oa\n", nb);
+
+	printf("\n270\n");
+	printf("null prec : %12.0oa\n", nb);
+	ft_printf("null prec : %12.0oa\n", nb);
+
+	printf("\n271\n");
+	printf("null prec : %-5.oa\n", nb);
+	ft_printf( "null prec : %-5.oa\n", nb);
+
+	nb = 0;
+	printf("\n272\n");
+	printf("test o:%oa\n", nb);
+	ft_printf("test o:%oa\n", nb);
+
+	printf("\n273\n");
+	printf("hash:%#oa\n", nb);
+	ft_printf("hash:%#oa\n", nb);
+
+	printf("\n274\n");
+	printf("precision / grande:%.5oa\n", nb);
+	ft_printf("precision / grande:%.5oa\n", nb);
+
+	printf("\n275\n");
+	printf("Prec + hash / grande:%#.5oa\n", nb);
+	ft_printf("Prec + hash / grande:%#.5oa\n", nb);
+
+	printf("\n276\n");
+	printf("Prec + hash / petite:%#.1oa\n", nb);
+	ft_printf("Prec + hash / petite:%#.1oa\n", nb);
+
+	printf("\n277\n");
+	printf("Prec + 0:%0.5oa\n", nb);
+	ft_printf("Prec + 0:%0.5oa\n", nb);
+
+	printf("\n278\n");
+	printf("Prec + minus:%-.5oa\n", nb);
+	ft_printf("Prec + minus:%-.5oa\n", nb);
+
+	printf("\n279\n");
+	printf("Size:%5oa\n", nb);
+	ft_printf("Size:%5oa\n", nb);
+
+	printf("\n280\n");
+	printf("size + prec:%7.3oa\n", nb);
+	ft_printf("size + prec:%7.3oa\n", nb);
+
+	printf("\n281\n");
+	printf("size + minus:%-5oa\n", nb);
+	ft_printf("size + minus:%-5oa\n", nb);
+
+	printf("\n282\n");
+	printf("size + zero:%05oa\n", nb);
+	ft_printf("size + zero:%05oa\n", nb);
+
+	printf("\n283\n");
+	printf("size + zero + hash:%#05oa\n", nb);
+	ft_printf("size + zero + hash:%#05oa\n", nb);
+
+	printf("\n284\n");
+	printf("size + zero + prec:%05.3oa\n", nb);
+	ft_printf("size + zero + prec:%05.3oa\n", nb);
+
+	printf("\n285\n");
+	printf("size + minus + prec:%-5.3oa\n", nb);
+	ft_printf("size + minus + prec:%-5.3oa\n", nb);
+
+	printf("\n286\n");
+	printf("size + hash + zero + prec:%#05.3oa\n", nb);
+	ft_printf("size + hash + zero + prec:%#05.3oa\n", nb);
+
+	printf("\n287\n");
+	printf("size + hash + zero + prec:%0#5.3oa\n", nb);
+	ft_printf("size + hash + zero + prec:%0#5.3oa\n", nb);
+
+	printf("\n288\n");
+	printf("size + hash + minus + prec:%-#7.3oa\n", nb);
+	ft_printf("size + hash + minus + prec:%-#7.3oa\n", nb);
+
+	return (0);
 }

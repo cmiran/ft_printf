@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/10 00:04:13 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/11 16:07:45 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	pf_putdbl(size_t *fla, long double dnbr)
 {
 	size_t	i;
 
-	if (fla['.'] && !fla['P'] && (dnbr - (long)dnbr) * 10 > 4)
+	if (fla['.'] && !fla['P'] && (dnbr - (long)dnbr) * 10 > 5)
 		pf_putnbr(dnbr < 0 ? dnbr - 1 : dnbr + 1, &*fla);
 	else
 		pf_putnbr(dnbr, &*fla);
