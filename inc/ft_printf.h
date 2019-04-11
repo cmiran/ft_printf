@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/09 18:55:35 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/10 01:32:20 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ typedef struct s_printf_environment
 	size_t		i;
 	size_t		fla[128];
 /*
-**	fla['hh'] = 	fla[91]
-**	fla['ll'] = 	fla[93]
-**	nbr lenght =	fla['N']
-**	float marker =	fla['F']
-**	return value =	fla['R']
+**	fla['hh']	fla[91]
+**	fla['ll']	fla[93]
+**	width		fla['W']
+**	precision	fla['P']
+**	nbr lenght	fla['N']
+**	float marker	fla['F']
+**	return value	fla['R']
 */
 	t_conv		conv;
 }		t_env;

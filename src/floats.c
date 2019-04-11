@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/09 18:56:34 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/10 00:04:13 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ void	other_4dbl(size_t *fla, long double dnbr)
 			sign_4dbl(&*fla, dnbr);
 		pf_putnchar((fla['0'] ? '0' : ' '), fla['W'] - fla['N']\
 				- ((fla['+'] || fla[' ']) || dnbr < 0 ? 1 : 0)\
-				- (fla['#'] || (ABS(dnbr - (long)dnbr) > 0 ? 1 : 0)), &fla['R']);
+				- (fla['#'] || (ABS(dnbr - (long)dnbr) > 0 ? 1 : 0))\
+				, &fla['R']);
 		if (!fla['0'])
 			sign_4dbl(&*fla, dnbr);
 	}
@@ -76,7 +77,8 @@ void	other_4dbl(size_t *fla, long double dnbr)
 	{
 		pf_putnchar(' ', fla['W'] - fla['N'] - fla['P']\
 				- ((fla['+'] || fla[' ']) || dnbr < 0 ? 1 : 0)\
-				- (fla['#'] || (ABS(dnbr - (long)dnbr) >= 0 ? 1 : 0)), &fla['R']);
+				- (fla['#'] || (ABS(dnbr - (long)dnbr) >= 0 ? 1 : 0))\
+				, &fla['R']);
 		sign_4dbl(&*fla, dnbr);
 	}
 	pf_putdbl(&*fla, ABS(dnbr));
@@ -85,6 +87,9 @@ void	other_4dbl(size_t *fla, long double dnbr)
 void	floats(t_env *var, unsigned char b)
 {
 	var->fla['F'] = 1;
+/*
+**	^ float maker used later in pf_putnbr.c
+*/
 	if (b == 'f')
 		if (!is_f(var->fla['L'], &var->conv.dnbr, var->ap))
 			exit(EX_USAGE);

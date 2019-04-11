@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/09 18:50:52 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/10 00:21:14 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	parse(const char *format, size_t *i, size_t *fla)
 	{
 		if (pf_strchr("#0-+ ", format[*i]))
 			++fla[pf_strchr("#0-+ ", format[*i])];
-		else if (ft_isdigit(format[*i]))
+		else if (ft_isdigit(format[*i]) && !fla['W'])
 		{
 			fla['W'] = pf_atoi(format, *i);
 			*i += ft_nbrlen(fla['W']) - 1;
 		}
-		else if (format[*i] == '.')
+		else if (format[*i] == '.' && !fla['.'])
 		{
 			++fla['.'];
 			fla['P'] = pf_atoi(format, *i + 1);
