@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/11 17:55:28 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/12 16:29:58 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,12 @@ int	parse(const char *format, size_t *i, size_t *fla)
 
 void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
 {
+	ssize_t	tmp;
+
+	tmp = fla['R'];
 	while (len--)
 		*fla++ = 0;
+	fla['R'] += tmp;
 	conv->nbr = 0;
 	conv->unbr = 0;
 	conv->dnbr = 0.0;

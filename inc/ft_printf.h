@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/11 21:42:47 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/12 16:00:35 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_printf_environment
 {
 	va_list		ap;
 	size_t		i;
-	size_t		f[128];
+	size_t		fla[128];
 /*
 **	fla['hh']	fla[91]
 **	fla['ll']	fla[93]
