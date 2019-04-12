@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/11 18:45:28 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/11 21:02:30 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void		other(size_t *fla, t_conv conv, unsigned char b)
 		pf_putnchar(fla['0'] ? '0' : ' ', fla['W'] - fla['N']\
 				- ((fla['+'] || fla[' '] || conv.nbr < 0)\
 					 && !pf_strchr("ouxX", b) ? 1 : 0)\
-				- (fla['#'] && b == 'o'/* && conv.unbr*/ ? 1 : 0), &fla['R']);
+				- (fla['#'] && b == 'o' && conv.unbr ? 1 : 0)
+				/* ? hash(&*fla, conv.unbr, b) : 0)*/, &fla['R']);
 		if (!fla['0'])
 			sign(&*fla, conv.nbr, b);
 	}
@@ -49,7 +50,7 @@ void		other(size_t *fla, t_conv conv, unsigned char b)
 		pf_putnchar(' ', fla['W'] - (fla['N'] > fla['P'] ? fla['N'] : fla['P'])\
 				- ((fla['+'] || fla[' '] || conv.nbr < 0)\
 				 	&& !pf_strchr("ouxX", b) ? 1 : 0)\
-				- (fla['#'] && b == 'o' && !conv.unbr ? 1 : 0), &fla['R']);
+				- (fla['#'] && b == 'o' && conv.unbr ? 1 : 0), &fla['R']);
 		sign(&*fla, conv.nbr, b);
 		pf_putnchar('0', fla['P'] - fla['N'], &fla['R']);
 	}
@@ -81,7 +82,7 @@ void		dash(size_t *fla, t_conv conv, unsigned char b)
 	pf_putnchar(' ', fla['W'] - (fla['N'] > fla['P'] ? fla['N'] : fla['P'])\
 			- ((fla['+'] || fla[' '] || conv.nbr < 0)\
 			 	&& !pf_strchr("ouxX", b) ? 1 : 0)\
-			- (fla['#'] && (b == 'o') ? 1 : 0)\
+			- (fla['#'] && (b == 'o') && conv.unbr ? 1 : 0)\
 			- (fla['#'] && (b == 'x' || b == 'X')\
 				&& conv.unbr > 0 ? 2 : 0), &fla['R']);
 }
@@ -89,7 +90,10 @@ void		dash(size_t *fla, t_conv conv, unsigned char b)
 unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b)
 {
 	if (b == 'o')
+//	{
 		pf_putnchar('0', 1 - (fla['P'] > fla['N'] ? 1 : 0), &fla['R']);
+/*		return (1);
+	}*/
 	else
 	{
 		if (!fla['P'])

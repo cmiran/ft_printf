@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/11 16:07:45 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/11 21:15:18 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	pf_putdbl(size_t *fla, long double dnbr)
 {
 	size_t	i;
 
-	if (fla['.'] && !fla['P'] && (dnbr - (long)dnbr) * 10 > 5)
-		pf_putnbr(dnbr < 0 ? dnbr - 1 : dnbr + 1, &*fla);
+	if (fla['.'] && !fla['P'] && (dnbr - (long)dnbr) * 10 > 5.)
+		pf_putnbr(dnbr < 0 ? dnbr - 1. : dnbr + 1., &*fla);
 	else
 		pf_putnbr(dnbr, &*fla);
 	if (fla['#'] || fla['P'])
@@ -28,14 +28,14 @@ void	pf_putdbl(size_t *fla, long double dnbr)
 	i = 0;
 	while (i++ < fla['P'])
 	{
-		dnbr = (dnbr - (long)dnbr) * 10;
-		if (fla['P'] + fla['N'] < (dnbr < 0 || fla['+'] || fla[' '] ? 19 : 18)\
-				&& (dnbr - (int)dnbr) * 10 > 8)
-			(int)dnbr == 9 ? pf_putnbr(dnbr - 9, &*fla) :\
-				   pf_putnbr(dnbr + 1, &*fla);
-		else if (i == fla['P'] && (dnbr - (int)dnbr) * 10 > 5)
-			(int)dnbr == 9 ? pf_putnbr(dnbr - 9, &*fla) :\
-				   pf_putnbr(dnbr + 1, &*fla);
+		dnbr = (dnbr - (long)dnbr) * 10.;
+		if (fla['P'] + fla['N'] < (dnbr < .0 || fla['+'] || fla[' '] ? 19 : 18)\
+				&& (dnbr - (int)dnbr) * 10 > 8.)
+			(int)dnbr == 9 ? pf_putnbr(dnbr - 9., &*fla) :\
+				   pf_putnbr(dnbr + 1., &*fla);
+		else if (i == fla['P'] && (dnbr - (int)dnbr) * 10 > 5.)
+			(int)dnbr == 9 ? pf_putnbr(dnbr - 9., &*fla) :\
+				   pf_putnbr(dnbr + 1., &*fla);
 		else
 			pf_putnbr(dnbr, &*fla);
 	}
@@ -43,19 +43,19 @@ void	pf_putdbl(size_t *fla, long double dnbr)
 
 void	sign_4dbl(size_t *fla, long double dnbr)
 {
-	if (dnbr < 0)
+	if (dnbr < .0)
 	{
 		write(1, "-", 1);
 		fla['R']++;
 	}
 	else if (fla['+'])
 	{
-		dnbr < 0 ? write(1, "-", 1) : write(1, "+", 1);
+		dnbr < .0 ? write(1, "-", 1) : write(1, "+", 1);
 		fla['R']++;
 	}
 	else if (fla[' '] && !fla['+'])
 	{
-		dnbr < 0 ? write(1, "-", 1) : write(1, " ", 1);
+		dnbr < .0 ? write(1, "-", 1) : write(1, " ", 1);
 		fla['R']++;
 	}
 }
@@ -67,8 +67,8 @@ void	other_4dbl(size_t *fla, long double dnbr)
 		if (fla['0'])
 			sign_4dbl(&*fla, dnbr);
 		pf_putnchar((fla['0'] ? '0' : ' '), fla['W'] - fla['N']\
-				- ((fla['+'] || fla[' ']) || dnbr < 0 ? 1 : 0)\
-				- (fla['#'] || (ABS(dnbr - (long)dnbr) > 0 ? 1 : 0))\
+				- ((fla['+'] || fla[' ']) || dnbr < .0 ? 1 : 0)\
+				- (fla['#'] || (ABS(dnbr - (long)dnbr) > .0 ? 1 : 0))\
 				, &fla['R']);
 		if (!fla['0'])
 			sign_4dbl(&*fla, dnbr);
@@ -76,8 +76,8 @@ void	other_4dbl(size_t *fla, long double dnbr)
 	else
 	{
 		pf_putnchar(' ', fla['W'] - fla['N'] - fla['P']\
-				- ((fla['+'] || fla[' ']) || dnbr < 0 ? 1 : 0)\
-				- (fla['#'] || (ABS(dnbr - (long)dnbr) >= 0 ? 1 : 0))\
+				- ((fla['+'] || fla[' ']) || dnbr < .0 ? 1 : 0)\
+				- (fla['#'] || (ABS(dnbr - (long)dnbr) >= .0 ? 1 : 0))\
 				, &fla['R']);
 		sign_4dbl(&*fla, dnbr);
 	}
@@ -101,9 +101,9 @@ void	floats(t_env *var, unsigned char b)
 		sign_4dbl(var->fla, var->conv.dnbr);
 		pf_putdbl(var->fla, ABS(var->conv.dnbr));
 		pf_putnchar(' ', var->fla['W'] - var->fla['N'] - var->fla['P']\
-			- ((var->fla['+'] || var->fla[' ']) || var->conv.dnbr < 0 ? 1 : 0)\
+			- (var->fla['+'] || var->fla[' '] || var->conv.dnbr < .0 ? 1 : 0)\
 			- (var->fla['#'] ||\
-				ABS(var->conv.dnbr - (long)var->conv.dnbr) > LDBL_EPSILON ? 1 : 0),\
+				ABS(var->conv.dnbr - (long)var->conv.dnbr) > .0 ? 1 : 0),\
 			&var->fla['R']);
 	}
 	else

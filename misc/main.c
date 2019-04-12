@@ -343,7 +343,7 @@ int	main(void)
 	ft_printf("%#+b Check\n", -2546);
 
 	printf("\n85\n");
-	ft_printf("%#+.64b Check\n", 62990);
+	ft_printf("%#+.6333b Check\n", 62990);
 
 	printf("\n86\n");
 	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %#+-o\n\n", (unsigned long)3213, 431, 4314);
