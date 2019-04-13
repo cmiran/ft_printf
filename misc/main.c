@@ -2,6 +2,7 @@
 
 int	main(void)
 {
+/*
 	ft_printf("Christopher Nolan\n");
 	ft_printf("%%%%\n");
 	
@@ -748,163 +749,164 @@ int	main(void)
 	printf("\n166\n");
 	printf("%050.d\n", nb);
 	ft_printf("%050.d\n", nb);
-
+*/
 
 	double		db;
 	db = -12547.58;
 	db = 0;
 	db = 45.123456789;
 //	db = 12389123798;
+//	db = -0.000;
 
 	
 	printf("\n167\n");
-	printf("space:% f\n", db);
-	ft_printf("space:% f\n", db);
+	printf("space:% fa\n", db);
+	ft_printf("space:% fa\n", db);
 	
 	printf("\n168\n");
-	printf("plus:%+f\n", db);
-	ft_printf("plus:%+f\n", db);
+	printf("plus:%+fa\n", db);
+	ft_printf("plus:%+fa\n", db);
 	
 	printf("\n169\n");
-	printf("hash:%#f\n", db);
-	ft_printf("hash:%#f\n", db);
+	printf("hash:%#fa\n", db);
+	ft_printf("hash:%#fa\n", db);
 	
 	printf("\n170\n");
-	printf("precision:%.2f\n", db);
-	ft_printf("precision:%.2f\n", db);
+	printf("precision:%.2fa\n", db);
+	ft_printf("precision:%.2fa\n", db);
 	
 	printf("\n171\n");
-	printf("big prec:%.14f\n", db);
-	ft_printf("big prec:%.14f\n", db);
+	printf("big prec:%.14fa\n", db);
+	ft_printf("big prec:%.14fa\n", db);
 	
 	printf("\n172\n");
-	printf("precision + hash:%#.0f\n", db);
-	ft_printf("precision + hash:%#.0f\n", db);
+	printf("precision + hash:%#.0fa\n", db);
+	ft_printf("precision + hash:%#.0fa\n", db);
 	
 	printf("\n173\n");
-	printf("space + prec:% .5f\n", db);
-	ft_printf("space + prec:% .5f\n", db);
+	printf("space + prec:% .5fa\n", db);
+	ft_printf("space + prec:% .5fa\n", db);
 	
 	printf("\n174\n");
-	printf("space + prec + hash:%# .0f\n", db);
-	ft_printf("space + prec + hash:%# .0f\n", db);
+	printf("space + prec + hash:%# .0fa\n", db);
+	ft_printf("space + prec + hash:%# .0fa\n", db);
 	
 	printf("\n175\n");
-	printf("space + prec + hash:% #.0f\n", db);
-	ft_printf("space + prec + hash:% #.0f\n", db);
+	printf("space + prec + hash:% #.0fa\n", db);
+	ft_printf("space + prec + hash:% #.0fa\n", db);
 	
 	printf("\n176\n");
-	printf("Plus + prec / grande:%+.5f\n", db);
-	ft_printf("Plus + prec / grande:%+.5f\n", db);
+	printf("Plus + prec / grande:%+.5fa\n", db);
+	ft_printf("Plus + prec / grande:%+.5fa\n", db);
 	
 	printf("\n177\n");
-	printf("Plus + prec / petite:%+.0f\n", db);
-	ft_printf("Plus + prec / petite:%+.0f\n", db);
+	printf("Plus + prec / petite:%+.0fa\n", db);
+	ft_printf("Plus + prec / petite:%+.0fa\n", db);
 	
 	printf("\n178\n");
-	printf("Plus + prec + hash:%#+.0f\n", db);
-	ft_printf("Plus + prec + hash:%#+.0f\n", db);
+	printf("Plus + prec + hash:%#+.0fa\n", db);
+	ft_printf("Plus + prec + hash:%#+.0fa\n", db);
 	
 	printf("\n179\n");
-	printf("Prec + 0:%0.5f\n", db);
-	ft_printf("Prec + 0:%0.5f\n", db);
+	printf("Prec + 0:%0.5fa\n", db);
+	ft_printf("Prec + 0:%0.5fa\n", db);
 	
 	printf("\n180\n");
-	printf("Prec + minus:%-.5f\n", db);
-	ft_printf("Prec + minus:%-.5f\n", db);
+	printf("Prec + minus:%-.5fa\n", db);
+	ft_printf("Prec + minus:%-.5fa\n", db);
 	
 	printf("\n181\n");
-	printf("size:%5f\n", db);
-	ft_printf("size:%5f\n", db);
+	printf("size:%5fa\n", db);
+	ft_printf("size:%5fa\n", db);
 	
 	printf("\n182\n");
-	printf("size + space:% 5f\n", db);
-	ft_printf("size + space:% 5f\n", db);
+	printf("size + space:% 5fa\n", db);
+	ft_printf("size + space:% 5fa\n", db);
 	
 	printf("\n183\n");
-	printf("size + plus:%+5f\n", db);
-	ft_printf("size + plus:%+5f\n", db);
+	printf("size + plus:%+5fa\n", db);
+	ft_printf("size + plus:%+5fa\n", db);
 	
 	printf("\n184\n");
-	printf("size + space:%# 5f\n", db);
-	ft_printf("size + space:%# 5f\n", db);
+	printf("size + space:%# 5fa\n", db);
+	ft_printf("size + space:%# 5fa\n", db);
 	
 	printf("\n185\n");
-	printf("size + plus:%#+5f\n", db);
-	ft_printf("size + plus:%#+5f\n", db);
+	printf("size + plus:%#+5fa\n", db);
+	ft_printf("size + plus:%#+5fa\n", db);
 	
 	printf("\n186\n");
-	printf("size + minus:%-5f\n", db);
-	ft_printf("size + minus:%-5f\n", db);
+	printf("size + minus:%-5fa\n", db);
+	ft_printf("size + minus:%-5fa\n", db);
 	
 	printf("\n187\n");
-	printf("size + 0:%05f\n", db);
-	ft_printf("size + 0:%05f\n", db);
+	printf("size + 0:%05fa\n", db);
+	ft_printf("size + 0:%05fa\n", db);
 	
 	printf("\n188\n");
-	printf("size + 0 + plus:%+05f\n", db);
-	ft_printf("size + 0 + plus:%+05f\n", db);
+	printf("size + 0 + plus:%+05fa\n", db);
+	ft_printf("size + 0 + plus:%+05fa\n", db);
 	
 	printf("\n189\n");
-	printf("size + 0 + plus:%0+5f\n", db);
-	ft_printf("size + 0 + plus:%0+5f\n", db);
+	printf("size + 0 + plus:%0+5fa\n", db);
+	ft_printf("size + 0 + plus:%0+5fa\n", db);
 	
 	printf("\n190\n");
-	printf("size + 0 + prec:%05.3f\n", db);
-	ft_printf("size + 0 + prec:%05.3f\n", db);
+	printf("size + 0 + prec:%05.3fa\n", db);
+	ft_printf("size + 0 + prec:%05.3fa\n", db);
 	
 	printf("\n191\n");
-	printf("size + 0 + prec + hash:%0#5.0f\n", db);
-	ft_printf("size + 0 + prec + hash:%0#5.0f\n", db);
+	printf("size + 0 + prec + hash:%0#5.0fa\n", db);
+	ft_printf("size + 0 + prec + hash:%0#5.0fa\n", db);
 	
 	printf("\n192\n");
-	printf("size + minus + prec:%-5.3f\n", db);
-	ft_printf("size + minus + prec:%-5.3f\n", db);
+	printf("size + minus + prec:%-5.3fa\n", db);
+	ft_printf("size + minus + prec:%-5.3fa\n", db);
 	
 	printf("\n193\n");
-	printf("size + minus + prec + hash:%-#5.0f\n", db);
-	ft_printf("size + minus + prec + hash:%-#5.0f\n", db);
+	printf("size + minus + prec + hash:%-#5.0fa\n", db);
+	ft_printf("size + minus + prec + hash:%-#5.0fa\n", db);
 	
 	printf("\n194\n");
-	printf("size + plus + 0 + prec:%+05.3f\n", db);
-	ft_printf("size + plus + 0 + prec:%+05.3f\n", db);
+	printf("size + plus + 0 + prec:%+05.3fa\n", db);
+	ft_printf("size + plus + 0 + prec:%+05.3fa\n", db);
 	
 	printf("\n195\n");
-	printf("size + plus + 0 + prec + hash:%0+#5.0f\n", db);
-	ft_printf("size + plus + 0 + prec + hash:%0+#5.0f\n", db);
+	printf("size + plus + 0 + prec + hash:%0+#5.0fa\n", db);
+	ft_printf("size + plus + 0 + prec + hash:%0+#5.0fa\n", db);
 	
 	printf("\n196\n");
-	printf("size + espace + zero + prec:%0 5.3f\n", db);
-	ft_printf("size + espace + zero + prec:%0 5.3f\n", db);
+	printf("size + espace + zero + prec:%0 5.3fa\n", db);
+	ft_printf("size + espace + zero + prec:%0 5.3fa\n", db);
 	
 	printf("\n197\n");
-	printf("size + espace + zero + prec:% 05.3f\n", db);
-	ft_printf("size + espace + zero + prec:% 05.3f\n", db);
+	printf("size + espace + zero + prec:% 05.3fa\n", db);
+	ft_printf("size + espace + zero + prec:% 05.3fa\n", db);
 	
 	printf("\n198\n");
-	printf("size + espace + zero + prec:%0 5.3f\n", db);
-	ft_printf("size + espace + zero + prec:%0 5.3f\n", db);
+	printf("size + espace + zero + prec:%0 5.3fa\n", db);
+	ft_printf("size + espace + zero + prec:%0 5.3fa\n", db);
 	
 	printf("\n199\n");
-	printf("size + espace + zero + prec + hash:%#0 5.0f\n", db);
-	ft_printf("size + espace + zero + prec + hash:%#0 5.0f\n", db);
+	printf("size + espace + zero + prec + hash:%#0 5.0fa\n", db);
+	ft_printf("size + espace + zero + prec + hash:%#0 5.0fa\n", db);
 	
 	printf("\n200\n");
-	printf("size + minus + plus + prec:%-+5.3f\n", db);
-	ft_printf("size + minus + plus + prec:%-+5.3f\n", db);
+	printf("size + minus + plus + prec:%-+5.3fa\n", db);
+	ft_printf("size + minus + plus + prec:%-+5.3fa\n", db);
 		
 	printf("\n200\n");
-	printf("ret : %d\n", printf("size + minus + plus + prec:%-+5.3f\n", db));
-	printf("ret : %d\n", ft_printf("size + minus + plus + prec:%-+5.3f\n", db));
+	printf("ret : %d\n", printf("size + minus + plus + prec:%-+5.3fa\n", db));
+	printf("ret : %d\n", ft_printf("size + minus + plus + prec:%-+5.3fa\n", db));
 
 	printf("\n201\n");
-	printf("size + minus + plus + prec + hash:%-#+5.0f\n", db);
-	ft_printf("size + minus + plus + prec + hash:%-#+5.0f\n", db);
+	printf("size + minus + plus + prec + hash:%-#+5.0fa\n", db);
+	ft_printf("size + minus + plus + prec + hash:%-#+5.0fa\n", db);
 
 	printf("\n202\n");
 	printf("%hd\n", INT_MAX);
 	ft_printf("%hd\n", INT_MAX);
-
+/*
 	nb = 0;
 
 	printf("\n203\n");
@@ -1030,7 +1032,8 @@ int	main(void)
 	db = 12354.569874;
 	printf("null prec : %+.0fa\n", db);
 	ft_printf("null prec : %+.0fa\n", db);
-	
+
+	printf("\nDELAAAAAAAAAa\n");
 	nb = 0;
 
 	printf("\n224\n");
@@ -1244,6 +1247,7 @@ int	main(void)
 	printf("null prec : %-5.oa\n", nb);
 	ft_printf( "null prec : %-5.oa\n", nb);
 
+	printf("\nALLAAAAA\n");
 	nb = 0;
 	printf("\n272\n");
 	printf("test o:%oa\n", nb);
@@ -1313,44 +1317,146 @@ int	main(void)
 	printf("size + hash + minus + prec:%-#7.3oa\n", nb);
 	ft_printf("size + hash + minus + prec:%-#7.3oa\n", nb);
 
-nb = 45;
+	nb = 45;
+
+	printf("\n289\n");
 	printf("test o:%o\n", nb);
 	ft_printf("test o:%o\n", nb);
+
+	printf("\n290\n");
 	printf("hash:%#o\n", nb);
 	ft_printf("hash:%#o\n", nb);
+
+	printf("\n291\n");
 	printf("precision / grande:%.5o\n", nb);
 	ft_printf("precision / grande:%.5o\n", nb);
+
+	printf("\n292\n");
 	printf("precision / petite:%.0o\n", nb);
 	ft_printf("precision / petite:%.0o\n", nb);
+
+	printf("\n293\n");
 	printf("Prec + hash / grande:%#.5o\n", nb);
 	ft_printf("Prec + hash / grande:%#.5o\n", nb);
+
+	printf("\n294\n");
 	printf("Prec + hash / petite:%#.1o\n", nb);
 	ft_printf("Prec + hash / petite:%#.1o\n", nb);
+
+	printf("\n295\n");
 	printf("Prec + 0:%0.5o\n", nb);
 	ft_printf("Prec + 0:%0.5o\n", nb);
+
+	printf("\n296\n");
 	printf("Prec + minus:%-.5o\n", nb);
 	ft_printf("Prec + minus:%-.5o\n", nb);
+
+	printf("\n297\n");
 	printf("Size:%5o\n", nb);
 	ft_printf("Size:%5o\n", nb);
+
+	printf("\n298\n");
 	printf("size + prec:%7.3o\n", nb);
 	ft_printf("size + prec:%7.3o\n", nb);
+
+	printf("\n299\n");
 	printf("size + minus:%-5o\n", nb);
 	ft_printf("size + minus:%-5o\n", nb);
+
+	printf("\n300\n");
 	printf("size + zero:%05o\n", nb);
 	ft_printf("size + zero:%05o\n", nb);
+
+	printf("\n301\n");
 	printf("size + zero + hash:%#05o\n", nb);
 	ft_printf("size + zero + hash:%#05o\n", nb);
+
+	printf("\n302\n");
 	printf("size + zero + prec:%05.3o\n", nb);
 	ft_printf("size + zero + prec:%05.3o\n", nb);
+
+	printf("\n303\n");
 	printf("size + minus + prec:%-5.3o\n", nb);
 	ft_printf("size + minus + prec:%-5.3o\n", nb);
+
+	printf("\n304\n");
 	printf("size + hash + zero + prec:%#05.3o\n", nb);
 	ft_printf("size + hash + zero + prec:%#05.3o\n", nb);
+
+	printf("\n305\n");
 	printf("size + hash + zero + prec:%0#5.3o\n", nb);
 	ft_printf("size + hash + zero + prec:%0#5.3o\n", nb);
+
+	printf("\n306\n");
 	printf("size + hash + minus + prec:%-#7.3o\n", nb);
 	ft_printf("size + hash + minus + prec:%-#7.3o\n", nb);
+*/
+	db = -0.0;
+	printf("\n307\n");
+	printf("%f\n", db);
+	ft_printf("%f\n", db);
 
+	db = 0.0;
+	printf("\n307\n");
+	printf("%f\n", db);
+	ft_printf("%f\n", db);
 
+	db = -45.0;
+	printf("\n307\n");
+	printf("%f\n", db);
+	ft_printf("%f\n", db);
+
+	char	*s = "$!^&@printf BATARD";
+	
+	char c;
+	
+	c = '!';
+
+	printf( "%c\n", c);
+//	ft_printf( "%c\n", c);
+	printf( "%1c\n", c);
+//	ft_printf( "%1c\n", c);
+	printf( "%7c\n", c);
+//	ft_printf( "%7c\n", c);
+	printf( "%-1c\n", c);
+//	ft_printf( "%-1c\n", c);
+	printf( "%-5c\n", c);
+//	ft_printf( "%-5c\n", c);
+
+	c = 'A';
+
+	printf("%c\n", c);
+//	ft_printf("%c", c);
+	printf("%12c\n", c);
+//	ft_printf("%12c", c);
+	printf("%-12c\n", c);
+//	ft_printf("%-12c", c);
+	printf("%-1c\n", c);
+//	ft_printf("%-1c", c);
+	printf("%1c\n", c);
+//	ft_printf("%1c", c);
+	printf("%5c\n", c);
+//	ft_printf("%5c", c);
+	printf("%-5c\n", c);
+//	ft_printf("%-5c\n", c);
+
+	printf(" %c\n", 0);
+//	ft_printf(" %c\n", 0);
+	printf("%c\n", 0);
+//	ft_printf("%c\n", 0);
+
+	printf("%c\n", c);
+//	ft_printf("%c\n", c);
+	printf("%0.12c\n", c);
+//	ft_printf("%0.12c\n", c);
+	printf("%0-1c\n", c);
+//	ft_printf("%0-1c\n", c);
+	printf("%1c\n", c);
+//	ft_printf("%1c\n", c);
+	printf("%.5c\n", c);
+//	ft_printf("%.5c\n", c);
+	printf("%-.5c\n", c);
+//	ft_printf("%-.5c\n", c);
 	return (0);
+
 }

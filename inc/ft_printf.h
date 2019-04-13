@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/12 16:00:35 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/13 22:13:54 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_conversions
 	long long		nbr;
 	unsigned long long	unbr;
 	long double		dnbr;
-//	wchar_t		c;
-//	wint_t		lc;
+	unsigned char		c;
+	char			*s;
 }		t_conv;
 
 typedef struct s_printf_environment
@@ -69,6 +69,7 @@ int		ft_printf(const char * restrict format, ...);
 int		is_bdi(size_t *fla, long long *nbr, va_list ap, char b);
 int		is_ouxX(size_t *fla, unsigned long long *unbr, va_list ap);
 int		is_f(size_t l, long double *dnbr, va_list ap);
+void		is_cs(/*size_t *fla, */t_conv *conv, va_list ap, char b);
 
 /*
 ** 	src/numbers.c

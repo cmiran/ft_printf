@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/11 21:36:27 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/13 19:41:07 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	pf_putbin(size_t *fla, long long nbr)
 		{
 			if (fla['N'] % 4 == 0)
 				break ;
-			fla['N']++;
+			++fla['N'];
 		}
 	}
 	fla['R'] += fla['N'];
@@ -33,11 +33,11 @@ void	pf_putbin(size_t *fla, long long nbr)
 	{
 		k = nbr >> fla['N'];
 		k & 1 ? write(1, "1", 1) : write(1, "0", 1);
-		fla['R']++;
+		++fla['R'];
 		if (fla['#'] && fla['N'] % 4 == 0 && fla['N'] != 0)
 		{
 			write(1, " ", 1);
-			fla['R']++;
+			++fla['R'];
 		}
 	}
 }
@@ -51,10 +51,10 @@ void	other_4bin(size_t *fla, long long nbr)
 			(fla['N'] + fla['P'] <= 32 ? fla['N'] + fla['P'] : fla['N']), &fla['R']);
 	}
 	else if (fla['P'] > fla['N'] && fla['P'] + fla['N'] < 32)
-		pf_putbin(fla, nbr);
+		pf_putbin(&*fla, nbr);
 	else
 	{
-		pf_putbin(fla, nbr);
+		pf_putbin(&*fla, nbr);
 		fla['P'] + fla['N'] < 32 ? pf_putnchar(' ', fla['W'] - fla['P'] - fla['N'], &fla['R']) :\
 			pf_putnchar(' ', fla['W'] - fla['N'], &fla['R']);
 		return ;

@@ -6,18 +6,19 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/08 09:53:49 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/13 22:13:41 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-/*int	is_cs(size_t *fla, t_conv *conv, va_list ap)
+void	is_cs(/*size_t *fla, */t_conv *conv, va_list ap, char b)
 {
-	if (fla['l'] && (*lc = va_arg(ap, )))
-		return (*unbr <= ULONG_MAX);
-
-}*/
+	if (b == 'c')
+		conv->c = (unsigned char)va_arg(ap, int);
+	if (b == 's')
+		conv->s = va_arg(ap, char *);
+}
 
 int	is_f(size_t l, long double *dnbr, va_list ap)
 {
