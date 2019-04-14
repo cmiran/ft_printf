@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/12 16:29:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/14 18:13:21 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
 void	init_env(t_env *var, t_fptr *f)
 {
 	var->i = 0;
-//	f['c'] = &
+	f['c'] = &strings;
 //	f['s'] = &
 //	f['p'] = &;
 	f['d'] = &numbers;

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/13 22:13:54 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/14 19:04:21 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,13 @@ void		floats(t_env *var, unsigned char b);
 ** void		pf_putdbl(size_t *fla, long double dnbr, unsigned char len, size_t *ret);
 */
 
+/*
+**	src/strings
+*/
+void		strings(t_env *var, unsigned char b);
+/*
+**
+*/
 
 /*
 **	lib/   by apparition order
@@ -118,6 +125,7 @@ void		pf_putnbr_base(unsigned long long unbr, char b, size_t *fla);
 void		ft_putchar(char c);
 void		pf_putnchar(char c, ssize_t i, size_t *ret);
 int		ft_isupper(int c);
+size_t		ft_strlen(const char *s);
 
 
 int	main(void);

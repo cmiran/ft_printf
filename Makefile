@@ -6,7 +6,7 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/04/05 19:50:55 by cmiran           ###   ########.fr        #
+#    Updated: 2019/04/14 18:13:46 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ SRC_NAME= ft_printf.c\
 	conversions.c\
 	numbers.c\
 	binarys.c\
-	floats.c
+	floats.c\
+	strings.c
 SRC= $(addprefix $(SRC_DIR), $(SRC_NAME))
 
 LIB_DIR= ./lib/
-
 LIB_NAME= ft_isdigit.c\
 	ft_isupper.c\
 	ft_nbrlen.c\
@@ -38,7 +38,6 @@ LIB_NAME= ft_isdigit.c\
 	pf_putnbr_base.c\
 	pf_putnchar.c\
 	pf_strchr.c
-
 LIB= $(addprefix $(LIB_DIR), $(LIB_NAME))
 
 INC_DIR= ./inc/
