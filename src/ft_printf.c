@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/14 18:13:21 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/17 17:07:26 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,20 @@ int	parse(const char *format, size_t *i, size_t *fla)
 
 void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
 {
-	ssize_t	tmp;
-
-	tmp = fla['R'];
 	while (len--)
 		*fla++ = 0;
-	fla['R'] += tmp;
 	conv->nbr = 0;
 	conv->unbr = 0;
 	conv->dnbr = 0.0;
 }
 
-
 void	init_env(t_env *var, t_fptr *f)
 {
 	var->i = 0;
+	var->r = 0;
 	f['c'] = &strings;
-//	f['s'] = &
-//	f['p'] = &;
+	f['s'] = &strings;
+	f['p'] = &numbers;
 	f['d'] = &numbers;
 	f['i'] = &numbers;
 	f['o'] = &numbers;
@@ -109,10 +105,10 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			write(1, &format[var.i], 1);
-			var.fla['R']++;
+			++var.r;
 		}
 		++var.i;
 	}
 	va_end(var.ap);
-	return (var.fla['R']);
+	return (var.r);
 }

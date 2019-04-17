@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 15:45:47 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/05 15:52:25 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/17 16:26:52 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ unsigned char	get_base(char b)
 		base = 2;
 	else if (b == 'o')
 		base = 8;
-	else if (b == 'x' || b == 'X')
+	else if (b == 'x' || b == 'X' || b == 'p')
 		base = 16;
 	else
 		base = 10;

@@ -6,15 +6,16 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 19:08:56 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/14 19:12:12 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/16 19:14:11 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-void	pf_putnstr(const char *s, size_t n)
+void	pf_putnstr(const char *s, size_t n, size_t *r)
 {
 	if (!s || !n)
 		return ;
+	*r += n;
 	write(1, (const char *)s, n);
 }

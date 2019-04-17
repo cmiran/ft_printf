@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:38:29 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/11 16:10:48 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/16 19:10:35 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 #include "../inc/ft_printf.h"
 
-void	pf_putnchar(char c, ssize_t i, size_t *ret)
+void	pf_putnchar(char c, ssize_t n, size_t *r)
 {
-	if (i < 0)
+	if (n < 0)
 		return ;
-	*ret += i;
-	while (i--)
+	*r += n;
+	while (n--)
 		write(1, &c, 1);
 }
