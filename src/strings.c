@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 16:20:08 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/17 16:55:32 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/20 21:14:39 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,12 @@ void	other_4str(size_t *fla, t_conv conv, unsigned char b, size_t *r)
 		write(1, &conv.c, 1);
 		*r += 1;
 	}
-	else if (b == 's')
+	else
 	{
 		pf_putnchar(fla['0'] ? '0' : ' ', fla['W']\
 				- (fla['P'] && fla['N'] > fla['P'] ? fla['P'] : fla['N'])\
 				, r);
 		pf_putnstr(conv.s, (fla['.'] && fla['P'] < fla['N']) ? fla['P'] : fla['N'], r);
-	}
-	else
-	{
-		write(1, "0x", 2);
-		pf_putnbr_base(conv.unbr, b, fla, r);
 	}
 }
 
@@ -42,30 +37,20 @@ void	dash_4str(size_t *fla, t_conv conv,  unsigned char b, size_t *r)
 		pf_putnchar(' ', fla['W'] - 1, r);
 		*r += 1;
 	}
-	else if (b == 's')
+	else
 	{	
 		pf_putnstr(conv.s, (fla['.'] && fla['P'] < fla['N']) ? fla['P'] : fla['N'], r);
 		pf_putnchar(' ', fla['W']\
 				- (fla['P'] && fla['N'] > fla['P'] ? fla['P'] : fla['N'])\
 				, r);
 	}
-	else
-	{
-		write(1, "0x", 2);
-		pf_putnbr_base(conv.unbr, b, fla, r);
-	}
 }
 
 void	strings(t_env *var, unsigned char b)
 {
-	if (b == 'c' || b == 's')
-	{
-		is_cs(&var->conv, var->ap, b);
-		b == 's' && var->conv.s ? var->fla['N'] = ft_strlen(var->conv.s) :\
-		   (var->conv.s = "(null)") && (var->fla['N'] = ft_strlen(var->conv.s));
-	}
-	if (var->fla['-'])
-		dash_4str(&*var->fla, var->conv, b, &var->r);
-	else
+	is_csf(var->fla, &var->conv, var->ap, b);
+	b == 's' && var->conv.s ? var->fla['N'] = ft_strlen(var->conv.s) :\
+		(var->conv.s = "(null)") && (var->fla['N'] = ft_strlen(var->conv.s));
+	var->fla['-'] ? dash_4str(&*var->fla, var->conv, b, &var->r) :\
 		other_4str(&*var->fla, var->conv, b, &var->r);
 }

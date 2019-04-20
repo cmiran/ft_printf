@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/16 18:57:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/20 21:23:09 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,7 @@ void	other_4dbl(size_t *fla, long double dnbr, size_t *r)
 
 void	floats(t_env *var, unsigned char b)
 {
-	var->fla['F'] = 1;
-/*
-**	^ float maker used later in pf_putnbr.c
-*/
-	if (b == 'f')
-		if (!is_f(var->fla['L'], &var->conv.dnbr, var->ap))
-			exit(EX_USAGE);
+	is_csf(var->fla, &var->conv, var->ap, b);
 	var->fla['N'] = pf_nbrlen(var->conv.dnbr, 'f');
 	if (!var->fla['.'] && !var->fla['P'])
 		var->fla['P'] = 6;

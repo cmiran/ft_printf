@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/17 17:07:26 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/20 22:13:50 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	parse(const char *format, size_t *i, size_t *fla)
 		else
 			break ;
 	}
-	return (pf_strchr("cspdiouxXfbn", format[*i]));
+	return (pf_strchr("cspdiouxXfb", format[*i]));
 }
 
 void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
@@ -79,7 +79,6 @@ void	init_env(t_env *var, t_fptr *f)
 	f['X'] = &numbers;
 	f['f'] = &floats;
 	f['b'] = &binarys;
-//	f['n'] = &;
 }
 
 int	ft_printf(const char *format, ...)
@@ -99,7 +98,7 @@ int	ft_printf(const char *format, ...)
 			{
 				pf_bzero(&*var.fla, 127, &var.conv);
 				!parse(format, &var.i, &*var.fla) ? exit(EX_USAGE) :\
-					f[pf_strchr("cspdiouxXfbn", format[var.i])](&var, format[var.i]);
+					f[pf_strchr("cspdiouxXfb", format[var.i])](&var, format[var.i]);
 			}
 		}
 		else

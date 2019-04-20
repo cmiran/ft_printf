@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/17 17:31:31 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/20 21:18:59 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,16 +115,8 @@ unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b, size_t 
 
 void		numbers(t_env *var, unsigned char b)
 {
-	if (b == 'd' || b == 'i')
-	{
-		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
-			exit(EX_USAGE);
-	}
-	else
-	{
-		if (!is_ouxp(var->fla, &var->conv.unbr, var->ap, b))
-			exit(EX_USAGE);
-	}
+	(b == 'd' || b == 'i') ? is_bdi(var->fla, &var->conv.nbr, var->ap, b) :\
+		(is_ouxp(var->fla, &var->conv.unbr, var->ap, b));
 	var->fla['N'] = (b == 'd' || b == 'i') ? pf_nbrlen(var->conv.nbr, b) :\
 		pf_unbrlen(var->conv.unbr, b);
 	if (var->fla['.'] && var->conv.nbr == 0 && var->conv.unbr == 0)

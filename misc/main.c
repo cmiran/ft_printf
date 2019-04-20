@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-
+/*
 	ft_printf("Christopher Nolan\n");
 	ft_printf("%%%%\n");
 	
@@ -345,11 +345,11 @@ int	main(void)
 
 	printf("\n85\n");
 	ft_printf("%#+.6333b Check\n", 62990);
-
+*/
 	printf("\n86\n");
-	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %#+-o\n\n", (unsigned long)3213, 431, 4314);
+	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %n+-o\n", (unsigned long)3213, 431, 4314);
 	ft_printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d ,%#0b, %#+-o\n", (unsigned long)3213, 431, 45422, 4314);
-
+/*
 	printf("\n87\n");
 	ft_printf("%b Check\n", 0);
 
@@ -498,7 +498,7 @@ int	main(void)
 	printf("\n104\n");
 	printf("%#15.f check\n", 12);
 	ft_printf("%#15.f check\n", 12);
-
+*/
 	printf("\n105\n");
 	printf("max int :  %d\n", INT16_MAX);
 	ft_printf("max int :  %d\n", INT16_MAX);
@@ -530,7 +530,7 @@ int	main(void)
 	printf("\n113\n");	
 	printf("min long long :  %lld\n",LLONG_MIN);
 	ft_printf("min long long :  %lld\n",LLONG_MIN);
-
+/*
 	int	nb;
 	nb = -45; 
 		
@@ -1725,6 +1725,6 @@ int	main(void)
 	printf("\n384\n");
 	printf("%42p b\n", &c);
 	ft_printf("%42p b\n", &c);
-
+*/
 	return (0);
 }

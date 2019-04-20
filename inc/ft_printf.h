@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/17 16:54:15 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/20 21:25:18 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ typedef struct s_printf_environment
 **	width		fla['W']
 **	precision	fla['P']
 **	nbr lenght	fla['N']
-**	float marker	fla['F']
 */
 	t_conv		conv;
 }		t_env;
@@ -67,10 +66,9 @@ int		ft_printf(const char * restrict format, ...);
 /*
 **	src/conversions.c
 */
-int		is_bdi(size_t *fla, long long *nbr, va_list ap, char b);
-int		is_ouxp(size_t *fla, unsigned long long *unbr, va_list ap, char b);
-int		is_f(size_t l, long double *dnbr, va_list ap);
-void		is_cs(/*size_t *fla, */t_conv *conv, va_list ap, char b);
+void		is_bdi(size_t *fla, long long *nbr, va_list ap, char b);
+void		is_ouxp(size_t *fla, unsigned long long *unbr, va_list ap, char b);
+void		is_csf(size_t *fla, t_conv *conv, va_list ap, char b);
 
 /*
 ** 	src/numbers.c
@@ -129,8 +127,4 @@ int		ft_isupper(int c);
 size_t		ft_strlen(const char *s);
 void		pf_putnstr(const char *s, size_t n, size_t *r);
 
-
-//int	main(void);
-void	*ft_print_memory(void const *addr, size_t size);
-int	ft_isprint(int c);
 #endif

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/16 19:01:26 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/20 21:07:43 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,8 @@ void	dash_4bin(size_t *fla, long long nbr, size_t *r)
 
 void	binarys(t_env *var, unsigned char b)
 {
-	if (b == 'b')
-		if (!is_bdi(var->fla, &var->conv.nbr, var->ap, b))
-			exit(EX_USAGE);
+	is_bdi(var->fla, &var->conv.nbr, var->ap, b);
 	var->fla['N'] = pf_nbrlen((int)var->conv.nbr, 'b');
-	if (var->fla['-'])
-		dash_4bin(&*var->fla, var->conv.nbr, &var->r);
-	else
+	var->fla['-'] ? dash_4bin(&*var->fla, var->conv.nbr, &var->r) :\
 		other_4bin(&*var->fla, var->conv.nbr, &var->r);
 }
