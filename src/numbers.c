@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/20 21:18:59 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/21 01:41:37 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ void		numbers(t_env *var, unsigned char b)
 	var->fla['N'] = (b == 'd' || b == 'i') ? pf_nbrlen(var->conv.nbr, b) :\
 		pf_unbrlen(var->conv.unbr, b);
 	if (var->fla['.'] && var->conv.nbr == 0 && var->conv.unbr == 0)
-		var->fla['N']--;
+		--var->fla['N'];
 	if ((var->fla['#'] && !var->fla['-'] && (b == 'x' || b == 'X') && var->conv.unbr > 0)\
 			|| (!var->fla['-'] && b == 'p'))
 		hash(&*var->fla, var->conv.unbr, b, &var->r);

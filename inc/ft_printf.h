@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/20 21:25:18 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/21 01:05:29 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_printf_environment
 **	fla['ll']	fla[93]
 **	width		fla['W']
 **	precision	fla['P']
-**	nbr lenght	fla['N']
+**	lenght		fla['N']
 */
 	t_conv		conv;
 }		t_env;
@@ -58,9 +58,9 @@ typedef void (*t_fptr)(t_env *var, unsigned char b);
 */
 int		ft_printf(const char * restrict format, ...);
 /*
-** int		parse(size_t *fla, size_t *i, const char *format);
-** size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla);
-** void		pf_bzero(size_t *fla, size_t len, t_conv *conv);
+** int		parse(size_t *fla, size_t *i, const char *format)
+** size_t	*check_sizeflag(const char *format, size_t *i, size_t *fla)
+** void		pf_bzero(size_t *fla, size_t len, t_conv *conv)
 */
 
 /*
@@ -76,9 +76,9 @@ void		is_csf(size_t *fla, t_conv *conv, va_list ap, char b);
 void		numbers(t_env *var, unsigned char i);
 unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b, size_t *r);
 /*
-** void		dash(size_t *fla, long long nbr, ssize_t len);
-** void		zer0(size_t *fla, long long nbr, ssize_t len);
-** void		sign(size_t *fla, long long nbr);
+** void		dash(size_t *fla, t_conv conv, unsigned char b, size_t *r)
+** void		other(size_t *fla, t_conv conv, unsigned char b, size_t *r)
+** void		sign(size_t *fla, long long nbr, unsigned char b, size_t *r)
 */
 
 /*
@@ -86,9 +86,9 @@ unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b, size_t 
 */
 void		binarys(t_env *var, unsigned char b);
 /*
-** void		dash_4bin(size_t *fla, t_conv conv, char b, unsigned char len);
-** void		other_4bin(size_t *fla, t_conv conv, unsigned char b, unsigned char len);
-** void		pf_putbin(size_t *fla, ssize_t nbr, unsigned char len);
+** void		dash_4bin(size_t *fla, long long nbr, size_t *r)
+** void		other_4bin(size_t *fla, long long nbr, size_t *r)
+** void		pf_putbin(size_t *fla, long long nbr, size_t *r)
 */
 
 /*
@@ -96,9 +96,9 @@ void		binarys(t_env *var, unsigned char b);
 */
 void		floats(t_env *var, unsigned char b);
 /*
-** void		other_4dbl(size_t *fla, long double dnbr, unsigned char len, size_t *ret);
-** void		sign_4dbl(size_t *fla, double long dnbr, size_t *ret);
-** void		pf_putdbl(size_t *fla, long double dnbr, unsigned char len, size_t *ret);
+** void		other_4dbl(size_t *fla, long double dnbr, size_t *r)
+** void		sign_4dbl(size_t *fla, long double dnbr, size_t *r)
+** void		pf_putdbl(size_t *fla, long double dnbr, size_t *r)
 */
 
 /*
@@ -106,7 +106,8 @@ void		floats(t_env *var, unsigned char b);
 */
 void		strings(t_env *var, unsigned char b);
 /*
-**
+** void		dash_4str(size_t *fla, t_conv conv,  unsigned char b, size_t *r)
+** void		other_4str(size_t *fla, t_conv conv, unsigned char b, size_t *r)
 */
 
 /*

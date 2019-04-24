@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:38:29 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/16 19:10:35 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/21 01:35:02 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	pf_putnchar(char c, ssize_t n, size_t *r)
 {
-	if (n < 0)
+	if (n <= 0)
 		return ;
 	*r += n;
 	while (n--)

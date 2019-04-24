@@ -345,11 +345,11 @@ int	main(void)
 
 	printf("\n85\n");
 	ft_printf("%#+.6333b Check\n", 62990);
-*/
+
 	printf("\n86\n");
 	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %n+-o\n", (unsigned long)3213, 431, 4314);
 	ft_printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d ,%#0b, %#+-o\n", (unsigned long)3213, 431, 45422, 4314);
-/*
+
 	printf("\n87\n");
 	ft_printf("%b Check\n", 0);
 
@@ -358,7 +358,7 @@ int	main(void)
 	
 	printf("\n89\n");
 	printf("%lc Check\n", 74);
-	
+*/	
 	printf("\n90\n");
 	printf("%.8f Check\n", 0.6);
 	ft_printf("%.8f Check\n", 0.6);
@@ -498,7 +498,7 @@ int	main(void)
 	printf("\n104\n");
 	printf("%#15.f check\n", 12);
 	ft_printf("%#15.f check\n", 12);
-*/
+/*
 	printf("\n105\n");
 	printf("max int :  %d\n", INT16_MAX);
 	ft_printf("max int :  %d\n", INT16_MAX);
@@ -530,7 +530,7 @@ int	main(void)
 	printf("\n113\n");	
 	printf("min long long :  %lld\n",LLONG_MIN);
 	ft_printf("min long long :  %lld\n",LLONG_MIN);
-/*
+
 	int	nb;
 	nb = -45; 
 		
@@ -750,7 +750,7 @@ int	main(void)
 	printf("%050.d\n", nb);
 	ft_printf("%050.d\n", nb);
 
-
+*/
 	double		db;
 	db = -12547.58;
 	db = 0;
@@ -902,7 +902,7 @@ int	main(void)
 	printf("\n201\n");
 	printf("size + minus + plus + prec + hash:%-#+5.0fa\n", db);
 	ft_printf("size + minus + plus + prec + hash:%-#+5.0fa\n", db);
-
+/*
 	printf("\n202\n");
 	printf("%hd\n", INT_MAX);
 	ft_printf("%hd\n", INT_MAX);

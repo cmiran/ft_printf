@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/20 21:40:48 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/23 14:13:45 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	is_csf(size_t *fla, t_conv *conv, va_list ap, char b)
 
 void	is_ouxp(size_t *fla, unsigned long long *unbr, va_list ap, char b)
 {
-	if (fla[91])
+	if (b == 'p')
+		*unbr = va_arg(ap, uintptr_t);
+	else if (fla[91])
 		*unbr = (unsigned char)va_arg(ap, unsigned int);
 	else if (fla['h'])
 		*unbr = (unsigned short)va_arg(ap, unsigned int);
@@ -33,8 +35,6 @@ void	is_ouxp(size_t *fla, unsigned long long *unbr, va_list ap, char b)
 		*unbr = va_arg(ap, unsigned long);
 	else if (fla[93])
 		*unbr = va_arg(ap, unsigned long long);
-	else if (b == 'p')
-		*unbr = va_arg(ap, uintptr_t);
 	else
 		*unbr = va_arg(ap, unsigned int);
 }

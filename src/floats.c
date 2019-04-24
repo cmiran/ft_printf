@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/20 21:23:09 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/23 13:42:42 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	pf_putdbl(size_t *fla, long double dnbr, size_t *r)
 	{
 		dnbr = (dnbr - (long)dnbr) * 10.;
 		if (fla['P'] + fla['N'] < (dnbr < .0 || fla['+'] || fla[' '] ? 19 : 18)\
-				&& (dnbr - (int)dnbr) * 10 == 9.)
+				&& (dnbr - (int)dnbr) * 10 >= 9.)
 /*
 **					Le probleme est la ^^^^^ (== 9. || >= 9.)
 */ 
@@ -91,7 +91,7 @@ void	floats(t_env *var, unsigned char b)
 {
 	is_csf(var->fla, &var->conv, var->ap, b);
 	var->fla['N'] = pf_nbrlen(var->conv.dnbr, 'f');
-	if (!var->fla['.'] && !var->fla['P'])
+	if (!var->fla['.'])
 		var->fla['P'] = 6;
 	if (var->fla['-'])
 	{
