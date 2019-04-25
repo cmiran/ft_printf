@@ -6,13 +6,13 @@
 #    By: jkettani <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 14:15:50 by jkettani          #+#    #+#              #
-#    Updated: 2019/03/22 13:53:01 by jkettani         ###   ########.fr        #
+#    Updated: 2019/04/25 17:39:19 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ----- LIBFTPRINTF PATH -----
 #
-LIBFTPRINTF_PATH =      ../../ft_printf
+LIBFTPRINTF_PATH =      ../../../
 
 # ----- VARIABLES -----
 

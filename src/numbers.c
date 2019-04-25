@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 17:29:04 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 18:03:50 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ void		dash(size_t *fla, t_conv conv, unsigned char b, size_t *r)
 /*
 **				 ^ '#' marker initialized in pf_putnbr_base.c
 */
-				&& (conv.unbr || (fla['.'] && fla['P'] <= fla['N'])) ? 1 : 0)\
+				&& ((conv.unbr && !fla['P'])\
+					|| (fla['.'] && fla['P'] <= fla['N'])) ? 1 : 0)\
 			- ((fla['#'] && (b == 'x' || b == 'X')\
 				&& conv.unbr) || b == 'p' ? 2 : 0), r);
 }

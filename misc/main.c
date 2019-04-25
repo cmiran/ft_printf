@@ -1768,6 +1768,10 @@ int	main(void)
 	printf("\n394\n");
 	printf("%-#23.5hho|%-023.5hho|%#023.5hho|%-#023.5hhoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
 	ft_printf("%-#23.5hho|%-023.5hho|%#023.5hho|%-#023.5hhoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+
+	printf("\n394 bis\n");
+	printf("%-#23.5ho|%-023.5ho|%#023.5ho|%-#023.5hoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+	ft_printf("%-#23.5ho|%-023.5ho|%#023.5ho|%-#023.5hoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
 /*
 	printf("\n395\n");
 	printf("%-#23o|%-023o|%#023o|%-#023oa\n", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX);
