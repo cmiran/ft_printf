@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 15:19:19 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/21 01:41:37 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 17:04:03 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		other(size_t *fla, t_conv conv, unsigned char b, size_t *r)
 		pf_putnchar(' ', fla['W'] - (fla['N'] > fla['P'] ? fla['N'] : fla['P'])\
 				- ((fla['+'] || fla[' '] || conv.nbr < 0)\
 				 	&& !pf_strchr("ouxX", b) ? 1 : 0)\
-				- (fla['#'] && b == 'o' && !fla['P'] ? 1 : 0), r);
+				- (fla['#'] && b == 'o' && fla['P'] <= fla['N'] ? 1 : 0), r);
 		sign(&*fla, conv.nbr, b, r);
 		pf_putnchar('0', fla['P'] - fla['N'], r);
 	}
@@ -81,9 +81,13 @@ void		dash(size_t *fla, t_conv conv, unsigned char b, size_t *r)
 	pf_putnchar(' ', fla['W'] - (fla['N'] > fla['P'] ? fla['N'] : fla['P'])\
 			- ((fla['+'] || fla[' '] || conv.nbr < 0)\
 			 	&& !pf_strchr("ouxX", b) ? 1 : 0)\
-			- (fla['#'] && (b == 'o') && !fla['P'] ? 1 : 0)\
+			- ((fla['H'] || fla['#']) && b == 'o'\
+/*
+**				 ^ '#' marker initialized in pf_putnbr_base.c
+*/
+				&& (conv.unbr || (fla['.'] && fla['P'] <= fla['N'])) ? 1 : 0)\
 			- ((fla['#'] && (b == 'x' || b == 'X')\
-				&& conv.unbr > 0) || b == 'p' ? 2 : 0), r);
+				&& conv.unbr) || b == 'p' ? 2 : 0), r);
 }
 
 unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b, size_t *r)
@@ -92,7 +96,7 @@ unsigned int	hash(size_t *fla, unsigned long long unbr, unsigned char b, size_t 
 		pf_putnchar('0', 1 - (fla['P'] > fla['N'] ? 1 : 0), r);
 	else
 	{
-		if (!fla['P'])
+		if (!fla['.'])
 		{
 			if (fla['0'])
 				ft_isupper(b) ? write(1, "0X", 2) : write(1, "0x", 2);

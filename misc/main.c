@@ -1726,5 +1726,67 @@ int	main(void)
 	printf("%42p b\n", &c);
 	ft_printf("%42p b\n", &c);
 */
+
+	printf("\n385\n");
+	printf("%-#23hX|%-023hX|%#023hX|%-#023hX\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+	ft_printf("%-#23hX|%-023hX|%#023hX|%-#023hX\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+
+	printf("\n386\n");
+	printf("%%|%%%%|%%%%%%|%%abc%%def%%ghi%%\n");
+	printf("%d\n", printf("%%|%%%%|%%%%%%|%%abc%%def%%ghi%%\n"));
+	ft_printf("%%|%%%%|%%%%%%|%%abc%%def%%ghi%%\n");
+	printf("%d\n", ft_printf("%%|%%%%|%%%%%%|%%abc%%def%%ghi%%\n"));
+
+	printf("\n387\n");
+	printf("%-#23o|%-023o|%#023o|%-#023oa\n", 0U, 0U, 0U, 0U);
+	ft_printf("%-#23o|%-023o|%#023o|%-#023oa\n", 0U, 0U, 0U, 0U);
+	
+	printf("\n388\n");
+	printf("%-#23.5llo|%-023.5llo|%#023.5llo|%-#023.5llo\n", 0U, 0U, 0U, 0U);
+	ft_printf("%-#23.5llo|%-023.5llo|%#023.5llo|%-#023.5llo\n", 0U, 0U, 0U, 0U);
+
+	printf("\n389\n");
+	printf("%23.5hho|%-23.5hho|%#23.5hho|%023.5hho\n", 0U, 0U, 0U, 0U);
+	ft_printf("%23.5hho|%-23.5hho|%#23.5hho|%023.5hho\n", 0U, 0U, 0U, 0U);
+
+	printf("\n390\n");
+	printf("%d\n", printf("%-#23o|%-023o|%#023o|%-#023o\n", 0U, 0U, 0U, 0U));
+	printf("%d\n", ft_printf("%-#23o|%-023o|%#023o|%-#023o\n", 0U, 0U, 0U, 0U));
+
+	printf("\n391\n");
+	printf("%1.o|%-1.o|%#1.o|%01.oa\n", 0U, 0U, 0U, 0U);
+	ft_printf("%1.o|%-1.o|%#1.o|%01.oa\n", 0U, 0U, 0U, 0U);
+	
+	printf("\n392\n");
+	printf("%-#1.o|%-01.o|%#01.o|%-#01.oa\n", 0U, 0U, 0U, 0U);
+	ft_printf("%-#1.o|%-01.o|%#01.o|%-#01.oa\n", 0U, 0U, 0U, 0U);
+
+	printf("\n393\n");
+	printf("%-#23.o|%-023.o|%#023.o|%-#023.oa\n", 0U, 0U, 0U, 0U);
+	ft_printf("%-#23.o|%-023.o|%#023.o|%-#023.oa\n", 0U, 0U, 0U, 0U);
+	
+	printf("\n394\n");
+	printf("%-#23.5hho|%-023.5hho|%#023.5hho|%-#023.5hhoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+	ft_printf("%-#23.5hho|%-023.5hho|%#023.5hho|%-#023.5hhoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+/*
+	printf("\n395\n");
+	printf("%-#23o|%-023o|%#023o|%-#023oa\n", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX);
+	ft_printf("%-#23o|%-023o|%#023o|%-#023oa\n", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX);
+	
+	printf("\n396\n");
+	printf("%ho|%-ho|%#ho|%0hoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+	ft_printf("%ho|%-ho|%#ho|%0hoa\n", ULLONG_MAX, ULLONG_MAX, ULLONG_MAX, ULLONG_MAX);
+	
+	printf("\n397\n");
+	printf("%-#23.X|%-023.X|%#023.X|%-#023.Xa\n", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX);
+	ft_printf("%-#23.X|%-023.X|%#023.X|%-#023.Xa\n", UINT_MAX, UINT_MAX, UINT_MAX, UINT_MAX);
+*/	
+	printf("\n398\n");
+	printf("%li|%-li|%+li|% li|%0lia\n", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	ft_printf("%li|%-li|%+li|% li|%0lia\n", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+
+	printf("\n399\n");
+	printf("%-+23.5hi|%- 23.5hi|%-023.5hi|%+ 23.5hi|%+023.5hi|% 023.5hi|%-+ 023.5hia\n", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	ft_printf("%-+23.5hi|%- 23.5hi|%-023.5hi|%+ 23.5hi|%+023.5hi|% 023.5hi|%-+ 023.5hia\n", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
 	return (0);
 }

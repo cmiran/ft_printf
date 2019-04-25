@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 17:56:28 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/17 17:34:58 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 17:04:25 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,13 @@ void	pf_putnbr_base(unsigned long long unbr, char b, size_t *fla, size_t *r)
 
 	base = get_base(b);
 	if (fla['#'] && b == 'o')
+	{
 		fla['#'] = hash(&*fla, unbr, b, r);
+		fla['H'] = 1;
+/*		
+**		^ '#' marker used in dash() from numbers.c;
+*/		
+	}
 	if (unbr < base)
 	{
 		ft_putchar(itoc(unbr % base, b));

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/20 22:13:50 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 16:12:14 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 void	check_sizeflag(const char *format, size_t *i, size_t *fla)
 {
 	if (format[*i] == 'h')
-		fla[91] = (format[*i + 1] == 'h') ? ++*i : ++fla['h'];
+		(fla[91] = (format[*i + 1] == 'h')) ? ++*i : ++fla['h'];
+//		format[*i + 1] == 'h' ? (++*i && ++fla[91]) : ++fla['h'];
 	else if (format[*i] == 'l')
-		fla[93] = (format[*i + 1] == 'l') ? ++*i : ++fla['l'];
+		(fla[93] = (format[*i + 1] == 'l')) ? ++*i : ++fla['l'];
+//		format[*i + 1] == 'l' ? (++*i && ++fla[93]) : ++fla['l'];
 	else
 		++fla['L'];
 }
@@ -55,7 +57,7 @@ int	parse(const char *format, size_t *i, size_t *fla)
 	return (pf_strchr("cspdiouxXfb", format[*i]));
 }
 
-void	pf_bzero(size_t *fla, size_t len, t_conv *conv)
+void	pf_bzeroo(size_t *fla, size_t len, t_conv *conv)
 {
 	while (len--)
 		*fla++ = 0;
@@ -93,10 +95,13 @@ int	ft_printf(const char *format, ...)
 		if (format[var.i] == '%')
 		{
 			if (format[var.i + 1] == '%')
+			{
 				write(1, &format[var.i++], 1);
+				++var.r;
+			}
 			else
 			{
-				pf_bzero(&*var.fla, 127, &var.conv);
+				pf_bzeroo(&*var.fla, 127, &var.conv);
 				!parse(format, &var.i, &*var.fla) ? exit(EX_USAGE) :\
 					f[pf_strchr("cspdiouxXfb", format[var.i])](&var, format[var.i]);
 			}

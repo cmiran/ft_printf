@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/21 01:05:29 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 12:59:39 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_printf_environment
 **	width		fla['W']
 **	precision	fla['P']
 **	lenght		fla['N']
+**	'#' marker	fla['H']
 */
 	t_conv		conv;
 }		t_env;
