@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 18:00:33 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 12:18:43 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 21:19:43 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		pf_nbrlen(long long nbr, char b)
 {
-	size_t		len;
+	size_t			len;
 	unsigned char	base;
 
 	len = 1;

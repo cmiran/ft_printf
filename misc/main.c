@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-/*
+
 	ft_printf("Christopher Nolan\n");
 	ft_printf("%%%%\n");
 	
@@ -347,7 +347,7 @@ int	main(void)
 	ft_printf("%#+.6333b Check\n", 62990);
 
 	printf("\n86\n");
-	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %n+-o\n", (unsigned long)3213, 431, 4314);
+//	printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d , %n+-o\n", (unsigned long)3213, 431, 4314);
 	ft_printf("sal$#ut\n)*$$%%\t,cavabiendad%#75.43lX , %#0d ,%#0b, %#+-o\n", (unsigned long)3213, 431, 45422, 4314);
 
 	printf("\n87\n");
@@ -358,7 +358,7 @@ int	main(void)
 	
 	printf("\n89\n");
 	printf("%lc Check\n", 74);
-*/	
+
 	printf("\n90\n");
 	printf("%.8f Check\n", 0.6);
 	ft_printf("%.8f Check\n", 0.6);
@@ -1792,5 +1792,32 @@ int	main(void)
 	printf("\n399\n");
 	printf("%-+23.5hi|%- 23.5hi|%-023.5hi|%+ 23.5hi|%+023.5hi|% 023.5hi|%-+ 023.5hia\n", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
 	ft_printf("%-+23.5hi|%- 23.5hi|%-023.5hi|%+ 23.5hi|%+023.5hi|% 023.5hi|%-+ 023.5hia\n", LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN, LLONG_MIN);
+	
+	printf("\n400\n");
+	ft_printf("%#b\n", 257);
+
+	printf("\n401\n");
+	ft_printf("%14b\n", -150);
+
+	printf("\n402\n");
+	ft_printf("%10.15b\n", -150);
+
+	printf("\n403\n");
+	ft_printf("%#14b\n", -150);
+
+	printf("\n404\n");
+	ft_printf("%#10.15b\n", -150);
+
+	printf("\n405\n");
+	ft_printf("%0b\n", -150);
+
+	printf("\n406\n");
+	ft_printf("%0#b\n", 150);
+
+	printf("\n407\n");
+	ft_printf("%10.5b\n", 150);
+
+	printf("\n408\n");
+	ft_printf("%-10.5b\n", -150);
 	return (0);
 }

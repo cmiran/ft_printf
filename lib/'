@@ -6,13 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 17:56:28 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 21:26:31 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/25 21:22:03 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**	e['H'] == # marker used in dash() from numbers.c
-*/
+// https://gitgud.io/varnaud/libft/blob/586dd7b0d4f170ea438f2db0d717664801fc9b04/ft_putnbr_base.c
 
 #include "../inc/ft_printf.h"
 
@@ -29,8 +27,7 @@ unsigned char	itoc(size_t i, char b)
 	return (0);
 }
 
-void			pf_putnbr_base(unsigned long long unbr, char b, size_t *e,\
-										size_t *r)
+void		pf_putnbr_base(unsigned long long unbr, char b, size_t *e, size_t *r)
 {
 	unsigned char	base;
 
@@ -39,6 +36,9 @@ void			pf_putnbr_base(unsigned long long unbr, char b, size_t *e,\
 	{
 		e['#'] = hash(&*e, unbr, b, r);
 		e['H'] = 1;
+/*		
+**		   ^ '#' marker used in dash() from numbers.c
+*/		
 	}
 	if (unbr < base)
 		pf_putchar(itoc(unbr % base, b), r);
