@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 21:24:11 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/04/27 03:27:42 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	pf_bzero(size_t *e, size_t len, t_conv *conv)
 	conv->nbr = 0;
 	conv->unbr = 0;
 	conv->dnbr = 0.0;
+	conv->c = 0;
+	conv->s = NULL;
 }
 
 void	init_env(t_env *var, t_fptr *f)
