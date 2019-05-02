@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 20:35:23 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/02 19:30:37 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	pf_putdbl(size_t *e, long double dnbr, size_t *r)
 {
 	size_t	i;
+//	int	nb;
 
 	if (e['.'] && !e['P'] && (dnbr - (long)dnbr) * 10 > 5.)
 		pf_putnbr(dnbr < 0 ? dnbr - 1. : dnbr + 1., r);
@@ -23,21 +24,33 @@ void	pf_putdbl(size_t *e, long double dnbr, size_t *r)
 	if (e['#'] || e['P'])
 		pf_putchar('.', r);
 	i = 0;
+//	printf("\ndnbr : %Lf\n", (dnbr - (long)dnbr) * 10.);
 	while (i++ < e['P'])
 	{
 		dnbr = (dnbr - (long)dnbr) * 10.;
+		printf("\ndnbr : %Lf\n", dnbr);
 		if (e['P'] + e['N'] < (dnbr < .0 || e['+'] || e[' '] ? 19 : 18)\
-				&& (dnbr - (int)dnbr) * 10 >= 9.)
+				&& (dnbr - (int)dnbr) * 10 == 9.)
 /*
 **					Le probleme est la ^^^^^ (== 9. || >= 9.)
 */
 			(int)dnbr == 9 ? pf_putnbr(dnbr - 9., r) :\
 				pf_putnbr(dnbr + 1., r);
 		else if (i == e['P'] && (dnbr - (int)dnbr) * 10 > 5.)
+		{
+			printf("\nonysuis\n");
 			(int)dnbr == 9 ? pf_putnbr(dnbr - 9., r) :\
 				pf_putnbr(dnbr + 1., r);
+		}
 		else
-			pf_putnbr(dnbr, r);
+		{
+//			printf("\ndnbr : %Lf, %Lf\n", dnbr, dnbr * (10 ^ e['P']));
+//			printf("\nprecision :%lu\n", e['P']);
+//			pf_putnbr(nb = (int)dnbr, r);
+//			break ;
+			(int)dnbr == 9  ? pf_putnbr(dnbr - 9., r) : 0;
+			(dnbr - (int)dnbr) * 10 == 9. ? pf_putnbr(dnbr + 1, r) : pf_putnbr(dnbr, r);
+		}
 	}
 }
 

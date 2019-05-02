@@ -6,7 +6,7 @@
 /*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 21:07:51 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 19:38:12 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/02 19:30:35 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 
 void	pf_putnbr(long long nbr, size_t *r)
 {
+//	printf("putnbr : %lld\n", nbr);
+	if (nbr == LLONG_MIN)
+	{
+		write(1, "9223372036854775808", 19);
+		*r += 19;
+		return ;
+	}
 	if (nbr < 0)
 		nbr = -nbr;
 	if (nbr < 10)
