@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/05/02 18:47:37 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/03 16:47:39 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,15 @@
 # include <sysexits.h>
 # include <unistd.h>
 
-# include <stdio.h>
-
 # define ABS(a) (a < 0) ? -a : a
 
 typedef struct	s_conversions
 {
-	long long		nbr;
+	long long			nbr;
 	unsigned long long	unbr;
-	long double		dnbr;
+	long double			dnbr;
 	unsigned char		c;
-	char			*s;
+	char				*s;
 }				t_conv;
 
 typedef struct	s_printf_environment
@@ -56,7 +54,7 @@ typedef void	(*t_fptr)(t_env *var, unsigned char b);
 /*
 **	src/ft_printf.c
 */
-int		ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 /*
 ** int		parse(size_t *e, size_t *i, const char *format)
 ** size_t	*check_sizeeg(const char *format, size_t *i, size_t *e)
@@ -66,15 +64,17 @@ int		ft_printf(const char *format, ...);
 /*
 **	src/conversions.c
 */
-void		is_bdi(size_t *e, long long *nbr, va_list ap, char b);
-void		is_ouxp(size_t *e, unsigned long long *unbr, va_list ap, char b);
-void		is_csf(size_t *e, t_conv *conv, va_list ap, char b);
+void			is_bdi(size_t *e, long long *nbr, va_list ap, char b);
+void			is_ouxp(size_t *e, unsigned long long *unbr, va_list ap,\
+		char b);
+void			is_csf(size_t *e, t_conv *conv, va_list ap, char b);
 
 /*
 ** 	src/numbers.c
 */
-void		numbers(t_env *var, unsigned char i);
-int		hash(size_t *e, unsigned long long unbr, unsigned char b, size_t *r);
+void			numbers(t_env *var, unsigned char i);
+int				hash(size_t *e, unsigned long long unbr, unsigned char b,\
+		size_t *r);
 /*
 ** void		dash(size_t *e, t_conv conv, unsigned char b, size_t *r)
 ** void		other(size_t *e, t_conv conv, unsigned char b, size_t *r)
@@ -84,7 +84,7 @@ int		hash(size_t *e, unsigned long long unbr, unsigned char b, size_t *r);
 /*
 **	src/binarys.c
 */
-void		binarys(t_env *var, unsigned char b);
+void			binarys(t_env *var, unsigned char b);
 /*
 ** void		dash_4bin(size_t *e, long long nbr, size_t *r)
 ** void		other_4bin(size_t *e, long long nbr, size_t *r)
@@ -94,7 +94,7 @@ void		binarys(t_env *var, unsigned char b);
 /*
 **	src/floats.c
 */
-void		floats(t_env *var, unsigned char b);
+void			floats(t_env *var, unsigned char b);
 /*
 ** void		sign_4dbl(size_t *e, long double dnbr, size_t *r)
 ** void		pf_putdbl(size_t *e, long double dnbr, size_t *r)
@@ -103,7 +103,7 @@ void		floats(t_env *var, unsigned char b);
 /*
 **	src/strings
 */
-void		strings(t_env *var, unsigned char b);
+void			strings(t_env *var, unsigned char b);
 /*
 ** void		dash_4str(size_t *e, t_conv conv,  unsigned char b, size_t *r)
 ** void		other_4str(size_t *e, t_conv conv, unsigned char b, size_t *r)
@@ -112,20 +112,20 @@ void		strings(t_env *var, unsigned char b);
 /*
 **	lib/   by apparition order
 */
-int		ft_isdigit(int c);
-size_t		pf_atoi(const char *format, size_t i);
-size_t		ft_nbrlen(ssize_t nbr);
+int				ft_isdigit(int c);
+size_t			pf_atoi(const char *format, size_t i);
+size_t			ft_nbrlen(ssize_t nbr);
 unsigned char	pf_strchr(const char *s, int c);
-size_t		pf_nbrlen(long long nbr, char b);
+size_t			pf_nbrlen(long long nbr, char b);
 unsigned char	pf_unbrlen(unsigned long long unbr, char b);
 unsigned char	get_base(char c);
-void		pf_putnbr(long long nbr, size_t *r);
-void		pf_putnbr_base(unsigned long long unbr, char b, size_t *e,\
-									size_t *r);
-void		pf_putchar(char c, size_t *r);
-void		pf_putnchar(char c, ssize_t n, size_t *r);
-int		ft_isupper(int c);
-size_t		ft_strlen(const char *s);
-void		pf_putnstr(const char *s, size_t n, size_t *r);
+void			pf_putnbr(long long nbr, size_t *r);
+void			pf_putnbr_base(unsigned long long unbr, char b, size_t *e,\
+	size_t *r);
+void			pf_putchar(char c, size_t *r);
+void			pf_putnchar(char c, ssize_t n, size_t *r);
+int				ft_isupper(int c);
+size_t			ft_strlen(const char *s);
+void			pf_putnstr(const char *s, size_t n, size_t *r);
 
 #endif
