@@ -6,11 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 19:08:41 by cmiran            #+#    #+#             */
-/*   Updated: 2019/05/03 16:48:12 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:11:34 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "ft_printf.h"
 
 void	pf_putbin(size_t *e, long long nbr, size_t *r)
 {

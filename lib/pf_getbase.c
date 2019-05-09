@@ -6,13 +6,13 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 15:45:47 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 21:19:20 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:13:10 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../ft_printf.h"
 
-unsigned char	get_base(char b)
+unsigned char	pf_getbase(char b)
 {
 	unsigned char	base;
 

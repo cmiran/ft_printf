@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 17:56:28 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 21:26:31 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:13:43 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 **	e['H'] == # marker used in dash() from numbers.c
 */
 
-#include "../inc/ft_printf.h"
+#include "../ft_printf.h"
 
 unsigned char	itoc(size_t i, char b)
 {
@@ -34,7 +34,7 @@ void			pf_putnbr_base(unsigned long long unbr, char b, size_t *e,\
 {
 	unsigned char	base;
 
-	base = get_base(b);
+	base = pf_getbase(b);
 	if (e['#'] && b == 'o')
 	{
 		e['#'] = hash(&*e, unbr, b, r);

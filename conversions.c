@@ -6,11 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 22:51:31 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 21:23:53 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:11:41 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "ft_printf.h"
 
 void	is_csf(size_t *e, t_conv *conv, va_list ap, char b)
 {

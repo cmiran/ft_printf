@@ -6,11 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 15:48:09 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 20:51:41 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:13:19 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_isupper(int c)
 {

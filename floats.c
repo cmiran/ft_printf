@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 15:45:53 by cmiran            #+#    #+#             */
-/*   Updated: 2019/05/03 16:10:17 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:11:50 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 ** Le probleme (== 9. || >= 9.)
 */
 
-#include "../inc/ft_printf.h"
+#include "ft_printf.h"
 
 void	pf_putdbl(size_t *e, long double dnbr, size_t *r)
 {

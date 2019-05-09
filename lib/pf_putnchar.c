@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 13:38:29 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 21:21:13 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:13:56 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 ** Affiche n caracteres c sur la sortie standard.
 */
 
-#include "../inc/ft_printf.h"
+#include "../ft_printf.h"
 
 void	pf_putnchar(char c, ssize_t n, size_t *r)
 {

@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 22:20:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/05/03 16:47:39 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 16:41:40 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,11 +114,10 @@ void			strings(t_env *var, unsigned char b);
 */
 int				ft_isdigit(int c);
 size_t			pf_atoi(const char *format, size_t i);
-size_t			ft_nbrlen(ssize_t nbr);
 unsigned char	pf_strchr(const char *s, int c);
 size_t			pf_nbrlen(long long nbr, char b);
 unsigned char	pf_unbrlen(unsigned long long unbr, char b);
-unsigned char	get_base(char c);
+unsigned char	pf_getbase(char c);
 void			pf_putnbr(long long nbr, size_t *r);
 void			pf_putnbr_base(unsigned long long unbr, char b, size_t *e,\
 	size_t *r);

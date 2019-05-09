@@ -6,17 +6,16 @@
 #    By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/22 11:43:16 by cmiran            #+#    #+#              #
-#    Updated: 2019/05/09 15:47:36 by cmiran           ###   ########.fr        #
+#    Updated: 2019/05/09 18:11:04 by cmiran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libftprintf.a
 
-CC= gcc -g
+CC= gcc
 CFLAGS= -Wall -Wextra -Werror
 
-SRC_DIR= ./src/
-SRC_NAME= ft_printf.c\
+SRC= ft_printf.c\
 	conversions.c\
 	numbers.c\
 	binarys.c\
@@ -24,13 +23,12 @@ SRC_NAME= ft_printf.c\
 	strings.c
 
 LIB_DIR= ./lib/
-LIB_NAME= ft_isdigit.c\
+LIB= ft_isdigit.c\
 	ft_isupper.c\
-	ft_nbrlen.c\
-	pf_putchar.c\
 	ft_strlen.c\
-	get_base.c\
+	pf_putchar.c\
 	pf_atoi.c\
+	pf_getbase.c\
 	pf_nbrlen.c\
 	pf_unbrlen.c\
 	pf_putnbr.c\
@@ -39,31 +37,29 @@ LIB_NAME= ft_isdigit.c\
 	pf_putnstr.c\
 	pf_strchr.c
 
-INC_DIR= ./inc/
-INC= $(addprefix -I , $(INC_DIR))
+INC= $(addprefix -I , .)
 
-OBJ_DIR= .sources/
-OBJ= $(addprefix $(OBJ_DIR), $(SRC_NAME:.c=.o))
-OBJLIB_DIR= .library/
-OBJLIB= $(addprefix $(OBJLIB_DIR), $(LIB_NAME:.c=.o))
+OBJ_DIR= .obj/
+OBJ= $(addprefix $(OBJ_DIR), $(SRC:.c=.o))\
+	$(addprefix $(OBJ_DIR), $(LIB:.c=.o))
 
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(OBJLIB)
+$(NAME): $(OBJ)# $(OBJLIB)
 	@echo "\033[0;35m    Creating library...\033[0m"
 	@ar rc $@ $(OBJ) $(OBJLIB)
 	@echo "\033[0;36m  Indexing library...\033[0m"
 	@ranlib $@
 	@ls | grep libftprintf.a
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_DIR)%.o: %.c 
 	@mkdir -p $(OBJ_DIR)
 	@echo "\033[0;33m      Compiling\033[0m		"$<
 	@$(CC) $(CFLAGS) -o $@ -c $< $(INC)
 
-$(OBJLIB_DIR)%.o: $(LIB_DIR)%.c
-	@mkdir -p $(OBJLIB_DIR)
+$(OBJ_DIR)%.o: $(LIB_DIR)%.c 
+	@mkdir -p $(OBJ_DIR)
 	@echo "\033[0;33m      Compiling\033[0m		"$<
 	@$(CC) $(CFLAGS) -o $@ -c $< $(INC)
 

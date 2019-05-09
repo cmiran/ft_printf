@@ -6,7 +6,7 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 12:05:30 by cmiran            #+#    #+#             */
-/*   Updated: 2019/05/03 18:48:21 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:11:58 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 **	%[flag][width][.precision][size-flag]type
 */
 
-#include "../inc/ft_printf.h"
+#include "ft_printf.h"
 
 void	check_sizeflag(const char *format, size_t *i, size_t *e)
 {
@@ -35,13 +35,13 @@ int		parse(const char *format, size_t *i, size_t *e)
 		else if (ft_isdigit(format[*i]) && !e['W'])
 		{
 			e['W'] = pf_atoi(format, *i);
-			*i += ft_nbrlen(e['W']) - 1;
+			*i += pf_nbrlen(e['W'], 'i') - 1;
 		}
 		else if (format[*i] == '.' && !e['.'])
 		{
 			++e['.'];
 			e['P'] = pf_atoi(format, *i + 1);
-			*i += ft_nbrlen(e['P']);
+			*i += pf_nbrlen(e['P'], 'i');
 		}
 		else if (pf_strchr("Lhl", format[*i]))
 		{

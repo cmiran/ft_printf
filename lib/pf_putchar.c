@@ -6,7 +6,7 @@
 /*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 20:56:55 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 19:35:26 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:13:31 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 ** Affiche le caractère c sur la sortie standard.
 */
 
-#include "../inc/ft_printf.h"
+#include "../ft_printf.h"
 
 void	pf_putchar(char c, size_t *r)
 {

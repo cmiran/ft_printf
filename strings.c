@@ -6,11 +6,11 @@
 /*   By: cmiran <cmiran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 16:20:08 by cmiran            #+#    #+#             */
-/*   Updated: 2019/04/25 19:56:15 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:12:12 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "ft_printf.h"
 
 void	other_4str(size_t *e, t_conv conv, unsigned char b, size_t *r)
 {

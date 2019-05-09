@@ -6,11 +6,11 @@
 /*   By: cmiran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 17:46:57 by cmiran            #+#    #+#             */
-/*   Updated: 2019/03/30 18:03:03 by cmiran           ###   ########.fr       */
+/*   Updated: 2019/05/09 18:14:08 by cmiran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../ft_printf.h"
 
 unsigned char	pf_strchr(const char *s, int c)
 {
